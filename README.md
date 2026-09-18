@@ -1,7 +1,7 @@
 # Grupo-Sevilla
 Ali Slatna
 Yeray Mico
-Hamza Fouiad
+Hamza Souiad
 Jhoel Fuentes
 Raul Llorca
 Sharaf El Mahfoudi
