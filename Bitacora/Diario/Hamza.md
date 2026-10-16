@@ -1,1 +1,49 @@
 
+# Bitácora Diaria - Hamza Souiad (Secretario)
+
+---
+
+## Semana 1 - Fecha: DD/MM/AAAA
+
+a. **Objetivo del día:**
+
+
+b. **Qué he hecho:**
+
+
+c. **Qué he podido conseguir:**
+
+
+d. **Qué no he podido conseguir, y por qué:**
+
+---
+
+## Semana 2 - Fecha: DD/MM/AAAA
+
+a. **Objetivo del día:**
+
+
+b. **Qué he hecho:**
+
+
+c. **Qué he podido conseguir:**
+
+
+d. **Qué no he podido conseguir, y por qué:**
+
+---
+
+## Semana 3 - Fecha: DD/MM/AAAA
+
+a. **Objetivo del día:**
+
+
+b. **Qué he hecho:**
+
+
+c. **Qué he podido conseguir:**
+
+
+d. **Qué no he podido conseguir, y por qué:**
+
+---
