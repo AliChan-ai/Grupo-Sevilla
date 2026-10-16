@@ -1,4 +1,12 @@
 Nombre grupo : Grupo-Sevilla
-Integrantes: Yeray Mico, Hamza Souiad, Jhoel Fuentes, Ali Slarna, Sharaf El Mahfoudi, Raul Llorca
+Integrantes: 
+Yeray Mico: Cabeza de proyecto
+Hamza Souiad: Secretario
+Jhoel Fuentes:Responsable Tecnico
+Ali Slarna: Secretario
+Sharaf El Mahfoudi: Cabeza de proyecto
+Raul Llorca: Responsable Tecnico
+
 Enlace a Documento: 
-Enlace a recursos:
+Carpeta recursos
+bitacora: 
