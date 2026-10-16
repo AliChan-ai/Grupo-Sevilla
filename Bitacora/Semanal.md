@@ -26,9 +26,9 @@ c. **Qué no hemos podido conseguir, y por qué:** No pudimos terminar la práct
 
 a. **Objetivo del grupo:** Realizar la conexión por consola al switch 3560, explicar los programas de configuración de dicho switch y conectar el servidor Proxmox al switch 3560.
 
-b. **Qué hemos podido conseguir:** Logramos establecer la conexión por consola al switch e instalar un sistema operativo Linux en un equipo cliente.
+b. **Qué hemos podido conseguir:** Logramos establecer la conexión por consola al switch e instalar un sistema operativo Linux en un equipo cliente, configurar Vlans.
 
-c. **Qué no hemos podido conseguir, y por qué:** No pudimos completar la conexión del servidor Proxmox al switch 3560 debido a incidencias técnicas durante la práctica.
+c. **Qué no hemos podido conseguir, y por qué:** No pudimos completar la conexión del servidor Proxmox al switch 3560 debido a que nos ha llevado mucho tiempo configurar las Vlans.
 
 ---
 
