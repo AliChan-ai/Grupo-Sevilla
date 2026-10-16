@@ -62,15 +62,3 @@ d. **Qué no he podido conseguir, y por qué:**
 
 ---
 
-## Semana 5 - Fecha: DD/MM/AAAA
-
-a. **Objetivo del día:**
-
-
-b. **Qué he hecho:**
-
-
-c. **Qué he podido conseguir:**
-
-
-d. **Qué no he podido conseguir, y por qué:**
