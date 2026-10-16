@@ -1,1 +1,0 @@
-Nombre del grupo : 
