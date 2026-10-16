@@ -1,81 +1,76 @@
-# Bitàcora Diària - [Nom i Cognom] ([Rol])
+# Bitácora Diaria - Yeray Mico (Cabeza de proyecto)
 
 ---
 
-## Setmana 1 - Data: DD/MM/AAAA
+## Semana 1 - Fecha: DD/MM/AAAA
 
-a. **Objectiu del dia:**
-[Escriu aquí l'objectiu...]
+a. **Objetivo del día:**
 
-b. **Què he fet:**
-[Escriu aquí el que has fet...]
 
-c. **Què he pogut aconseguir:**
-[Escriu aquí el que has aconseguit...]
+b. **Qué he hecho:**
 
-d. **Què no he pogut aconseguir, i per què:**
-[Escriu aquí el que no has pogut aconseguir i el motiu...]
 
----
+c. **Qué he podido conseguir:**
 
-## Setmana 2 - Data: DD/MM/AAAA
 
-a. **Objectiu del dia:**
-[Escriu aquí l'objectiu...]
-
-b. **Què he fet:**
-[Escriu aquí el que has fet...]
-
-c. **Què he pogut aconseguir:**
-[Escriu aquí el que has aconseguit...]
-
-d. **Què no he pogut aconseguir, i per què:**
-[Escriu aquí el que no has pogut aconseguir i el motiu...]
+d. **Qué no he podido conseguir, y por qué:**
 
 ---
 
-## Setmana 3 - Data: DD/MM/AAAA
+## Semana 2 - Fecha: DD/MM/AAAA
 
-a. **Objectiu del dia:**
-[Escriu aquí l'objectiu...]
+a. **Objetivo del día:**
 
-b. **Què he fet:**
-[Escriu aquí el que has fet...]
 
-c. **Què he pogut aconseguir:**
-[Escriu aquí el que has aconseguit...]
+b. **Qué he hecho:**
 
-d. **Què no he pogut aconseguir, i per què:**
-[Escriu aquí el que no has pogut aconseguir i el motiu...]
 
----
+c. **Qué he podido conseguir:**
 
-## Setmana 4 - Data: DD/MM/AAAA
 
-a. **Objectiu del dia:**
-[Escriu hier l'objectiu...]
-
-b. **Què he fet:**
-[Escriu aquí el que has fet...]
-
-c. **Què he pogut aconseguir:**
-[Escriu aquí el que has aconseguit...]
-
-d. **Què no he pogut aconseguir, i per què:**
-[Escriu aquí el que no has pogut aconseguir i el motiu...]
+d. **Qué no he podido conseguir, y por qué:**
 
 ---
 
-## Setmana 5 - Data: DD/MM/AAAA
+## Semana 3 - Fecha: DD/MM/AAAA
 
-a. **Objectiu del dia:**
-[Escriu aquí l'objectiu...]
+a. **Objetivo del día:**
 
-b. **Què he fet:**
-[Escriu aquí el que has fet...]
 
-c. **Què he pogut aconseguir:**
-[Escriu aquí el que has aconseguit...]
+b. **Qué he hecho:**
 
-d. **Què no he pogut aconseguir, i per què:**
-[Escriu aquí el que no has pogut aconseguir i el motiu...]
+
+c. **Qué he podido conseguir:**
+
+
+d. **Qué no he podido conseguir, y por qué:**
+
+---
+
+## Semana 4 - Fecha: DD/MM/AAAA
+
+a. **Objetivo del día:**
+
+
+b. **Qué he hecho:**
+
+
+c. **Qué he podido conseguir:**
+
+
+d. **Qué no he podido conseguir, y por qué:**
+
+---
+
+## Semana 5 - Fecha: DD/MM/AAAA
+
+a. **Objetivo del día:**
+
+
+b. **Qué he hecho:**
+
+
+c. **Qué he podido conseguir:**
+
+
+d. **Qué no he podido conseguir, y por qué:**
