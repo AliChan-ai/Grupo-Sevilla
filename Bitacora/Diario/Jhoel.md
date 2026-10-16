@@ -1,4 +1,4 @@
-# Bitácora Diaria - Sharaf El Mahfoudi (Cabeza de proyecto)
+# Bitácora Diaria - Jhoel Fuentes (Responsable Técnico)
 
 ---
 
