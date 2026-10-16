@@ -14,7 +14,6 @@
 
 - 📂 **[Documentación del Proyecto](./Documentacion/)**: Incluye la justificación de roles, herramientas seleccionadas y el documento principal.
 - 🛠️ **[Carpeta de Recursos](./Recursos/)**: Archivos utilizados, scripts, diagramas e imágenes.
-- 📊 **[Gestión del Proyecto](#)**: Enlace a tu tablero de Trello, Jira o GitHub Projects.
 - 📓 **[Bitácora](./Bitacora/)**: 
   - 📄 **[Registro Semanal](./Bitacora/Semanal.md)**
   - 📁 **[Registros Diarios](./Bitacora/Diario/)**
