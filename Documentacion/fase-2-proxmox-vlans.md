@@ -1,5 +1,7 @@
 # Proyecto intermodular — Grupo Sevilla
-![Imagen extraída: pagina-1-imagen-3.jpeg](imagenes/pagina-1-imagen-3.jpeg)
+
+
+![Imagen extraída: pagina-1-imagen-4.jpeg](imagenes/pagina-1-imagen-4.jpeg)
 **Curso:** 2026–2027  
 **Ciclo:** 2.º ASIX  
 **Fecha del documento:** 25 de septiembre de 2026  
@@ -98,10 +100,6 @@ Una vez conectados al switch Cisco 3560 mediante PuTTY, configuramos las VLAN ne
 
 
 ## Imágenes extraídas del PDF
-
-![Imagen extraída: pagina-1-imagen-1.png](imagenes/pagina-1-imagen-1.png)
-
-![Imagen extraída: pagina-1-imagen-2.png](imagenes/pagina-1-imagen-2.png)
 
 
 ![Imagen extraída: pagina-1-imagen-4.jpeg](imagenes/pagina-1-imagen-4.jpeg)
