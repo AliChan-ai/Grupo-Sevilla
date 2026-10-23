@@ -34,7 +34,7 @@ c. **Qué no hemos podido conseguir, y por qué:** No pudimos completar la conex
 
 ## Semana 4
 
-a. **Objetivo del grupo:** 
+a. **Objetivo del grupo:** Terminar de configurar Vlans
 
 
 b. **Qué hemos podido conseguir:** 
