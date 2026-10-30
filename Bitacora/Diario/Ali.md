@@ -1,6 +1,6 @@
 # Bitácora Diaria - Ali Slarna (Secretario)
 
----
+
 
 ## Semana 1
 
