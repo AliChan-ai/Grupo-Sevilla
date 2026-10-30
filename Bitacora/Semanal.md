@@ -34,13 +34,12 @@ c. **Qué no hemos podido conseguir, y por qué:** No pudimos completar la conex
 
 ## Semana 4
 
-a. **Objetivo del grupo:** Terminar de configurar Vlans
+a. **Objetivo del grupo:** Terminar de configurar las VLAN, establecer las credenciales de acceso, reiniciar Proxmox, actualizar el sistema y comenzar la instalación de Linux Mint
+
+b. **Qué hemos podido conseguir:** Hemos conseguido terminar parte de la configuración de las VLAN, establecer las credenciales de acceso y reiniciar Proxmox para continuar con su actualización y preparación. También hemos comenzado el proceso de instalación de Linux Mint.
 
 
-b. **Qué hemos podido conseguir:** 
-
-
-c. **Qué no hemos podido conseguir, y por qué:** 
+c. **Qué no hemos podido conseguir, y por qué:** No hemos podido completar todas las tareas previstas debido a varios fallos en la conexión Ethernet, que han dificultado la comunicación entre los equipos y han retrasado el trabajo.
 
 ---
 
