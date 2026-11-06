@@ -2,7 +2,7 @@
 
 ---
 
-## Semana 1 - Fecha: DD/MM/AAAA
+## Semana 1
 
 a. **Objetivo del día:** Repartir los roles del equipo.
 
@@ -14,7 +14,7 @@ d. **Qué no he podido conseguir, y por qué:** No hemos tenido dificultades imp
 
 ---
 
-## Semana 2 - Fecha: DD/MM/AAAA
+## Semana 2
 
 a. **Objetivo del día:** Instalar Proxmox en el servidor.
 
@@ -26,7 +26,7 @@ d. **Qué no he podido conseguir, y por qué:** Hemos tenido problemas para acce
 
 ---
 
-## Semana 3 - Fecha: DD/MM/AAAA
+## Semana 3 -
 
 a. **Objetivo del día:** Comprobar los ordenadores clientes y organizar GitHub.
 
