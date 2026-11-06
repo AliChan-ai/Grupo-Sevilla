@@ -1,49 +1,39 @@
-
-# Bitácora Diaria - Hamza Souiad (Secretario)
+# Bitácora Diaria - Hamza Souiad (Segundo Secretario)
 
 ---
 
 ## Semana 1 - Fecha: DD/MM/AAAA
 
-a. **Objetivo del día:**
+a. **Objetivo del día:** Repartir los roles del equipo.
 
+b. **Qué he hecho:** Hemos organizado el equipo y asignado un rol a cada integrante, teniendo en cuenta las tareas y responsabilidades de cada uno. He colaborado en la organización y distribución del trabajo.
 
-b. **Qué he hecho:**
+c. **Qué he podido conseguir:** Hemos conseguido que todos los integrantes tengan un rol asignado y sepan cuáles son sus responsabilidades dentro del proyecto.
 
-
-c. **Qué he podido conseguir:**
-
-
-d. **Qué no he podido conseguir, y por qué:**
+d. **Qué no he podido conseguir, y por qué:** No hemos tenido dificultades importantes durante el reparto de roles, ya que todos hemos llegado a un acuerdo.
 
 ---
 
 ## Semana 2 - Fecha: DD/MM/AAAA
 
-a. **Objetivo del día:**
+a. **Objetivo del día:** Instalar Proxmox en el servidor.
 
+b. **Qué he hecho:** Hemos preparado un USB de arranque (bootable) para iniciar el servidor e instalar Proxmox. Después, hemos seguido los pasos del instalador para completar la instalación.
 
-b. **Qué he hecho:**
+c. **Qué he podido conseguir:** Hemos conseguido instalar Proxmox correctamente y dejar el servidor preparado para gestionar máquinas virtuales.
 
-
-c. **Qué he podido conseguir:**
-
-
-d. **Qué no he podido conseguir, y por qué:**
+d. **Qué no he podido conseguir, y por qué:** Hemos tenido problemas para acceder al servidor porque olvidamos la contraseña configurada durante la instalación. Esto nos ha impedido entrar al panel de Proxmox.
 
 ---
 
 ## Semana 3 - Fecha: DD/MM/AAAA
 
-a. **Objetivo del día:**
+a. **Objetivo del día:** Comprobar los ordenadores clientes y organizar GitHub.
 
+b. **Qué he hecho:** Hemos encendido los ordenadores clientes e instalado Ubuntu Server para comprobar que funcionaban correctamente. Además, me he encargado de trabajar con GitHub, creando y organizando el repositorio del proyecto y subiendo los archivos y documentos correspondientes.
 
-b. **Qué he hecho:**
+c. **Qué he podido conseguir:** Hemos conseguido comprobar que los ordenadores arrancan correctamente con Ubuntu Server. También he conseguido organizar el repositorio de GitHub para guardar y compartir los documentos y archivos del proyecto con los demás integrantes.
 
-
-c. **Qué he podido conseguir:**
-
-
-d. **Qué no he podido conseguir, y por qué:**
+d. **Qué no he podido conseguir, y por qué:** No hemos podido comprobar todavía todas las funcionalidades de los ordenadores, ya que quedan pendientes algunas pruebas de conexión y configuración de la red.
 
 ---
