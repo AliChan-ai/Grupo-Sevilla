@@ -2,7 +2,7 @@
 
 ---
 
-## Semana 1
+## Semana 1 - Fecha: DD/MM/AAAA
 
 a. **Objetivo del día:** Repartir los roles del equipo.
 
@@ -14,7 +14,7 @@ d. **Qué no he podido conseguir, y por qué:** No hemos tenido dificultades imp
 
 ---
 
-## Semana 2
+## Semana 2 - Fecha: DD/MM/AAAA
 
 a. **Objetivo del día:** Instalar Proxmox en el servidor.
 
@@ -26,7 +26,7 @@ d. **Qué no he podido conseguir, y por qué:** Hemos tenido problemas para acce
 
 ---
 
-## Semana 3 -
+## Semana 3 - Fecha: DD/MM/AAAA
 
 a. **Objetivo del día:** Comprobar los ordenadores clientes y organizar GitHub.
 
@@ -35,5 +35,17 @@ b. **Qué he hecho:** Hemos encendido los ordenadores clientes e instalado Ubunt
 c. **Qué he podido conseguir:** Hemos conseguido comprobar que los ordenadores arrancan correctamente con Ubuntu Server. También he conseguido organizar el repositorio de GitHub para guardar y compartir los documentos y archivos del proyecto con los demás integrantes.
 
 d. **Qué no he podido conseguir, y por qué:** No hemos podido comprobar todavía todas las funcionalidades de los ordenadores, ya que quedan pendientes algunas pruebas de conexión y configuración de la red.
+
+---
+
+## Semana 4 - Fecha: DD/MM/AAAA
+
+a. **Objetivo del día:** Documentar las prácticas y entregar las tareas.
+
+b. **Qué he hecho:** He colaborado en la documentación de las prácticas, organizando la información y los pasos que hemos seguido durante el proyecto. También me he encargado de subir los documentos a GitHub y mantener el repositorio organizado y actualizado.
+
+c. **Qué he podido conseguir:** He conseguido tener los documentos organizados y subidos correctamente a GitHub. De esta manera, todos los integrantes del equipo pueden acceder a la documentación y consultar el trabajo realizado. También hemos entregado las tareas dentro del plazo establecido.
+
+d. **Qué no he podido conseguir, y por qué:** No he podido empezar la siguiente práctica porque he dedicado el tiempo disponible a terminar la documentación y organizar los archivos del repositorio de GitHub.
 
 ---
