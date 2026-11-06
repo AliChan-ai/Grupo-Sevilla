@@ -2,7 +2,7 @@
 
 ---
 
-## Semana 1 - Fecha: DD/MM/AAAA
+## Semana 1 
 
 a. **Objetivo del día:**Organizar el equipo y repartir las responsabilidades.
 
@@ -17,7 +17,7 @@ d. **Qué no he podido conseguir, y por qué:**No hemos podido planificar todos 
 
 ---
 
-## Semana 2 - Fecha: DD/MM/AAAA
+## Semana 2 
 
 a. **Objetivo del día:**Supervisar la instalación de Proxmox en el servidor.
 
@@ -32,7 +32,7 @@ d. **Qué no he podido conseguir, y por qué:**No hemos podido acceder al panel 
 
 ---
 
-## Semana 3 - Fecha: DD/MM/AAAA
+## Semana 3 
 
 a. **Objetivo del día:**Comprobar el funcionamiento de los ordenadores clientes y avanzar con la configuración del proyecto.
 
@@ -48,7 +48,7 @@ d. **Qué no he podido conseguir, y por qué:**No hemos podido verificar todas l
 
 ---
 
-## Semana 4 - Fecha: DD/MM/AAAA
+## Semana 4 
 
 a. **Objetivo del día:** Revisar, organizar y finalizar las prácticas para su entrega.
 
