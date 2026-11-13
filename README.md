@@ -1,7 +1,9 @@
+<div align="center">
+
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./Documentacion/imagenes/cabecera_oscuro.svg"/>
-  <source media="(prefers-color-scheme: light)" srcset="./Documentacion/imagenes/cabecera_claro.svg"/>
-  <img src="./Documentacion/imagenes/cabecera_oscuro.svg" width="100%" alt="Grupo Sevilla · Proyecto Intermodular"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./Documentacion/imagenes/cabecera_oscuro_2.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="./Documentacion/imagenes/cabecera_claro_2.svg"/>
+  <img src="./Documentacion/imagenes/cabecera_oscuro_2.svg" width="100%" alt="Grupo Sevilla · Proyecto Intermodular"/>
 </picture>
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=3200&pause=1200&color=5865F2&center=true&vCenter=true&repeat=true&width=760&height=40&lines=Administraci%C3%B3n+de+Sistemas+Inform%C3%A1ticos+en+Red;Planificaci%C3%B3n+rigurosa+y+trabajo+colaborativo;Documentaci%C3%B3n+trazable+y+control+de+versiones;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="Lema del equipo"/>
