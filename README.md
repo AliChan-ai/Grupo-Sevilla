@@ -1,6 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=ffffff&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descSize=18&descAlignY=62" width="100%" alt="Grupo Sevilla · Proyecto Intermodular"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=ffffff&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descSize=18&descAlignY=62"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=000000&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descSize=18&descAlignY=62"/>
+  <img src="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=000000&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descSize=18&descAlignY=62" width="100%" alt="Grupo Sevilla · Proyecto Intermodular"/>
+</picture>
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=3200&pause=1200&color=5865F2&center=true&vCenter=true&repeat=true&width=760&height=40&lines=Administraci%C3%B3n+de+Sistemas+Inform%C3%A1ticos+en+Red;Planificaci%C3%B3n+rigurosa+y+trabajo+colaborativo;Documentaci%C3%B3n+trazable+y+control+de+versiones;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="Lema del equipo"/>
 
@@ -70,7 +74,7 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 <br/>
 <a href="https://github.com/Jhoel52"><img src="https://wsrv.nl/?url=github.com/Jhoel52.png&w=240&h=240&fit=cover&mask=circle" width="110" alt="Foto de Jhoel Fuentes"/></a><br/>
 <b><a href="https://github.com/Jhoel52">Jhoel Fuentes</a></b><br/>
-<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable técnico"/><br/>
+<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable t%C3%A9cnico"/><br/>
 <a href="https://github.com/Jhoel52"><img src="https://img.shields.io/badge/@Jhoel52-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub de Jhoel Fuentes"/></a>
 <br/><br/>
 </td>
@@ -96,7 +100,7 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 <br/>
 <a href="https://github.com/raulllorcagomez"><img src="https://wsrv.nl/?url=github.com/raulllorcagomez.png&w=240&h=240&fit=cover&mask=circle" width="110" alt="Foto de Raul Llorca"/></a><br/>
 <b><a href="https://github.com/raulllorcagomez">Raul Llorca</a></b><br/>
-<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable técnico"/><br/>
+<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable t%C3%A9cnico"/><br/>
 <a href="https://github.com/raulllorcagomez"><img src="https://img.shields.io/badge/@raulllorcagomez-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub de Raul Llorca"/></a>
 <br/><br/>
 </td>
@@ -217,7 +221,11 @@ Con objeto de mantener el repositorio ordenado y coherente, se establecen las si
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=5865F2&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="GRUPO SEVILLA"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=FFFFFF&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=000000&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo"/>
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=000000&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="GRUPO SEVILLA"/>
+</picture>
 
 <sub>2.º ASIX · Proyecto Intermodular · Curso 2026–2027</sub>
 
