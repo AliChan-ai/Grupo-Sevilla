@@ -45,10 +45,18 @@ c. **Qué no hemos podido conseguir, y por qué:** No hemos podido completar tod
 
 ## Semana 5
 
-a. **Objetivo del grupo:** 
+### a. Objetivo del grupo:
 
+El objetivo del grupo ha sido solucionar los problemas que surgieron durante la actividad 3, resolver los problemas de conexión entre Proxmox y el servidor y configurar Ubuntu Server, incluyendo las particiones de los discos. Hemos conseguido realizar estas tareas correctamente y hemos continuado avanzando con la práctica. Sin embargo, por falta de tiempo, no hemos podido completar la instalación de Linux Mint.
 
-b. **Qué hemos podido conseguir:** 
+### b. Qué hemos podido conseguir:
 
+- Solucionar los problemas que teníamos pendientes de la actividad 3.
+- Resolver los problemas de conexión entre Proxmox y el servidor.
+- Configurar correctamente Ubuntu Server.
+- Crear y configurar las particiones de los discos sin problemas.
+- Continuar avanzando en la práctica y dejar preparada la configuración para seguir trabajando.
 
-c. **Qué no hemos podido conseguir, y por qué:**
+### c. Qué no hemos podido conseguir, y por qué:
+
+No hemos podido completar la configuración de Linux Mint, ya que hemos dedicado parte de la sesión a solucionar los problemas anteriores y a configurar correctamente Proxmox y Ubuntu Server. Esto nos ha llevado más tiempo del previsto, por lo que hemos dejado la instalación de Linux Mint pendiente para la próxima sesión.
