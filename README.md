@@ -1,9 +1,7 @@
-<div align="center">
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=ffffff&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descSize=18&descAlignY=62"/>
-  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=000000&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descSize=18&descAlignY=62"/>
-  <img src="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=000000&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descSize=18&descAlignY=62" width="100%" alt="Grupo Sevilla · Proyecto Intermodular"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./Documentacion/imagenes/cabecera_oscuro.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="./Documentacion/imagenes/cabecera_claro.svg"/>
+  <img src="./Documentacion/imagenes/cabecera_oscuro.svg" width="100%" alt="Grupo Sevilla · Proyecto Intermodular"/>
 </picture>
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=3200&pause=1200&color=5865F2&center=true&vCenter=true&repeat=true&width=760&height=40&lines=Administraci%C3%B3n+de+Sistemas+Inform%C3%A1ticos+en+Red;Planificaci%C3%B3n+rigurosa+y+trabajo+colaborativo;Documentaci%C3%B3n+trazable+y+control+de+versiones;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="Lema del equipo"/>
@@ -221,11 +219,7 @@ Con objeto de mantener el repositorio ordenado y coherente, se establecen las si
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=FFFFFF&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo"/>
-  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=000000&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo"/>
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=000000&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="GRUPO SEVILLA"/>
-</picture>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=5865F2&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="GRUPO SEVILLA"/>
 
 <sub>2.º ASIX · Proyecto Intermodular · Curso 2026–2027</sub>
 
