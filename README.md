@@ -21,7 +21,8 @@
 [Equipo](#2-organización-del-equipo) ·
 [Estructura](#3-estructura-del-repositorio) ·
 [Metodología](#4-metodología-de-trabajo) ·
-[Normas](#5-normas-de-colaboración)
+[Normas](#5-normas-de-colaboración) ·
+[Trello](#6-gestión-de-tareas-trello)
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:5865F2,100:7B2CBF&height=3&animation=twinkling" width="100%" alt=""/>
 
@@ -214,6 +215,22 @@ Con objeto de mantener el repositorio ordenado y coherente, se establecen las si
 <td align="left">Autor → Revisor → <b>Validado</b></td>
 </tr>
 </table>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:5865F2,100:7B2CBF&height=3&animation=twinkling" width="100%" alt=""/>
+
+</div>
+
+## 6. Gestión de tareas (Trello)
+
+La planificación y el seguimiento de las tareas del proyecto se gestionan en un tablero de **Trello** compartido por todo el equipo. En él se registra el estado de cada tarea, su responsable y su plazo de entrega.
+
+<div align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=3A86FF&center=true&vCenter=true&width=620&height=30&lines=Pendiente+%E2%86%92+En+curso+%E2%86%92+En+revisi%C3%B3n+%E2%86%92+Hecho;Todas+las+tareas+en+un+solo+tablero" alt="Pendiente → En curso → En revisión → Hecho"/>
+
+<br>
+
+<a href="https://trello.com/b/ZamItCqc/grupo-sevilla"><img src="https://img.shields.io/badge/ABRIR_TABLERO_EN_TRELLO-0052CC?style=for-the-badge&logo=trello&logoColor=white" alt="Abrir tablero en Trello"/></a>
 
 </div>
 
