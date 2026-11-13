@@ -49,3 +49,13 @@ c. **Qué he podido conseguir:** He conseguido tener los documentos organizados 
 d. **Qué no he podido conseguir, y por qué:** No he podido empezar la siguiente práctica porque he dedicado el tiempo disponible a terminar la documentación y organizar los archivos del repositorio de GitHub.
 
 ---
+
+## Semana 5
+
+a. **Objetivo del día:** Documentar las prácticas, subir las imágenes correspondientes y actualizar la bitácora del proyecto.
+
+b. **Qué he hecho:** Hemos continuado trabajando en la documentación de las prácticas, añadiendo imágenes para mostrar los pasos realizados y facilitar la comprensión del trabajo. También hemos revisado y corregido los documentos anteriores, arreglando algunos errores y mejorando su organización. Además, me he encargado de actualizar la bitácora diaria y subir los archivos modificados a GitHub para mantener el repositorio al día.
+
+c. **Qué he podido conseguir:** Hemos conseguido mejorar la documentación de las prácticas, añadir las imágenes necesarias y corregir los documentos para que estén más completos y organizados. También he conseguido actualizar la bitácora y mantener el repositorio de GitHub actualizado con los últimos cambios.
+
+d. **Qué no he podido conseguir, y por qué:** No hemos podido avanzar mucho en nuevas prácticas, ya que hemos dedicado la mayor parte del tiempo a revisar, corregir y completar la documentación pendiente.
