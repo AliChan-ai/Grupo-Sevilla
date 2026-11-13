@@ -1,31 +1,32 @@
 <div align="center">
 
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=ffffff&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descColor=ffffff&descSize=18&descAlignY=62"/>
+<source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=000000&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descColor=000000&descSize=18&descAlignY=62"/>
 <img src="https://capsule-render.vercel.app/api?type=venom&color=0:5865F2,100:7B2CBF&height=230&section=header&text=GRUPO%20SEVILLA&fontColor=ffffff&fontSize=60&fontAlignY=40&animation=fadeIn&desc=Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX%20%C2%B7%20Curso%202026%E2%80%932027&descSize=18&descAlignY=62" width="100%" alt="Grupo Sevilla · Proyecto Intermodular"/>
+</picture>
 
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=3200&pause=1200&color=FFFFFF&center=true&vCenter=true&repeat=true&width=760&height=40&lines=Administraci%C3%B3n+de+Sistemas+Inform%C3%A1ticos+en+Red;Planificaci%C3%B3n+rigurosa+y+trabajo+colaborativo;Documentaci%C3%B3n+trazable+y+control+de+versiones;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo"/>
+<source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=3200&pause=1200&color=000000&center=true&vCenter=true&repeat=true&width=760&height=40&lines=Administraci%C3%B3n+de+Sistemas+Inform%C3%A1ticos+en+Red;Planificaci%C3%B3n+rigurosa+y+trabajo+colaborativo;Documentaci%C3%B3n+trazable+y+control+de+versiones;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo"/>
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=3200&pause=1200&color=5865F2&center=true&vCenter=true&repeat=true&width=760&height=40&lines=Administraci%C3%B3n+de+Sistemas+Inform%C3%A1ticos+en+Red;Planificaci%C3%B3n+rigurosa+y+trabajo+colaborativo;Documentaci%C3%B3n+trazable+y+control+de+versiones;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="Lema del equipo"/>
+</picture>
 
 <br>
 
-![Ciclo](https://img.shields.io/badge/CICLO-2.%C2%BA%20ASIX-5865F2?style=for-the-badge)
-![Curso](https://img.shields.io/badge/CURSO-2026--2027-7B2CBF?style=for-the-badge)
-![Equipo](https://img.shields.io/badge/EQUIPO-6%20INTEGRANTES-3A86FF?style=for-the-badge)
-![Git](https://img.shields.io/badge/CONTROL%20DE%20VERSIONES-GIT%20%2B%20GITHUB-181717?style=for-the-badge&logo=github&logoColor=white)
+!Ciclo !Curso !Equipo !Git
 
 <br>
 
-[Presentación](#1-presentación) ·
-[Equipo](#2-organización-del-equipo) ·
-[Estructura](#3-estructura-del-repositorio) ·
-[Metodología](#4-metodología-de-trabajo) ·
-[Normas](#5-normas-de-colaboración)
+Presentación · Equipo · Estructura · Metodología · Normas
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:5865F2,100:7B2CBF&height=3&animation=twinkling" width="100%" alt=""/>
 
 </div>
 
-## 1. Presentación
+1. Presentación
 
-**Grupo Sevilla** es un equipo formado por seis estudiantes de **2.º curso del ciclo formativo de Administración de Sistemas Informáticos en Red (ASIX)**, que desarrolla de manera conjunta el **Proyecto Intermodular** correspondiente al curso académico 2026–2027.
+Grupo Sevilla es un equipo formado por seis estudiantes de 2.º curso del ciclo formativo de Administración de Sistemas Informáticos en Red (ASIX), que desarrolla de manera conjunta el Proyecto Intermodular correspondiente al curso académico 2026–2027.
 
 El presente repositorio constituye el espacio central de trabajo del grupo. En él se recogen la documentación oficial, los recursos técnicos empleados y el seguimiento continuo de la evolución del proyecto.
 
@@ -35,13 +36,17 @@ El presente repositorio constituye el espacio central de trabajo del grupo. En �
 
 </div>
 
-## 2. Organización del equipo
+2. Organización del equipo
 
-El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo de dos integrantes, con el fin de garantizar el apoyo mutuo y la continuidad del trabajo.
+El equipo se estructura en tres áreas de responsabilidad, cada una a cargo de dos integrantes, con el fin de garantizar el apoyo mutuo y la continuidad del trabajo.
 
 <div align="center">
 
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=FFFFFF&center=true&vCenter=true&width=620&height=30&lines=Coordinaci%C3%B3n+%E2%80%A2+Documentaci%C3%B3n+%E2%80%A2+%C3%81rea+t%C3%A9cnica;Seis+integrantes+%C2%B7+Tres+%C3%A1reas+%C2%B7+Un+objetivo"/>
+<source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=000000&center=true&vCenter=true&width=620&height=30&lines=Coordinaci%C3%B3n+%E2%80%A2+Documentaci%C3%B3n+%E2%80%A2+%C3%81rea+t%C3%A9cnica;Seis+integrantes+%C2%B7+Tres+%C3%A1reas+%C2%B7+Un+objetivo"/>
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=7B2CBF&center=true&vCenter=true&width=620&height=30&lines=Coordinaci%C3%B3n+%E2%80%A2+Documentaci%C3%B3n+%E2%80%A2+%C3%81rea+t%C3%A9cnica;Seis+integrantes+%C2%B7+Tres+%C3%A1reas+%C2%B7+Un+objetivo" alt="Coordinación • Documentación • Área técnica"/>
+</picture>
 
 <table>
 <tr>
@@ -70,7 +75,7 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 <br/>
 <a href="https://github.com/Jhoel52"><img src="https://wsrv.nl/?url=github.com/Jhoel52.png&w=240&h=240&fit=cover&mask=circle" width="110" alt="Foto de Jhoel Fuentes"/></a><br/>
 <b><a href="https://github.com/Jhoel52">Jhoel Fuentes</a></b><br/>
-<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable t%C3%A9cnico"/><br/>
+<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable técnico"/><br/>
 <a href="https://github.com/Jhoel52"><img src="https://img.shields.io/badge/@Jhoel52-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub de Jhoel Fuentes"/></a>
 <br/><br/>
 </td>
@@ -96,7 +101,7 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 <br/>
 <a href="https://github.com/raulllorcagomez"><img src="https://wsrv.nl/?url=github.com/raulllorcagomez.png&w=240&h=240&fit=cover&mask=circle" width="110" alt="Foto de Raul Llorca"/></a><br/>
 <b><a href="https://github.com/raulllorcagomez">Raul Llorca</a></b><br/>
-<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable t%C3%A9cnico"/><br/>
+<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable técnico"/><br/>
 <a href="https://github.com/raulllorcagomez"><img src="https://img.shields.io/badge/@raulllorcagomez-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub de Raul Llorca"/></a>
 <br/><br/>
 </td>
@@ -110,11 +115,10 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 
 <br>
 
-| Área | Funciones principales |
-|:---|:---|
-| **Coordinación** | Planificación general, asignación de tareas, control de plazos y comunicación con el equipo docente. |
-| **Documentación** | Redacción y revisión de documentos, elaboración de actas, mantenimiento de la bitácora y control de calidad documental. |
-| **Área técnica** | Diseño, implementación y pruebas de la solución técnica, así como la selección y justificación de las herramientas. |
+Área	Funciones principales
+Coordinación	Planificación general, asignación de tareas, control de plazos y comunicación con el equipo docente.
+Documentación	Redacción y revisión de documentos, elaboración de actas, mantenimiento de la bitácora y control de calidad documental.
+Área técnica	Diseño, implementación y pruebas de la solución técnica, así como la selección y justificación de las herramientas.
 
 </details>
 
@@ -124,33 +128,32 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 
 </div>
 
-## 3. Estructura del repositorio
+3. Estructura del repositorio
 
 <div align="center">
 
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=FFFFFF&center=true&vCenter=true&width=620&height=30&lines=Una+organizaci%C3%B3n+clara+para+cada+tipo+de+contenido;Documentaci%C3%B3n+%C2%B7+Recursos+%C2%B7+Bit%C3%A1cora"/>
+<source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=000000&center=true&vCenter=true&width=620&height=30&lines=Una+organizaci%C3%B3n+clara+para+cada+tipo+de+contenido;Documentaci%C3%B3n+%C2%B7+Recursos+%C2%B7+Bit%C3%A1cora"/>
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=3A86FF&center=true&vCenter=true&width=620&height=30&lines=Una+organizaci%C3%B3n+clara+para+cada+tipo+de+contenido;Documentaci%C3%B3n+%C2%B7+Recursos+%C2%B7+Bit%C3%A1cora" alt="Una organización clara para cada tipo de contenido"/>
+</picture>
 
 <img src="./Recursos/Imagenes/estructura.svg" width="100%" alt="Estructura del repositorio: Bitacora, Documentacion, Recursos, Como hacer bitacora y README.md"/>
 
 <br>
 
-<a href="./Documentacion/"><img src="https://img.shields.io/badge/DOCUMENTACI%C3%93N-5865F2?style=for-the-badge&logo=googledocs&logoColor=white" alt="Documentación"/></a>
-&nbsp;
-<a href="./Recursos/"><img src="https://img.shields.io/badge/RECURSOS-7B2CBF?style=for-the-badge&logo=files&logoColor=white" alt="Recursos"/></a>
-&nbsp;
-<a href="./Bitacora/"><img src="https://img.shields.io/badge/BIT%C3%81CORA-3A86FF?style=for-the-badge&logo=bookstack&logoColor=white" alt="Bitácora"/></a>
+<a href="./Documentacion/"><img src="https://img.shields.io/badge/DOCUMENTACI%C3%93N-5865F2?style=for-the-badge&logo=googledocs&logoColor=white" alt="Documentación"/></a>   <a href="./Recursos/"><img src="https://img.shields.io/badge/RECURSOS-7B2CBF?style=for-the-badge&logo=files&logoColor=white" alt="Recursos"/></a>   <a href="./Bitacora/"><img src="https://img.shields.io/badge/BIT%C3%81CORA-3A86FF?style=for-the-badge&logo=bookstack&logoColor=white" alt="Bitácora"/></a>
 
 </div>
 
 <br>
 
-| Elemento | Contenido | Acceso |
-|:---|:---|:---|
-| 📓 **`Bitacora/`** | Historial del trabajo realizado y seguimiento de la evolución del proyecto. | [Semanal](./Bitacora/Semanal.md) · [Diario](./Bitacora/Diario/) |
-| 📚 **`Documentacion/`** | Documentos principales, organización del equipo, justificación de roles y herramientas seleccionadas. | [Consultar →](./Documentacion/) |
-| 🛠️ **`Recursos/`** | Scripts, diagramas, imágenes y materiales utilizados durante el proyecto. | [Consultar →](./Recursos/) |
-| 📄 **`Como hacer bitacora`** | Guía de referencia para el correcto registro de la bitácora. | En la raíz del repositorio |
-| 📘 **`README.md`** | Presentación general del proyecto y del equipo. | Este documento |
+Elemento	Contenido	Acceso
+📓 Bitacora/	Historial del trabajo realizado y seguimiento de la evolución del proyecto.	Semanal · Diario
+📚 Documentacion/	Documentos principales, organización del equipo, justificación de roles y herramientas seleccionadas.	Consultar →
+🛠️ Recursos/	Scripts, diagramas, imágenes y materiales utilizados durante el proyecto.	Consultar →
+📄 Como hacer bitacora	Guía de referencia para el correcto registro de la bitácora.	En la raíz del repositorio
+📘 README.md	Presentación general del proyecto y del equipo.	Este documento
 
 <div align="center">
 
@@ -158,13 +161,17 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 
 </div>
 
-## 4. Metodología de trabajo
+4. Metodología de trabajo
 
 El grupo trabaja siguiendo un ciclo continuo de cuatro fases. Cada integrante contribuye desde su área de responsabilidad y todas las actuaciones quedan registradas en la bitácora.
 
 <div align="center">
 
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=FFFFFF&center=true&vCenter=true&width=620&height=30&lines=Planificar+%E2%86%92+Organizar+%E2%86%92+Desarrollar+%E2%86%92+Documentar;Un+ciclo+continuo+de+mejora"/>
+<source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=000000&center=true&vCenter=true&width=620&height=30&lines=Planificar+%E2%86%92+Organizar+%E2%86%92+Desarrollar+%E2%86%92+Documentar;Un+ciclo+continuo+de+mejora"/>
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=7B2CBF&center=true&vCenter=true&width=620&height=30&lines=Planificar+%E2%86%92+Organizar+%E2%86%92+Desarrollar+%E2%86%92+Documentar;Un+ciclo+continuo+de+mejora" alt="Planificar → Organizar → Desarrollar → Documentar"/>
+</picture>
 
 <img src="./Recursos/Imagenes/workflow.svg" width="100%" alt="Ciclo de trabajo: planificar, organizar, desarrollar y documentar"/>
 
@@ -172,7 +179,7 @@ El grupo trabaja siguiendo un ciclo continuo de cuatro fases. Cada integrante co
 
 </div>
 
-## 5. Normas de colaboración
+5. Normas de colaboración
 
 Con objeto de mantener el repositorio ordenado y coherente, se establecen las siguientes pautas:
 
@@ -217,9 +224,13 @@ Con objeto de mantener el repositorio ordenado y coherente, se establecen las si
 
 <div align="center">
 
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=FFFFFF&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo"/>
+<source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=000000&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo"/>
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=5865F2&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="GRUPO SEVILLA"/>
+</picture>
 
-<sub>2.º ASIX · Proyecto Intermodular · Curso 2026–2027</sub>
+2.º ASIX · Proyecto Intermodular · Curso 2026–2027
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:5865F2,100:7B2CBF&height=120&section=footer&animation=fadeIn" width="100%" alt=""/>
 
