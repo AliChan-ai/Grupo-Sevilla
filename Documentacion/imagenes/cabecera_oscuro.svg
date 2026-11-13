@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="854" height="230" viewBox="0 0 854 230">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5865F2"/>
+      <stop offset="100%" stop-color="#7B2CBF"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#g)" d="M392 28 C450 6 520 20 548 70 C574 118 556 182 508 206 C462 228 404 214 372 178 C338 140 330 52 392 28 Z">
+    <animate attributeName="d" dur="8s" repeatCount="indefinite"
+      values="M392 28 C450 6 520 20 548 70 C574 118 556 182 508 206 C462 228 404 214 372 178 C338 140 330 52 392 28 Z;
+              M400 22 C462 12 530 34 544 84 C558 136 536 190 486 210 C440 228 390 206 366 166 C342 124 344 32 400 22 Z;
+              M392 28 C450 6 520 20 548 70 C574 118 556 182 508 206 C462 228 404 214 372 178 C338 140 330 52 392 28 Z"/>
+  </path>
+  <g font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif" font-weight="700" text-anchor="middle" fill="#FFFFFF">
+    <animate attributeName="opacity" from="0" to="1" dur="1.2s" fill="freeze"/>
+    <text x="427" y="104" font-size="60">GRUPO SEVILLA</text>
+    <text x="427" y="148" font-size="18" font-weight="600">Proyecto Intermodular · 2.º ASIX · Curso 2026–2027</text>
+  </g>
+</svg>
