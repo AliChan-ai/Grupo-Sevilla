@@ -54,8 +54,21 @@ d. **Qué no he podido conseguir, y por qué:** No he podido empezar la siguient
 
 a. **Objetivo del día:** Documentar las prácticas, subir las imágenes correspondientes y actualizar mi bitácora del proyecto.
 
-b. **Qué he hecho:** He continuado trabajando en la documentación de las prácticas, añadiendo imágenes para mostrar los pasos realizados y facilitar la comprensión del trabajo. También he revisado y corregido los documentos anteriores, arreglando algunos errores y mejorando su organización. Además, me he encargado de actualizar mi bitácora diaria y subir los archivos modificados a GitHub para mantener el repositorio al día.
+b. **Qué he hecho:** He continuado trabajando en la documentación de las prácticas, añadiendo imágenes para mostrar los pasos realizados y facilitar la comprensión del trabajo. También he revisado y corregido los documentos anteriore Además.
 
 c. **Qué he podido conseguir:** He conseguido mejorar la documentación de las prácticas, añadir las imágenes necesarias y corregir los documentos para que estén más completos y organizados. También he actualizado mi bitácora y mantenido el repositorio de GitHub actualizado con los últimos cambios.
 
 d. **Qué no he podido conseguir, y por qué:** No he podido avanzar mucho en nuevas prácticas, ya que he dedicado la mayor parte del tiempo a revisar, corregir y completar la documentación pendiente.
+
+---
+## Semana 6
+
+
+a. **Objetivo del día:** Terminar la pratica y organizar fotos.
+
+b. **Qué he hecho:** He ido subiendo las fotos de la practica como las han ido haciendo poniendo cada una en su sitio y he ido documentando cada una.
+
+c. **Qué he podido conseguir:** He conseguido mejorar la documentación, añadir las imágenes necesarias.ç
+
+d. **Qué no he podido conseguir, y por qué:** No he podido terminar la practica actual ya que no se ha terminado aun de hacerlo en el servidor asi que por eso no la puedo documentar. 
+
