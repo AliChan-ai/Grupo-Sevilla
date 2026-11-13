@@ -33,6 +33,13 @@
    4. [Tarea 2: Instalación del servidor](#4-tarea-2-instalación-del-servidor)
    5. [Tarea 3: Verificación después de la instalación](#5-tarea-3-verificación-después-de-la-instalación)
    6. [Instalación de los clientes Linux Mint](#6-instalación-de-los-clientes-linux-mint)
+3. [Fase 4: Despliegue de servicios con Windows Server](#fase-4-despliegue-de-servicios-con-windows-server)
+   1. [Tarea 1: Planificación de la infraestructura](#1-tarea-1-planificación-de-la-infraestructura)
+   2. [Tarea 2: Instalación de Windows Server 2025](#2-tarea-2-instalación-de-windows-server-2025)
+   3. [Tarea 3: Configuración del almacenamiento](#3-tarea-3-configuración-del-almacenamiento)
+   4. [Tarea 4: Configuración TCP/IP del servidor](#4-tarea-4-configuración-tcpip-del-servidor)
+   5. [Tarea 5: Servicio DHCP en Windows Server](#5-tarea-5-servicio-dhcp-en-windows-server)
+   6. [Tarea 6: DHCP no autorizado y DHCP Snooping](#6-tarea-6-dhcp-no-autorizado-y-dhcp-snooping)
 
 ---
 
@@ -178,11 +185,13 @@ Antes de iniciar el instalador, diseñamos el particionado del servidor. En Prox
 
 | Disco | Disco en Proxmox | Dispositivo en Ubuntu | Tamaño del disco | Partición | Tamaño | Sistema de ficheros | Punto de montaje | Uso |
 |---|---|---|---|---|---|---|---|---|
-| Disco 1 | `scsi0` | `/dev/sda` | 1 GB | `/dev/sda1` | 512 MB | vfat (FAT32) | `/boot/efi` | Partición de sistema EFI, al principio del disco |
-| Disco 1 | `scsi0` | `/dev/sda` | 1 GB | `/dev/sda2` | Resto (~500 MB) | ext4 | `/boot` | Núcleo Linux e initramfs |
-| Disco 2 | `scsi1` | `/dev/sdb` | 20 GB | `/dev/sdb1` | 20 GB (todo el disco) | ext4 | `/` | Sistema base |
-| Disco 3 | `scsi2` | `/dev/sdc` | 30 GB | `/dev/sdc1` | 30 GB (todo el disco) | ext4 | `/home` | Datos de los usuarios |
-| Disco 4 | `scsi3` | `/dev/sdd` | 10 GB | `/dev/sdd1` | 10 GB (todo el disco) | swap | — | Memoria de intercambio |
+| Disco 1 | `scsi0` | `/dev/sda` | 1,5 GB | `/dev/sda1` | 538 MB | vfat (FAT32) | `/boot/efi` | Partición de sistema EFI, al principio del disco |
+| Disco 1 | `scsi0` | `/dev/sda` | 1,5 GB | `/dev/sda2` | Resto (986 MB) | ext4 | `/boot` | Núcleo Linux e initramfs |
+| Disco 2 | `scsi1` | `/dev/sdb` | 10 GB | `/dev/sdb1` | 10 GB (todo el disco) | swap | — | Memoria de intercambio |
+| Disco 3 | `scsi2` | `/dev/sdc` | 20 GB | `/dev/sdc1` | 20 GB (todo el disco) | ext4 | `/` | Sistema base |
+| Disco 4 | `scsi3` | `/dev/sdd` | 30 GB | `/dev/sdd1` | 30 GB (todo el disco) | ext4 | `/home` | Datos de los usuarios |
+
+> Los nombres `/dev/sdX` siguen el orden de los discos en Proxmox; se confirman con `lsblk` en la Tarea 3.
 
 **Justificación del diseño:**
 
@@ -191,7 +200,7 @@ Antes de iniciar el instalador, diseñamos el particionado del servidor. En Prox
 - **`/` y `/home` en ext4:** ext4 es el sistema de ficheros por defecto de Ubuntu, es estable y tiene journaling. Cada uno ocupa su disco entero, así que los datos de los usuarios quedan aislados del sistema.
 - **swap en un disco propio:** la memoria de intercambio no compite por espacio ni por accesos con el sistema ni con los datos.
 
-> **Nota sobre el disco 1:** la práctica pide un disco de 1 GB con la partición EFI (mínimo recomendado de 512 MB) y `/boot` (1 GB). Las dos juntas no caben en 1 GB, así que hemos dejado 512 MB para EFI y el resto (~500 MB) para `/boot`, que es suficiente para el núcleo y el initramfs. Si se prefiere un `/boot` de 1 GB, el disco 1 tiene que ser de 2 GB.
+> **Nota sobre el disco 1:** la práctica pide un disco de 1 GB con la partición EFI (mínimo recomendado de 512 MB) y `/boot` (1 GB). Las dos juntas no caben en 1 GB, así que creamos el disco 1 con **1,5 GB**: 538 MB para la partición EFI y el resto (986 MB, prácticamente 1 GB) para `/boot`.
 
 Los clientes Linux Mint se instalan con el **particionado estándar** que propone el instalador, en un único disco.
 
@@ -281,29 +290,49 @@ Con la máquina apagada, seleccionamos **100 (Ubuntuserver) → Hardware** y aju
 
 | Disco | Bus/Device | Tamaño |
 |---|---|---|
-| Disco 1 — arranque y EFI | `scsi0` | 1 GB |
-| Disco 2 — sistema base | `scsi1` | 20 GB |
-| Disco 3 — datos de usuarios | `scsi2` | 30 GB |
-| Disco 4 — swap | `scsi3` | 10 GB |
+| Disco 1 — arranque y EFI | `scsi0` | 1,5 GB |
+| Disco 2 — swap | `scsi1` | 10 GB |
+| Disco 3 — sistema base | `scsi2` | 20 GB |
+| Disco 4 — datos de usuarios | `scsi3` | 30 GB |
 
 3. En **Options → Boot Order** comprobamos que la máquina arranca primero desde el CD (`ide2`) para iniciar el instalador.
 
-> **Pendiente:** añadir una captura de la pestaña **Hardware** con los cuatro discos.
+Todos los discos usan el controlador **VirtIO SCSI single**, el almacenamiento `local-lvm` y la caché por defecto (**No cache**).
+
+<p align="center"><img src="imagenes/P3_01_Proxmox_disco1_scsi0_1.5GB_EFI_boot.jpg" alt="Disco scsi0 de 1,5 GB para EFI y /boot" width="420" /> <img src="imagenes/P3_02_Proxmox_disco2_scsi1_10GB_swap.jpg" alt="Disco scsi1 de 10 GB para la swap" width="420" /></p>
+<p align="center"><img src="imagenes/P3_03_Proxmox_disco3_scsi2_20GB_raiz.jpg" alt="Disco scsi2 de 20 GB para la raíz" width="420" /> <img src="imagenes/P3_04_Proxmox_disco4_scsi3_30GB_home.jpg" alt="Disco scsi3 de 30 GB para /home" width="420" /></p>
 
 ### 4.6. Instalación de Ubuntu Server con particionado manual
 
 1. Iniciamos la máquina (**Start**) y abrimos la **Console**. La máquina arranca en modo UEFI desde la ISO de Ubuntu Server.
 2. Seguimos el instalador (idioma, teclado, red) hasta llegar a **Guided storage configuration**.
 3. Elegimos **Custom storage layout**, que es el particionado manual. No usamos el particionado automático.
-4. Creamos las particiones en cada disco tal como las diseñamos en la Tarea 1:
-   - En `/dev/sda`: marcamos el disco como **Use as Boot Device**, lo que crea la partición EFI (`/boot/efi`, vfat), y en el espacio libre que queda añadimos una partición ext4 montada en `/boot`.
-   - En `/dev/sdb`: una partición ext4 que ocupa todo el disco, montada en `/`.
-   - En `/dev/sdc`: una partición ext4 que ocupa todo el disco, montada en `/home`.
-   - En `/dev/sdd`: una partición que ocupa todo el disco, con formato **swap**.
-5. Revisamos el resumen, confirmamos y completamos la instalación (usuario, nombre del equipo y servidor SSH).
-6. Al terminar, quitamos la ISO de la máquina (**Hardware → CD/DVD Drive → Do not use any media**) y reiniciamos. El sistema tiene que arrancar solo desde el disco.
 
-> **Pendiente:** añadir capturas del particionado manual (**Custom storage layout**) y del resumen final.
+<p align="center"><img src="imagenes/P3_05_Instalador_custom_storage_layout.jpg" alt="Opción Custom storage layout en el instalador" width="520" /></p>
+
+4. Creamos las particiones en cada disco tal como las diseñamos en la Tarea 1:
+   - En `scsi0` (1,5 GB): marcamos el disco como **Use as Boot Device**, lo que crea la partición EFI (`/boot/efi`, fat32), y en el espacio libre que queda añadimos una partición ext4 montada en `/boot`.
+
+<p align="center"><img src="imagenes/P3_06_Particion_boot_en_scsi0.jpg" alt="Creación de la partición /boot en ext4 en el disco scsi0" width="480" /></p>
+
+   - En `scsi1` (10 GB): una partición que ocupa todo el disco, con formato **swap**.
+
+<p align="center"><img src="imagenes/P3_07_Particion_swap_en_scsi1.jpg" alt="Creación de la partición swap en el disco scsi1" width="480" /></p>
+
+   - En `scsi2` (20 GB): una partición ext4 que ocupa todo el disco, montada en `/`.
+   - En `scsi3` (30 GB): una partición ext4 que ocupa todo el disco, montada en `/home`.
+
+5. Revisamos el resumen. En **Dispositivos utilizados** se ve que cada punto de montaje está en su propio disco: `/boot/efi` (fat32) y `/boot` (ext4) en `scsi0`, la swap en `scsi1`, `/` en `scsi2` y `/home` en `scsi3`.
+
+<p align="center"><img src="imagenes/P3_08_Resumen_final_particionado.jpg" alt="Resumen final del particionado manual con los cuatro discos" width="560" /></p>
+
+6. Confirmamos y completamos la instalación. En **Profile configuration** indicamos el nombre `Sevilla`, el nombre del servidor `sevilla` y el usuario `grupo-s`.
+
+<p align="center"><img src="imagenes/P3_09_Configuracion_perfil_usuario.jpg" alt="Configuración del perfil de usuario en el instalador" width="520" /></p>
+
+7. Al terminar, quitamos la ISO de la máquina (**Hardware → CD/DVD Drive → Do not use any media**) y reiniciamos. El sistema arranca solo desde el disco y podemos iniciar sesión con `grupo-s`. En el mensaje de bienvenida ya se ve que `/home` tiene su propio espacio (29,36 GB).
+
+<p align="center"><img src="imagenes/P3_10_Login_tras_reinicio_home_29GB.jpg" alt="Inicio de sesión en Ubuntu Server tras reiniciar" width="520" /></p>
 
 ## 5. Tarea 3: Verificación después de la instalación
 
@@ -355,6 +384,184 @@ Con `blkid` podemos comparar los UUID de `/etc/fstab` con los de cada partición
 3. Conectamos el equipo a un puerto de la VLAN 310 del switch (por ejemplo, `0/23`, con la IP `10.3.10.3/24`) para que llegue al servidor y a la interfaz de Proxmox.
 
 > **Pendiente:** capturas de la instalación y de la conectividad con el servidor.
+
+---
+
+# Fase 4: Despliegue de servicios con Windows Server
+
+Esta fase corresponde a la **Práctica 4: Despliegue de servicios con Windows Server**. La dirección de la empresa quiere centralizar la autenticación de los usuarios, la administración de los equipos, los recursos compartidos y las copias de seguridad. Para ello desplegamos un servidor **Windows Server 2025** en Proxmox que, además, asignará automáticamente la configuración IP a los clientes mediante **DHCP**. Para proteger la red frente a servidores DHCP no autorizados, activaremos **DHCP Snooping** en el switch Cisco 3560.
+
+## 1. Tarea 1: Planificación de la infraestructura
+
+### 1.1. Características de la máquina virtual
+
+| Componente | Configuración requerida |
+|---|---|
+| Sistema operativo | Windows Server 2025 |
+| Firmware | UEFI (OVMF) |
+| Disco 0 | 60 GB (sistema operativo) |
+| Disco 1 | 50 GB (datos) |
+| Disco 2 | 50 GB (datos) |
+| Disco 3 | 20 GB (copias de seguridad) |
+| Memoria RAM | 8 GB mínimo |
+| Procesadores | 2 vCPU |
+| Adaptador de red | Puente `vmbr0` (red del laboratorio) |
+| Nombre del servidor | `WS2025-ASIXXX` (XX = número del grupo) |
+
+Antes de instalar comprobamos que la máquina arranca en UEFI, que los cuatro discos están conectados, que tiene al menos 8 GB de RAM, que tiene conectividad con el resto del laboratorio y que la ISO de Windows Server 2025 está subida a Proxmox.
+
+> **Pendiente:** captura de la pestaña **Hardware** de la máquina virtual en Proxmox.
+
+### 1.2. Esquema de discos y volúmenes
+
+| Disco | Tamaño | Volumen | Etiqueta | Finalidad |
+|---|---|---|---|---|
+| Disco 0 | 60 GB | `C:` | Sistema | Sistema operativo |
+| Disco 1 | 50 GB | `D:` | Compartidos | Recursos compartidos corporativos |
+| Disco 2 | 50 GB | `E:` | Departamentos | Datos departamentales |
+| Disco 3 | 20 GB | `F:` | Copias | Copias de seguridad |
+
+Separamos el sistema, los datos y las copias en discos distintos para que un problema en uno no afecte a los demás y para que las copias de seguridad no estén en el mismo disco que los datos que protegen.
+
+### 1.3. Esquema de red (propuesta)
+
+El servidor se conecta a la VLAN 310 (Servidores, `10.3.10.0/24`), igual que el resto de equipos del laboratorio.
+
+| Equipo | Dirección IP | Configuración |
+|---|---|---|
+| Switch Cisco 3560 (puerta de enlace) | `10.3.10.1` | Estática |
+| Servidor Proxmox | `10.3.10.2/24` | Estática |
+| Cliente físico | `10.3.10.3/24` | Reserva DHCP |
+| Servidor Windows Server 2025 | `10.3.10.10/24` | Estática |
+| Clientes | `10.3.10.100` – `10.3.10.200` | DHCP |
+
+> **Nota:** son valores propuestos por el grupo. Hay que confirmarlos con el profesorado y ajustar la tabla si cambian.
+
+### 1.4. Nombre del servidor y del dominio
+
+- **Servidor:** `WS2025-ASIXXX`, siguiendo la nomenclatura del enunciado (XX es el número del grupo).
+- **Dominio:** `sevilla.local` (propuesta). Identifica la sede y usa un sufijo interno que no choca con dominios públicos.
+
+> **Pendiente:** confirmar el número del grupo y el nombre del dominio.
+
+## 2. Tarea 2: Instalación de Windows Server 2025
+
+1. Creamos la máquina en Proxmox con BIOS **OVMF (UEFI)**, disco EFI y los cuatro discos de la tabla anterior.
+2. Arrancamos desde la ISO e instalamos Windows Server 2025 en el **Disco 0**. Al arrancar en UEFI, el instalador usa una tabla de particiones **GPT** y crea automáticamente las particiones del sistema (EFI, MSR, Windows y recuperación).
+3. Asignamos el nombre inicial al servidor (`WS2025-ASIXXX`).
+4. Para comprobar el modo de arranque ejecutamos `msinfo32` y revisamos que **Modo de BIOS** sea **UEFI**.
+
+> **Pendiente:** capturas de la configuración UEFI en Proxmox, de las particiones creadas durante la instalación, de la pantalla de inicio de sesión y de la información del sistema (`msinfo32`).
+
+## 3. Tarea 3: Configuración del almacenamiento
+
+En **Administración de discos** (`diskmgmt.msc`):
+
+1. Inicializamos los discos 1, 2 y 3 con estilo de partición **GPT**.
+2. Creamos en cada uno un **volumen simple** que ocupa todo el disco, formateado en **NTFS**.
+3. Asignamos las letras `D:`, `E:` y `F:` y las etiquetas de la tabla del apartado 1.2.
+
+> **Pendiente:** captura de Administración de discos con los cuatro discos y captura de los volúmenes en el Explorador de archivos.
+
+## 4. Tarea 4: Configuración TCP/IP del servidor
+
+Asignamos IP estática al adaptador de red:
+
+| Parámetro | Valor |
+|---|---|
+| Dirección IP | `10.3.10.10` |
+| Máscara | `255.255.255.0` |
+| Puerta de enlace | `10.3.10.1` |
+| DNS | `127.0.0.1` (el propio servidor, si se instala el rol DNS) o el DNS del laboratorio |
+
+Comprobamos la configuración y la conectividad:
+
+```powershell
+ipconfig /all
+ping 10.3.10.1
+ping 10.3.10.2
+```
+
+> **Pendiente:** captura de la configuración del adaptador, del resultado de `ipconfig /all` y de los `ping`.
+
+## 5. Tarea 5: Servicio DHCP en Windows Server
+
+1. En **Administrador del servidor → Agregar roles y características**, instalamos el rol **Servidor DHCP** y completamos la configuración posterior a la instalación.
+2. Si el servidor forma parte del dominio, lo **autorizamos** en Active Directory.
+3. Creamos y activamos el ámbito:
+
+| Parámetro | Valor (propuesta) |
+|---|---|
+| Nombre del ámbito | `VLAN310-Servidores` |
+| Rango | `10.3.10.100` – `10.3.10.200` |
+| Máscara | `255.255.255.0` |
+| Exclusiones | `10.3.10.1` – `10.3.10.20` (equipos con IP fija) |
+| Opción 003 – Puerta de enlace | `10.3.10.1` |
+| Opción 006 – Servidores DNS | `10.3.10.10` |
+| Opción 015 – Nombre de dominio | `sevilla.local` |
+
+4. Creamos una **reserva** para el cliente físico, asociando su dirección MAC a una IP fija.
+5. Comprobamos en los clientes que reciben la configuración por DHCP:
+
+```powershell
+ipconfig /release
+ipconfig /renew
+ipconfig /all
+```
+
+> **Pendiente:**
+> - Capturas del rol DHCP instalado y del servidor autorizado.
+> - Capturas del ámbito, el rango y las opciones.
+> - Captura de la reserva del cliente físico.
+> - `ipconfig /all` en un cliente virtual, mostrando la IP recibida y el servidor DHCP.
+> - `ipconfig /all` en el cliente físico, mostrando la IP de la reserva.
+> - Captura de las concesiones en la consola DHCP.
+
+## 6. Tarea 6: DHCP no autorizado y DHCP Snooping
+
+### 6.1. Topología
+
+| Equipo | Puerto del 3560 | Estado DHCP Snooping |
+|---|---|---|
+| Servidor Proxmox (incluye el Windows Server) | `0/22` | **trusted** |
+| Cliente físico | `0/23` | untrusted |
+| Ubuntu Server con DHCP no autorizado | _por definir_ | untrusted |
+
+> **Pendiente:** esquema de la topología con los puertos definitivos.
+
+### 6.2. Servidor DHCP no autorizado en Ubuntu Server
+
+En un equipo físico con Ubuntu Server instalamos `isc-dhcp-server` y configuramos un ámbito de pruebas con datos incorrectos (por ejemplo, una puerta de enlace o un DNS que no existen):
+
+```bash
+sudo apt install isc-dhcp-server
+sudo nano /etc/dhcp/dhcpd.conf
+sudo systemctl restart isc-dhcp-server
+```
+
+Primero comprobamos que, sin protección, un cliente puede recibir la configuración incorrecta del servidor no autorizado.
+
+> **Pendiente:** captura de `dhcpd.conf` y prueba desde un cliente recibiendo la configuración incorrecta.
+
+### 6.3. Activar DHCP Snooping en el Cisco 3560
+
+```text
+conf t
+ip dhcp snooping
+ip dhcp snooping vlan 310
+no ip dhcp snooping information option
+interface fastEthernet 0/22
+ ip dhcp snooping trust
+end
+show ip dhcp snooping
+show ip dhcp snooping binding
+```
+
+El puerto `0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. El resto de puertos se quedan **untrusted**, por lo que el switch descarta las respuestas DHCP que lleguen por ellos.
+
+> **Nota:** usamos `no ip dhcp snooping information option` para que el switch no añada la opción 82 a las peticiones; si no, Windows Server puede descartarlas.
+
+> **Pendiente:** capturas de la configuración del switch, de `show ip dhcp snooping` y `show ip dhcp snooping binding`, y prueba desde un cliente mostrando que después de activar DHCP Snooping recibe la configuración correcta del Windows Server.
 
 ---
 
