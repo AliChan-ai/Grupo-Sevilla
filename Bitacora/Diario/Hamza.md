@@ -52,10 +52,10 @@ d. **Qué no he podido conseguir, y por qué:** No he podido empezar la siguient
 
 ## Semana 5
 
-a. **Objetivo del día:** Documentar las prácticas, subir las imágenes correspondientes y actualizar la bitácora del proyecto.
+a. **Objetivo del día:** Documentar las prácticas, subir las imágenes correspondientes y actualizar mi bitácora del proyecto.
 
-b. **Qué he hecho:** Hemos continuado trabajando en la documentación de las prácticas, añadiendo imágenes para mostrar los pasos realizados y facilitar la comprensión del trabajo. También hemos revisado y corregido los documentos anteriores, arreglando algunos errores y mejorando su organización. Además, me he encargado de actualizar la bitácora diaria y subir los archivos modificados a GitHub para mantener el repositorio al día.
+b. **Qué he hecho:** He continuado trabajando en la documentación de las prácticas, añadiendo imágenes para mostrar los pasos realizados y facilitar la comprensión del trabajo. También he revisado y corregido los documentos anteriores, arreglando algunos errores y mejorando su organización. Además, me he encargado de actualizar mi bitácora diaria y subir los archivos modificados a GitHub para mantener el repositorio al día.
 
-c. **Qué he podido conseguir:** Hemos conseguido mejorar la documentación de las prácticas, añadir las imágenes necesarias y corregir los documentos para que estén más completos y organizados. También he conseguido actualizar la bitácora y mantener el repositorio de GitHub actualizado con los últimos cambios.
+c. **Qué he podido conseguir:** He conseguido mejorar la documentación de las prácticas, añadir las imágenes necesarias y corregir los documentos para que estén más completos y organizados. También he actualizado mi bitácora y mantenido el repositorio de GitHub actualizado con los últimos cambios.
 
-d. **Qué no he podido conseguir, y por qué:** No hemos podido avanzar mucho en nuevas prácticas, ya que hemos dedicado la mayor parte del tiempo a revisar, corregir y completar la documentación pendiente.
+d. **Qué no he podido conseguir, y por qué:** No he podido avanzar mucho en nuevas prácticas, ya que he dedicado la mayor parte del tiempo a revisar, corregir y completar la documentación pendiente.
