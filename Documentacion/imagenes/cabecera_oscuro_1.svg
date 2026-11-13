@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="854" height="230" viewBox="0 0 854 230">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5865F2"/>
+      <stop offset="100%" stop-color="#7B2CBF"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="0 455 117;12 455 117;-8 455 117;0 455 117" keyTimes="0;0.35;0.7;1" dur="10s" repeatCount="indefinite"/>
+    <path fill="url(#g)" d="M392 28 C450 6 520 20 548 70 C574 118 556 182 508 206 C462 228 404 214 372 178 C338 140 330 52 392 28 Z">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1" values="M392 28 C450 6 520 20 548 70 C574 118 556 182 508 206 C462 228 404 214 372 178 C338 140 330 52 392 28 Z;M410 16 C480 10 552 50 556 104 C560 160 520 214 462 218 C404 222 348 186 342 132 C336 76 352 22 410 16 Z;M380 40 C430 0 530 14 540 76 C552 140 570 196 500 212 C440 226 380 222 360 170 C340 120 334 76 380 40 Z;M400 24 C470 4 540 40 552 90 C564 146 534 200 478 214 C420 228 362 200 350 150 C338 98 344 40 400 24 Z;M392 28 C450 6 520 20 548 70 C574 118 556 182 508 206 C462 228 404 214 372 178 C338 140 330 52 392 28 Z"/>
+    </path>
+  </g>
+  <g font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif" font-weight="700" text-anchor="middle" fill="#FFFFFF" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="0.2s" dur="1.4s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" from="0 18" to="0 0" begin="0.2s" dur="1.4s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>
+    <text x="427" y="104" font-size="60">GRUPO SEVILLA</text>
+    <text x="427" y="148" font-size="18" font-weight="600">Proyecto Intermodular · 2.º ASIX · Curso 2026–2027</text>
+  </g>
+</svg>
