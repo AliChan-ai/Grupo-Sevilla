@@ -345,7 +345,11 @@ ls /sys/firmware/efi
 [ -d /sys/firmware/efi ] && echo "Arranque en modo UEFI" || echo "Arranque en modo BIOS"
 ```
 
-> **Pendiente:** captura del resultado.
+En la salida de `df -h` (punto 2) ya aparece montado el sistema de ficheros `efivarfs` en `/sys/firmware/efi/efivars`. Este sistema de ficheros solo existe cuando el equipo ha arrancado en modo UEFI, así que es una prueba de que el servidor arranca en UEFI.
+
+<p align="center"><img src="imagenes/P3_13_df_h_servidor_UEFI.jpg" alt="Salida de lsblk -f y df -h en el servidor, con efivarfs montado en /sys/firmware/efi/efivars" width="560" /></p>
+
+> **Pendiente:** captura de `ls /sys/firmware/efi` para tener también la comprobación directa del directorio.
 
 **2. Cada punto de montaje está en su disco.** Con `lsblk` vemos qué partición y qué disco físico corresponden a `/`, `/home`, `/boot`, `/boot/efi` y la swap. Con `df -h` vemos el tamaño y el espacio usado de cada punto de montaje:
 
@@ -354,7 +358,28 @@ lsblk -f
 df -h
 ```
 
-> **Pendiente:** captura del resultado.
+<p align="center"><img src="imagenes/P3_12_lsblk_f_servidor.jpg" alt="Salida de lsblk -f en el servidor con los cuatro discos y sus puntos de montaje" width="680" /></p>
+
+La salida de `lsblk -f` confirma que cada punto de montaje está en su propio disco, tal como lo diseñamos en la Tarea 1:
+
+| Disco | Partición | Sistema de ficheros | UUID | Punto de montaje | Tamaño (`df -h`) |
+|---|---|---|---|---|---|
+| `sda` | `sda1` | vfat (FAT32) | `1045-05B4` | `/boot/efi` | 537 MB |
+| `sda` | `sda2` | ext4 | `f0da3466-75a6-4f46-a4b1-5f574c23c612` | `/boot` | 953 MB |
+| `sdb` | `sdb1` | swap | `8dcca519-fcfa-46b3-abcd-4a4495525766` | `[SWAP]` | 10 GB |
+| `sdc` | `sdc1` | ext4 | `fc93c48c-fed6-4172-a2d4-862199f5b299` | `/` | 20 GB |
+| `sdd` | `sdd1` | ext4 | `faa07fe5-54ab-45ec-b050-407ee3add9d1` | `/home` | 30 GB |
+
+También comprobamos que la swap del disco 2 está activa con `free -h` y `swapon --show`: el sistema dispone de 9 GiB de swap en la partición `/dev/sdb1`.
+
+```bash
+free -h
+swapon --show
+```
+
+<p align="center"><img src="imagenes/P3_14_free_swapon_servidor.jpg" alt="Salida de free -h y swapon --show con la swap en /dev/sdb1" width="560" /></p>
+
+> **Nota:** en `lsblk` aparece todavía `sr0` con la ISO de Ubuntu Server. Hay que quitarla de la máquina (**Hardware → CD/DVD Drive → Do not use any media**) para que no quede ningún medio de instalación conectado.
 
 **3. Montaje automático por UUID.** El fichero `/etc/fstab` tiene que montar todos los puntos críticos al arrancar, identificando cada partición por su UUID:
 
@@ -371,11 +396,31 @@ Con `blkid` podemos comparar los UUID de `/etc/fstab` con los de cada partición
 
 ### 6.1. Cliente virtualizado
 
-1. Subimos la ISO de Linux Mint al almacenamiento `local` de Proxmox, igual que hicimos con la de Ubuntu Server (apartado 4.2).
-2. Creamos una nueva máquina virtual con **Create VM**, con un único disco y la tarjeta de red en el puente `vmbr0`.
-3. Instalamos Linux Mint con la opción de particionado estándar del instalador (**Erase disk and install Linux Mint**).
+1. Subimos la ISO de Linux Mint al almacenamiento `local` de Proxmox, igual que hicimos con la de Ubuntu Server (apartado 4.2). La imagen `linuxmint-22.3-cinnamon-64bit.iso` (3,09 GB) aparece en **ISO Images** junto a la de Ubuntu Server.
 
-> **Pendiente:** capturas de la creación de la máquina y de la instalación.
+<p align="center"><img src="imagenes/P3_15_ISO_LinuxMint_en_Proxmox.jpg" alt="ISO de Linux Mint 22.3 subida al almacenamiento local de Proxmox" width="520" /></p>
+
+2. Creamos una nueva máquina virtual con **Create VM** (VM 102). En la pestaña **OS** seleccionamos la ISO de Linux Mint y como sistema invitado **Linux 6.x – 2.6 Kernel**.
+
+<p align="center"><img src="imagenes/P3_16_CrearVM_Mint_OS.jpg" alt="Asistente Create VM: pestaña OS con la ISO de Linux Mint" width="480" /></p>
+
+3. En la pestaña **System** elegimos BIOS **OVMF (UEFI)** con disco EFI en `local-lvm` y el controlador **VirtIO SCSI single**. Después le asignamos un único disco y la tarjeta de red en el puente `vmbr0`.
+
+<p align="center"><img src="imagenes/P3_17_CrearVM_Mint_System_UEFI.jpg" alt="Asistente Create VM: pestaña System con OVMF (UEFI)" width="420" /></p>
+
+4. Arrancamos la máquina desde la ISO. Se inicia la sesión en vivo de **Linux Mint 22.3 Cinnamon**, y desde el icono del escritorio lanzamos el instalador.
+
+<p align="center"><img src="imagenes/P3_18_Mint_live_escritorio.jpg" alt="Escritorio de la sesión en vivo de Linux Mint 22.3" width="440" /></p>
+
+5. Instalamos Linux Mint con la opción de particionado estándar del instalador (**Borrar disco e instalar Linux Mint**), que usa el único disco de la máquina.
+
+<p align="center"><img src="imagenes/P3_19_Mint_instalando.jpg" alt="Instalador de Linux Mint copiando archivos" width="440" /></p>
+
+6. Al terminar, quitamos la ISO y reiniciamos. La máquina arranca desde el disco y muestra la pantalla de inicio de sesión del usuario `sevilla`.
+
+<p align="center"><img src="imagenes/P3_20_Mint_login_instalado.jpg" alt="Pantalla de inicio de sesión de Linux Mint ya instalado" width="440" /></p>
+
+> **Pendiente:** captura de los pasos del instalador donde se elige el particionado estándar.
 
 ### 6.2. Cliente físico
 
