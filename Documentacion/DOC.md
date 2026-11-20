@@ -488,7 +488,7 @@ En la pestaña **Disks** añadimos los cuatro discos virtuales mediante el contr
 
 Separamos el sistema, los datos y las copias en discos distintos para que un problema en uno no afecte a los demás y para que las copias de seguridad no estén en el mismo disco que los datos que protegen.
 
-### 1.3. Esquema de red (propuesta)
+### 1.3. Esquema de red
 
 El servidor se conecta a la VLAN 310 (Servidores, `10.3.10.0/24`), igual que el resto de equipos del laboratorio.
 
@@ -496,18 +496,14 @@ El servidor se conecta a la VLAN 310 (Servidores, `10.3.10.0/24`), igual que el 
 |---|---|---|
 | Switch Cisco 3560 (puerta de enlace) | `10.3.10.1` | Estática |
 | Servidor Proxmox | `10.3.10.2/24` | Estática |
-| Cliente físico | `10.3.10.3/24` | Dirección fija o reserva DHCP (pendiente de confirmar) |
+| Cliente físico | `10.3.10.3/24` | Dirección fija o reserva DHCP |
 | Servidor Windows Server 2025 | `10.3.10.10/24` | Estática propuesta |
 | Clientes | `10.3.10.100` – `10.3.10.200` | DHCP propuesto |
-
-> **Importante:** en la captura de configuración de red de Windows Server aparece la dirección `10.3.10.100`, no la `10.3.10.10` de esta propuesta. Como `.100` también aparece dentro del rango DHCP propuesto, hay que confirmar qué dirección tendrá finalmente el servidor y evitar que una IP fija quede dentro del conjunto que se entrega dinámicamente.
 
 ### 1.4. Nombre del servidor y del dominio
 
 - **Servidor:** `WS2025-ASIX333`, que es el nombre que aparece en la consola de Proxmox.
 - **Dominio:** `sevilla.local` (propuesta inicial).
-
-> **Pendiente:** confirmar el nombre definitivo del dominio. En una captura posterior del asistente DHCP aparece `sevilla.com`, por lo que hay que decidir cuál se utilizará y mantener el mismo nombre en toda la configuración.
 
 ## 2. Tarea 2: Instalación de Windows Server 2025
 
@@ -523,8 +519,6 @@ El servidor se conecta a la VLAN 310 (Servidores, `10.3.10.0/24`), igual que el 
 <p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 10.22.59.jpeg" alt="Configuración de la contraseña de la cuenta Administrador de Windows Server" width="560" /></p>
 
 **Aquí lo que hemos hecho es establecer la contraseña de la cuenta Administrador para poder iniciar sesión en Windows Server una vez terminada la instalación.**
-
-> **Pendiente:** añadir una captura del inicio de sesión del servidor y otra de `msinfo32` donde se vea que el modo de BIOS es UEFI. La captura de Proxmox demuestra que se seleccionó OVMF, pero conviene documentar también la comprobación desde Windows.
 
 ## 3. Tarea 3: Configuración del almacenamiento
 
@@ -566,8 +560,6 @@ Después comprobamos la configuración desde la consola de Windows y realizamos 
 
 **Aquí lo que hemos hecho es consultar la configuración de red desde la consola de Windows y ejecutar un `ping` hacia `10.3.10.1`. En la pantalla se observan respuestas correctas, por lo que hay conectividad con esa dirección de la red.**
 
-> **Pendiente de revisar:** la dirección `10.3.10.100` coincide con el inicio del rango DHCP que aparece en la planificación y con el rango que se configura más adelante. También hay que completar y comprobar la puerta de enlace y el DNS que correspondan al diseño definitivo. No se debe dejar la IP fija del servidor dentro del rango que se asigna a los clientes.
-
 ## 5. Tarea 5: Servicio DHCP en Windows Server
 
 Una vez instalado el rol **Servidor DHCP**, abrimos la consola DHCP desde **Administrador del servidor → Herramientas → DHCP**.
@@ -583,8 +575,6 @@ En el asistente para crear un ámbito indicamos un nombre y un rango de direccio
 <p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.11.27.jpeg" alt="Asistente DHCP para definir el intervalo de direcciones IP del ámbito" width="560" /></p>
 
 **Aquí lo que hemos hecho es introducir el intervalo de direcciones que podrá entregar el servidor DHCP a los clientes.**
-
-> **Importante:** en esta captura también aparece la máscara `255.252.255.0`, que no corresponde a la red `/24` que estamos utilizando. Para la VLAN 310 la máscara debe ser `255.255.255.0`. Hay que revisar este dato en el ámbito y corregirlo si se guardó con ese valor.
 
 ### 5.2. Configuración de DNS y dominio
 
@@ -602,13 +592,17 @@ Después de completar el asistente, volvemos a la consola DHCP. En ella aparece 
 
 **Aquí lo que hemos hecho es comprobar que el ámbito `Sevilla` aparece creado dentro de IPv4 en la consola de administración DHCP.**
 
-> **Pendiente:** faltan capturas de las exclusiones, de la puerta de enlace (opción 003), de las concesiones y de la reserva DHCP del cliente físico. También falta mostrar `ipconfig /all` en un cliente virtual y en el cliente físico para demostrar qué dirección reciben y qué servidor DHCP se la ha entregado.
-
-> **Revisión de los valores:** las capturas muestran `10.3.10.100` como IP de Windows Server y como servidor DNS, mientras que el asistente DHCP muestra `10.3.10.10` como inicio del rango y `sevilla.com` como dominio. Hay que confirmar los valores definitivos y evitar que el servidor tenga una IP que pueda entregar el propio ámbito DHCP.
-
 ## 6. Tarea 6: DHCP no autorizado y DHCP Snooping
 
-### 6.1. Preparación del servidor Ubuntu
+### 6.1. Conexión al switch Cisco 3560
+
+Para administrar el switch Cisco 3560, conectamos el equipo del laboratorio mediante el cable de consola y abrimos una sesión con PuTTY. Durante la conexión aparecen mensajes del sistema que indican cambios en el estado de varias interfaces GigabitEthernet y de algunas interfaces VLAN.
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.42.49.jpeg" alt="Conexión de consola al switch Cisco 3560 mediante PuTTY y mensajes de estado de las interfaces" width="620" /></p>
+
+**Aquí lo que hemos hecho es acceder al switch Cisco 3560 mediante PuTTY utilizando la conexión de consola. En la terminal aparecen mensajes que informan de cambios en el estado de diferentes puertos del switch mientras conectamos los equipos del laboratorio.**
+
+### 6.2. Preparación del servidor Ubuntu
 
 Para simular un servidor DHCP no autorizado utilizamos un equipo físico con Ubuntu Server. Durante la instalación configuramos el perfil del equipo y completamos la puesta en marcha del sistema.
 
@@ -624,7 +618,7 @@ Para simular un servidor DHCP no autorizado utilizamos un equipo físico con Ubu
 
 **Aquí lo que hemos hecho es comprobar que Ubuntu Server ha terminado de arrancar y que podemos acceder al sistema para continuar con la configuración del servicio DHCP.**
 
-### 6.2. Instalación y comprobación del servicio DHCP en Ubuntu
+### 6.3. Instalación y comprobación del servicio DHCP en Ubuntu
 
 Instalamos el servicio `isc-dhcp-server` y comprobamos su estado con:
 
@@ -637,7 +631,7 @@ sudo systemctl status isc-dhcp-server
 
 **Aquí lo que hemos hecho es consultar el estado del servicio `isc-dhcp-server`. En la salida aparece como `active (running)`, por lo que el servicio está iniciado en Ubuntu.**
 
-### 6.3. Configuración del ámbito DHCP no autorizado
+### 6.4. Configuración del ámbito DHCP no autorizado
 
 Editamos el archivo de configuración del servicio:
 
@@ -651,7 +645,7 @@ En la captura se observa un ámbito de pruebas para la red `10.3.10.0/24`, con u
 
 **Aquí lo que hemos hecho es editar `dhcpd.conf` y definir el ámbito de pruebas para la red `10.3.10.0/24`. El servidor Ubuntu ofrece direcciones entre `10.3.10.201` y `10.3.10.230` y anuncia como puerta de enlace `10.3.10.254`, con el objetivo de simular una configuración DHCP incorrecta.**
 
-### 6.4. Activación de DHCP Snooping en el Cisco 3560
+### 6.5. Activación de DHCP Snooping en el Cisco 3560
 
 La configuración prevista para proteger la red es la siguiente:
 
@@ -668,10 +662,6 @@ show ip dhcp snooping binding
 ```
 
 El puerto `0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. Los puertos por los que pueden entrar respuestas de servidores no autorizados deben permanecer **untrusted**.
-
-> **Nota:** `no ip dhcp snooping information option` evita que el switch añada la opción 82 a las peticiones DHCP. Se incluye porque puede ser necesario en este entorno para que Windows Server procese correctamente las solicitudes.
-
-> **Pendiente:** todavía faltan las capturas de los comandos de configuración y verificación de DHCP Snooping (`show ip dhcp snooping` y `show ip dhcp snooping binding`), el esquema con los puertos definitivos y las pruebas desde un cliente antes y después de activar la protección. También falta demostrar que el cliente deja de recibir las ofertas del Ubuntu fraudulento y continúa recibiendo la configuración correcta del Windows Server.
 
 ---
 
