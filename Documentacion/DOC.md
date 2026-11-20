@@ -451,20 +451,40 @@ Esta fase corresponde a la **Práctica 4: Despliegue de servicios con Windows Se
 | Memoria RAM | 8 GB mínimo |
 | Procesadores | 2 vCPU |
 | Adaptador de red | Puente `vmbr0` (red del laboratorio) |
-| Nombre del servidor | `WS2025-ASIXXX` (XX = número del grupo) |
+| Nombre del servidor | `WS2025-ASIX333` (según el nombre que aparece en Proxmox) |
 
-Antes de instalar comprobamos que la máquina arranca en UEFI, que los cuatro discos están conectados, que tiene al menos 8 GB de RAM, que tiene conectividad con el resto del laboratorio y que la ISO de Windows Server 2025 está subida a Proxmox.
+Antes de instalar comprobamos que la máquina utiliza UEFI y que tiene conectados los cuatro discos virtuales. En Proxmox seleccionamos **OVMF (UEFI)** y el almacenamiento `local-lvm` para el disco EFI.
 
-> **Pendiente:** captura de la pestaña **Hardware** de la máquina virtual en Proxmox.
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.26.03.jpeg" alt="Configuración del sistema de la máquina virtual con firmware OVMF (UEFI)" width="560" /></p>
+
+**Aquí lo que hemos hecho es seleccionar OVMF (UEFI) como firmware de la máquina virtual y añadir el disco EFI en Proxmox.** De esta forma, la máquina queda preparada para iniciar Windows Server utilizando UEFI.
+
+En la pestaña **Disks** añadimos los cuatro discos virtuales mediante el controlador **VirtIO SCSI single**. Los tamaños configurados son 60 GB, 50 GB, 50 GB y 20 GB.
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.28.39.jpeg" alt="Configuración del disco scsi0 de 60 GB en Proxmox" width="500" /></p>
+
+**Aquí lo que hemos hecho es configurar el primer disco virtual (`scsi0`) con una capacidad de 60 GB, que se utilizará para instalar el sistema operativo.**
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.28.45.jpeg" alt="Configuración del disco scsi1 de 50 GB en Proxmox" width="500" /></p>
+
+**Aquí lo que hemos hecho es configurar el segundo disco virtual (`scsi1`) con 50 GB de capacidad para almacenar datos.**
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.28.49.jpeg" alt="Configuración del disco scsi2 de 50 GB en Proxmox" width="500" /></p>
+
+**Aquí lo que hemos hecho es configurar el tercer disco virtual (`scsi2`) con otros 50 GB, destinado a los datos departamentales.**
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.28.54.jpeg" alt="Configuración del disco scsi3 de 20 GB en Proxmox" width="500" /></p>
+
+**Aquí lo que hemos hecho es configurar el cuarto disco virtual (`scsi3`) con 20 GB, que utilizaremos para guardar las copias de seguridad.**
 
 ### 1.2. Esquema de discos y volúmenes
 
 | Disco | Tamaño | Volumen | Etiqueta | Finalidad |
 |---|---|---|---|---|
 | Disco 0 | 60 GB | `C:` | Sistema | Sistema operativo |
-| Disco 1 | 50 GB | `D:` | Compartidos | Recursos compartidos corporativos |
-| Disco 2 | 50 GB | `E:` | Departamentos | Datos departamentales |
-| Disco 3 | 20 GB | `F:` | Copias | Copias de seguridad |
+| Disco 1 | 50 GB | `D:` | Recursos_Compartidos | Recursos compartidos corporativos |
+| Disco 2 | 50 GB | `E:` | datos_departamentales | Datos departamentales |
+| Disco 3 | 20 GB | `F:` | copias_de_seguridad | Copias de seguridad |
 
 Separamos el sistema, los datos y las copias en discos distintos para que un problema en uno no afecte a los demás y para que las copias de seguridad no estén en el mismo disco que los datos que protegen.
 
@@ -476,119 +496,164 @@ El servidor se conecta a la VLAN 310 (Servidores, `10.3.10.0/24`), igual que el 
 |---|---|---|
 | Switch Cisco 3560 (puerta de enlace) | `10.3.10.1` | Estática |
 | Servidor Proxmox | `10.3.10.2/24` | Estática |
-| Cliente físico | `10.3.10.3/24` | Reserva DHCP |
-| Servidor Windows Server 2025 | `10.3.10.10/24` | Estática |
-| Clientes | `10.3.10.100` – `10.3.10.200` | DHCP |
+| Cliente físico | `10.3.10.3/24` | Dirección fija o reserva DHCP (pendiente de confirmar) |
+| Servidor Windows Server 2025 | `10.3.10.10/24` | Estática propuesta |
+| Clientes | `10.3.10.100` – `10.3.10.200` | DHCP propuesto |
 
-> **Nota:** son valores propuestos por el grupo. Hay que confirmarlos con el profesorado y ajustar la tabla si cambian.
+> **Importante:** en la captura de configuración de red de Windows Server aparece la dirección `10.3.10.100`, no la `10.3.10.10` de esta propuesta. Como `.100` también aparece dentro del rango DHCP propuesto, hay que confirmar qué dirección tendrá finalmente el servidor y evitar que una IP fija quede dentro del conjunto que se entrega dinámicamente.
 
 ### 1.4. Nombre del servidor y del dominio
 
-- **Servidor:** `WS2025-ASIXXX`, siguiendo la nomenclatura del enunciado (XX es el número del grupo).
-- **Dominio:** `sevilla.local` (propuesta). Identifica la sede y usa un sufijo interno que no choca con dominios públicos.
+- **Servidor:** `WS2025-ASIX333`, que es el nombre que aparece en la consola de Proxmox.
+- **Dominio:** `sevilla.local` (propuesta inicial).
 
-> **Pendiente:** confirmar el número del grupo y el nombre del dominio.
+> **Pendiente:** confirmar el nombre definitivo del dominio. En una captura posterior del asistente DHCP aparece `sevilla.com`, por lo que hay que decidir cuál se utilizará y mantener el mismo nombre en toda la configuración.
 
 ## 2. Tarea 2: Instalación de Windows Server 2025
 
 1. Creamos la máquina en Proxmox con BIOS **OVMF (UEFI)**, disco EFI y los cuatro discos de la tabla anterior.
-2. Arrancamos desde la ISO e instalamos Windows Server 2025 en el **Disco 0**. Al arrancar en UEFI, el instalador usa una tabla de particiones **GPT** y crea automáticamente las particiones del sistema (EFI, MSR, Windows y recuperación).
-3. Asignamos el nombre inicial al servidor (`WS2025-ASIXXX`).
-4. Para comprobar el modo de arranque ejecutamos `msinfo32` y revisamos que **Modo de BIOS** sea **UEFI**.
+2. Arrancamos desde la ISO y llegamos a la pantalla de selección del disco donde se instalará Windows Server 2025. En esa pantalla aparecen los cuatro discos virtuales con capacidades de 20 GB, 60 GB, 50 GB y 50 GB. Seleccionamos el disco de **60 GB** para instalar el sistema operativo.
 
-> **Pendiente:** capturas de la configuración UEFI en Proxmox, de las particiones creadas durante la instalación, de la pantalla de inicio de sesión y de la información del sistema (`msinfo32`).
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 10.07.23.jpeg" alt="Selección del disco de 60 GB para instalar Windows Server 2025" width="560" /></p>
+
+**Aquí lo que hemos hecho es seleccionar el disco virtual de 60 GB para instalar Windows Server.** En la pantalla se ven también los otros tres discos, que se reservarán para los datos y las copias de seguridad.
+
+3. Una vez finalizada la instalación, Windows solicita establecer la contraseña de la cuenta **Administrador**.
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 10.22.59.jpeg" alt="Configuración de la contraseña de la cuenta Administrador de Windows Server" width="560" /></p>
+
+**Aquí lo que hemos hecho es establecer la contraseña de la cuenta Administrador para poder iniciar sesión en Windows Server una vez terminada la instalación.**
+
+> **Pendiente:** añadir una captura del inicio de sesión del servidor y otra de `msinfo32` donde se vea que el modo de BIOS es UEFI. La captura de Proxmox demuestra que se seleccionó OVMF, pero conviene documentar también la comprobación desde Windows.
 
 ## 3. Tarea 3: Configuración del almacenamiento
 
-En **Administración de discos** (`diskmgmt.msc`):
+En **Administración de discos** (`diskmgmt.msc`) inicializamos los discos secundarios y creamos volúmenes simples. Los formateamos en **NTFS**, dejamos el tamaño de unidad de asignación predeterminado y asignamos las letras y etiquetas correspondientes.
 
-1. Inicializamos los discos 1, 2 y 3 con estilo de partición **GPT**.
-2. Creamos en cada uno un **volumen simple** que ocupa todo el disco, formateado en **NTFS**.
-3. Asignamos las letras `D:`, `E:` y `F:` y las etiquetas de la tabla del apartado 1.2.
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-16 at 09.09.49.jpeg" alt="Asistente para formatear un volumen en NTFS" width="560" /></p>
 
-> **Pendiente:** captura de Administración de discos con los cuatro discos y captura de los volúmenes en el Explorador de archivos.
+**Aquí lo que hemos hecho es seleccionar el sistema de archivos NTFS para formatear el volumen y dejar el tamaño de unidad de asignación predeterminado.**
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-16 at 09.12.03.jpeg" alt="Configuración de la etiqueta copias_de_seguridad para el volumen de copias" width="560" /></p>
+
+**Aquí lo que hemos hecho es asignar la etiqueta `copias_de_seguridad` al volumen destinado a guardar las copias. También mantenemos el formato NTFS y el formato rápido.**
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-16 at 09.18.55.jpeg" alt="Configuración de la etiqueta Recursos_Compartidos para el volumen compartido" width="560" /></p>
+
+**Aquí lo que hemos hecho es asignar la etiqueta `Recursos_Compartidos` al volumen que utilizaremos para los recursos compartidos corporativos.**
+
+Una vez creados y formateados los volúmenes, comprobamos su estado desde **Administración de discos**. En la captura se observan los tres discos secundarios en línea y con formato NTFS:
+
+- `D:` — `Recursos_Compartidos`, aproximadamente 50 GB.
+- `E:` — `datos_departamentales`, aproximadamente 50 GB.
+- `F:` — `copias_de_seguridad`, aproximadamente 20 GB.
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-16 at 09.19.59.jpeg" alt="Administración de discos con los volúmenes D, E y F creados en NTFS" width="680" /></p>
+
+**Aquí lo que hemos hecho es comprobar que los tres volúmenes están creados, aparecen en línea y utilizan NTFS. También podemos ver que cada uno tiene la letra y la etiqueta que le hemos asignado.**
 
 ## 4. Tarea 4: Configuración TCP/IP del servidor
 
-Asignamos IP estática al adaptador de red:
+Configuramos una dirección IP estática en el adaptador Ethernet de Windows Server. En la captura aparece la dirección `10.3.10.100` con máscara `255.255.255.0`.
 
-| Parámetro | Valor |
-|---|---|
-| Dirección IP | `10.3.10.10` |
-| Máscara | `255.255.255.0` |
-| Puerta de enlace | `10.3.10.1` |
-| DNS | `127.0.0.1` (el propio servidor, si se instala el rol DNS) o el DNS del laboratorio |
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 08.30.52.jpeg" alt="Propiedades IPv4 del adaptador Ethernet de Windows Server con IP estática" width="560" /></p>
 
-Comprobamos la configuración y la conectividad:
+**Aquí lo que hemos hecho es entrar en las propiedades IPv4 del adaptador Ethernet y seleccionar la configuración manual. En la captura se ve la dirección IP `10.3.10.100` y la máscara `255.255.255.0`. Los campos de puerta de enlace y DNS aparecen sin completar en esta imagen.**
 
-```powershell
-ipconfig /all
-ping 10.3.10.1
-ping 10.3.10.2
-```
+Después comprobamos la configuración desde la consola de Windows y realizamos una prueba de conectividad con la dirección `10.3.10.1`.
 
-> **Pendiente:** captura de la configuración del adaptador, del resultado de `ipconfig /all` y de los `ping`.
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 08.37.00.jpeg" alt="Comprobación de la configuración de red y ping desde el equipo Windows" width="560" /></p>
+
+**Aquí lo que hemos hecho es consultar la configuración de red desde la consola de Windows y ejecutar un `ping` hacia `10.3.10.1`. En la pantalla se observan respuestas correctas, por lo que hay conectividad con esa dirección de la red.**
+
+> **Pendiente de revisar:** la dirección `10.3.10.100` coincide con el inicio del rango DHCP que aparece en la planificación y con el rango que se configura más adelante. También hay que completar y comprobar la puerta de enlace y el DNS que correspondan al diseño definitivo. No se debe dejar la IP fija del servidor dentro del rango que se asigna a los clientes.
 
 ## 5. Tarea 5: Servicio DHCP en Windows Server
 
-1. En **Administrador del servidor → Agregar roles y características**, instalamos el rol **Servidor DHCP** y completamos la configuración posterior a la instalación.
-2. Si el servidor forma parte del dominio, lo **autorizamos** en Active Directory.
-3. Creamos y activamos el ámbito:
+Una vez instalado el rol **Servidor DHCP**, abrimos la consola DHCP desde **Administrador del servidor → Herramientas → DHCP**.
 
-| Parámetro | Valor (propuesta) |
-|---|---|
-| Nombre del ámbito | `VLAN310-Servidores` |
-| Rango | `10.3.10.100` – `10.3.10.200` |
-| Máscara | `255.255.255.0` |
-| Exclusiones | `10.3.10.1` – `10.3.10.20` (equipos con IP fija) |
-| Opción 003 – Puerta de enlace | `10.3.10.1` |
-| Opción 006 – Servidores DNS | `10.3.10.10` |
-| Opción 015 – Nombre de dominio | `sevilla.local` |
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.05.39.jpeg" alt="Consola de administración DHCP abierta en Windows Server" width="560" /></p>
 
-4. Creamos una **reserva** para el cliente físico, asociando su dirección MAC a una IP fija.
-5. Comprobamos en los clientes que reciben la configuración por DHCP:
+**Aquí lo que hemos hecho es abrir la consola de administración DHCP para gestionar el servicio y crear el ámbito que utilizarán los equipos clientes.**
 
-```powershell
-ipconfig /release
-ipconfig /renew
-ipconfig /all
-```
+### 5.1. Creación del ámbito
 
-> **Pendiente:**
-> - Capturas del rol DHCP instalado y del servidor autorizado.
-> - Capturas del ámbito, el rango y las opciones.
-> - Captura de la reserva del cliente físico.
-> - `ipconfig /all` en un cliente virtual, mostrando la IP recibida y el servidor DHCP.
-> - `ipconfig /all` en el cliente físico, mostrando la IP de la reserva.
-> - Captura de las concesiones en la consola DHCP.
+En el asistente para crear un ámbito indicamos un nombre y un rango de direcciones IP. En una de las capturas se ve el rango desde `10.3.10.10` hasta `10.3.10.200`.
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.11.27.jpeg" alt="Asistente DHCP para definir el intervalo de direcciones IP del ámbito" width="560" /></p>
+
+**Aquí lo que hemos hecho es introducir el intervalo de direcciones que podrá entregar el servidor DHCP a los clientes.**
+
+> **Importante:** en esta captura también aparece la máscara `255.252.255.0`, que no corresponde a la red `/24` que estamos utilizando. Para la VLAN 310 la máscara debe ser `255.255.255.0`. Hay que revisar este dato en el ámbito y corregirlo si se guardó con ese valor.
+
+### 5.2. Configuración de DNS y dominio
+
+En el asistente configuramos el nombre de dominio y el servidor DNS que recibirán los clientes. La captura muestra el dominio `sevilla.com` y el servidor DNS `10.3.10.100`.
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.27.32.jpeg" alt="Asistente DHCP con el dominio sevilla.com y el servidor DNS 10.3.10.100" width="560" /></p>
+
+**Aquí lo que hemos hecho es indicar el nombre de dominio que se entregará a los clientes y añadir la dirección IP del servidor DNS.**
+
+### 5.3. Comprobación del ámbito
+
+Después de completar el asistente, volvemos a la consola DHCP. En ella aparece el ámbito identificado como `10.3.10.0` y con el nombre `Sevilla`.
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.28.31.jpeg" alt="Consola DHCP con el ámbito 10.3.10.0 Sevilla" width="560" /></p>
+
+**Aquí lo que hemos hecho es comprobar que el ámbito `Sevilla` aparece creado dentro de IPv4 en la consola de administración DHCP.**
+
+> **Pendiente:** faltan capturas de las exclusiones, de la puerta de enlace (opción 003), de las concesiones y de la reserva DHCP del cliente físico. También falta mostrar `ipconfig /all` en un cliente virtual y en el cliente físico para demostrar qué dirección reciben y qué servidor DHCP se la ha entregado.
+
+> **Revisión de los valores:** las capturas muestran `10.3.10.100` como IP de Windows Server y como servidor DNS, mientras que el asistente DHCP muestra `10.3.10.10` como inicio del rango y `sevilla.com` como dominio. Hay que confirmar los valores definitivos y evitar que el servidor tenga una IP que pueda entregar el propio ámbito DHCP.
 
 ## 6. Tarea 6: DHCP no autorizado y DHCP Snooping
 
-### 6.1. Topología
+### 6.1. Preparación del servidor Ubuntu
 
-| Equipo | Puerto del 3560 | Estado DHCP Snooping |
-|---|---|---|
-| Servidor Proxmox (incluye el Windows Server) | `0/22` | **trusted** |
-| Cliente físico | `0/23` | untrusted |
-| Ubuntu Server con DHCP no autorizado | _por definir_ | untrusted |
+Para simular un servidor DHCP no autorizado utilizamos un equipo físico con Ubuntu Server. Durante la instalación configuramos el perfil del equipo y completamos la puesta en marcha del sistema.
 
-> **Pendiente:** esquema de la topología con los puertos definitivos.
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-06 at 08.33.53.jpeg" alt="Configuración del perfil del servidor Ubuntu utilizado para la práctica" width="560" /></p>
 
-### 6.2. Servidor DHCP no autorizado en Ubuntu Server
+**Aquí lo que hemos hecho es completar la configuración del perfil de Ubuntu Server, indicando el nombre del usuario y del equipo que utilizaremos para administrar el servidor.**
 
-En un equipo físico con Ubuntu Server instalamos `isc-dhcp-server` y configuramos un ámbito de pruebas con datos incorrectos (por ejemplo, una puerta de enlace o un DNS que no existen):
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-06 at 08.37.11.jpeg" alt="Equipo físico utilizado para preparar el servidor Ubuntu en el laboratorio" width="560" /></p>
+
+**Aquí se muestra el equipo físico del laboratorio que utilizamos para preparar y administrar el servidor Ubuntu.**
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-06 at 09.55.50.jpeg" alt="Pantalla de bienvenida de Ubuntu Server 24.04.5 LTS" width="560" /></p>
+
+**Aquí lo que hemos hecho es comprobar que Ubuntu Server ha terminado de arrancar y que podemos acceder al sistema para continuar con la configuración del servicio DHCP.**
+
+### 6.2. Instalación y comprobación del servicio DHCP en Ubuntu
+
+Instalamos el servicio `isc-dhcp-server` y comprobamos su estado con:
 
 ```bash
 sudo apt install isc-dhcp-server
-sudo nano /etc/dhcp/dhcpd.conf
-sudo systemctl restart isc-dhcp-server
+sudo systemctl status isc-dhcp-server
 ```
 
-Primero comprobamos que, sin protección, un cliente puede recibir la configuración incorrecta del servidor no autorizado.
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-06 at 10.37.35.jpeg" alt="Estado del servicio isc-dhcp-server en ejecución en Ubuntu" width="560" /></p>
 
-> **Pendiente:** captura de `dhcpd.conf` y prueba desde un cliente recibiendo la configuración incorrecta.
+**Aquí lo que hemos hecho es consultar el estado del servicio `isc-dhcp-server`. En la salida aparece como `active (running)`, por lo que el servicio está iniciado en Ubuntu.**
 
-### 6.3. Activar DHCP Snooping en el Cisco 3560
+### 6.3. Configuración del ámbito DHCP no autorizado
+
+Editamos el archivo de configuración del servicio:
+
+```bash
+sudo nano /etc/dhcp/dhcpd.conf
+```
+
+En la captura se observa un ámbito de pruebas para la red `10.3.10.0/24`, con un rango de direcciones diferente al que utiliza el servidor Windows y una puerta de enlace incorrecta para simular el servidor DHCP fraudulento.
+
+<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.32.58.jpeg" alt="Configuración del ámbito DHCP fraudulento en dhcpd.conf" width="560" /></p>
+
+**Aquí lo que hemos hecho es editar `dhcpd.conf` y definir el ámbito de pruebas para la red `10.3.10.0/24`. El servidor Ubuntu ofrece direcciones entre `10.3.10.201` y `10.3.10.230` y anuncia como puerta de enlace `10.3.10.254`, con el objetivo de simular una configuración DHCP incorrecta.**
+
+### 6.4. Activación de DHCP Snooping en el Cisco 3560
+
+La configuración prevista para proteger la red es la siguiente:
 
 ```text
 conf t
@@ -602,11 +667,11 @@ show ip dhcp snooping
 show ip dhcp snooping binding
 ```
 
-El puerto `0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. El resto de puertos se quedan **untrusted**, por lo que el switch descarta las respuestas DHCP que lleguen por ellos.
+El puerto `0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. Los puertos por los que pueden entrar respuestas de servidores no autorizados deben permanecer **untrusted**.
 
-> **Nota:** usamos `no ip dhcp snooping information option` para que el switch no añada la opción 82 a las peticiones; si no, Windows Server puede descartarlas.
+> **Nota:** `no ip dhcp snooping information option` evita que el switch añada la opción 82 a las peticiones DHCP. Se incluye porque puede ser necesario en este entorno para que Windows Server procese correctamente las solicitudes.
 
-> **Pendiente:** capturas de la configuración del switch, de `show ip dhcp snooping` y `show ip dhcp snooping binding`, y prueba desde un cliente mostrando que después de activar DHCP Snooping recibe la configuración correcta del Windows Server.
+> **Pendiente:** todavía faltan las capturas de los comandos de configuración y verificación de DHCP Snooping (`show ip dhcp snooping` y `show ip dhcp snooping binding`), el esquema con los puertos definitivos y las pruebas desde un cliente antes y después de activar la protección. También falta demostrar que el cliente deja de recibir las ofertas del Ubuntu fraudulento y continúa recibiendo la configuración correcta del Windows Server.
 
 ---
 
