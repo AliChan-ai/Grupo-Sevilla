@@ -114,11 +114,11 @@
 
 **Objetivo:** Documentar las prácticas y reinstalar Proxmox.
 
-**Qué he hecho:** *Pendiente de completar.*
+**Qué he hecho:** Reinstalar Proxmox e instalar la máquina virtual de Linux Mint
 
-**Qué he conseguido:** *Pendiente de completar.*
+**Qué he conseguido:** Instalar y configurar correctamente los equipos
 
-**Qué no he conseguido y por qué:** *Pendiente de completar.*
+**Qué no he conseguido y por qué:** 
 
 <div align="center">
 
