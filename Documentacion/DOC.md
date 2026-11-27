@@ -3,7 +3,7 @@
 
 
 <div align="center">
-  <img src="imagenes/pagina-1-imagen-4-Photoroom.png" alt="Redes y comunicaciones Sevilla" width="470" />
+  <img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/logo-redes-comunicaciones-sevilla.png" alt="Redes y comunicaciones Sevilla" width="470" />
 </div>
 
 <div align="center">
@@ -21,29 +21,84 @@
 
 ## Índice
 
-1. [Fase 2: Instalación y configuración de Proxmox y VLANs](#fase-2-instalación-y-configuración-de-proxmox-y-vlans)
+1. [Fase 1 · Práctica 1: Organización del grupo de trabajo](#fase-1--práctica-1-organización-del-grupo-de-trabajo)
+   1. [Roles del grupo](#1-roles-del-grupo)
+   2. [Herramientas y técnicas](#2-herramientas-y-técnicas)
+   3. [Repositorio de documentación](#3-repositorio-de-documentación)
+   4. [Bitácora](#4-bitácora)
+2. [Fase 1 · Práctica 2: Instalación y configuración de Proxmox y VLANs](#fase-1--práctica-2-instalación-y-configuración-de-proxmox-y-vlans)
    1. [Instalar y poner en funcionamiento Proxmox](#1-instalar-y-poner-en-funcionamiento-proxmox)
    2. [Direcciones IP y redes VLAN](#2-direcciones-ip-y-redes-vlan)
    3. [Conexión al Cisco 3560 mediante consola](#3-conexión-al-cisco-3560-mediante-consola)
    4. [Configuración de VLANs en el Cisco 3560](#4-configuración-de-vlans-en-el-cisco-3560)
-2. [Fase 3: Despliegue de los equipos del laboratorio](#fase-3-despliegue-de-los-equipos-del-laboratorio)
+   5. [Interfaces VLAN (SVI)](#5-interfaces-vlan-svi)
+   6. [Configuración de los puertos del switch](#6-configuración-de-los-puertos-del-switch)
+3. [Práctica 3: Despliegue de los equipos del laboratorio](#práctica-3-despliegue-de-los-equipos-del-laboratorio)
    1. [Esquema de conexión en la VLAN 310](#1-esquema-de-conexión-en-la-vlan-310)
    2. [Requisitos de los equipos](#2-requisitos-de-los-equipos)
    3. [Tarea 1: Diseño del particionado](#3-tarea-1-diseño-del-particionado)
    4. [Tarea 2: Instalación del servidor](#4-tarea-2-instalación-del-servidor)
    5. [Tarea 3: Verificación después de la instalación](#5-tarea-3-verificación-después-de-la-instalación)
    6. [Instalación de los clientes Linux Mint](#6-instalación-de-los-clientes-linux-mint)
-3. [Fase 4: Despliegue de servicios con Windows Server](#fase-4-despliegue-de-servicios-con-windows-server)
+4. [Práctica 4: Despliegue de servicios con Windows Server](#práctica-4-despliegue-de-servicios-con-windows-server)
    1. [Tarea 1: Planificación de la infraestructura](#1-tarea-1-planificación-de-la-infraestructura)
    2. [Tarea 2: Instalación de Windows Server 2025](#2-tarea-2-instalación-de-windows-server-2025)
    3. [Tarea 3: Configuración del almacenamiento](#3-tarea-3-configuración-del-almacenamiento)
    4. [Tarea 4: Configuración TCP/IP del servidor](#4-tarea-4-configuración-tcpip-del-servidor)
    5. [Tarea 5: Servicio DHCP en Windows Server](#5-tarea-5-servicio-dhcp-en-windows-server)
    6. [Tarea 6: DHCP no autorizado y DHCP Snooping](#6-tarea-6-dhcp-no-autorizado-y-dhcp-snooping)
+5. [Incidencias y soluciones](#incidencias-y-soluciones)
+6. [Tareas pendientes](#tareas-pendientes)
 
 ---
 
-# Fase 2: Instalación y configuración de Proxmox y VLANs
+# Fase 1 · Práctica 1: Organización del grupo de trabajo
+
+Antes de empezar el proyecto, organizamos el grupo de trabajo: repartimos los roles, elegimos las herramientas, creamos el repositorio de documentación con su bitácora y publicamos el enlace de acceso.
+
+## 1. Roles del grupo
+
+El grupo tiene seis integrantes repartidos en tres roles. Cada rol lo ocupan **dos personas**: así, como pide el enunciado, siempre hay un suplente si el titular no está en clase, y además nos apoyamos entre nosotros. El reparto lo acordamos entre todos en la primera sesión.
+
+| Rol | Integrantes | Funciones |
+|---|---|---|
+| **Jefe de proyecto** | Yeray Mico · Sharaf El Mahfoudi | Coordinar el grupo y la sede, coordinar las exposiciones y justificar las decisiones del grupo |
+| **Secretario** | Hamza Souiad · Ali Slatna | Redactar las actas, coordinar la documentación de cada integrante, mantener la bitácora semanal y hacer las entregas |
+| **Responsable técnico** | Jhoel Fuentes · Raul Llorca | Gestionar las herramientas de trabajo y llevar el inventario del hardware y el software cedido por el centro |
+
+## 2. Herramientas y técnicas
+
+| Necesidad | Herramienta |
+|---|---|
+| Repositorio de documentación | GitHub |
+| Documentación y bitácora | Markdown |
+| Gestión del proyecto y reparto de tareas | [Trello](https://trello.com/b/ZamItCqc/grupo-sevilla) |
+| Diagramas | *Pendiente de completar* |
+| Comunicación del grupo | *Pendiente de completar* |
+
+## 3. Repositorio de documentación
+
+Enlace de acceso: **https://github.com/AliChan-ai/Grupo-Sevilla**
+
+| Elemento | Ubicación |
+|---|---|
+| Documento del proyecto | `Documentacion/` |
+| Recursos a entregar (imágenes, configuraciones, scripts) | `Recursos/` |
+| Panel de gestión del proyecto | [Tablero de Trello](https://trello.com/b/ZamItCqc/grupo-sevilla) |
+| Bitácora | `Bitacora/` |
+
+En cada entrega, el secretario hace un commit con el nombre de la práctica (por ejemplo, `Fase 1 Práctica 2`) y sube a Aules el enlace a ese commit.
+
+## 4. Bitácora
+
+Llevamos dos registros en Markdown, en **orden cronológico inverso** (primero la entrada más reciente):
+
+- **Registro diario** (`Bitacora/Diario/`): un fichero por integrante. Cada uno añade una entrada al terminar cada sesión, con el objetivo del día, lo que ha hecho, lo que ha conseguido y lo que no ha conseguido y por qué.
+- **Registro semanal** (`Bitacora/Semanal.md`): el secretario resume al final de cada semana el objetivo del grupo, lo conseguido y lo que no se ha conseguido y por qué.
+
+---
+
+# Fase 1 · Práctica 2: Instalación y configuración de Proxmox y VLANs
 
 Tenemos que preparar el servidor de la sede para poder virtualizar varios servidores y clientes. Para ello, utilizaremos Proxmox.
 
@@ -55,55 +110,65 @@ Primero, vamos a instalar Proxmox VE en nuestro servidor para poder crear y gest
 
 1. Conectamos el USB que contiene el instalador de Proxmox al servidor.
 2. Encendemos o reiniciamos el servidor y entramos en la BIOS/UEFI pulsando la tecla correspondiente (normalmente F2, F12, DEL o ESC).
-3. Entramos en el menú **Boot** y seleccionamos el USB como dispositivo de arranque.
+3. Entramos en el menú **Boot** y seleccionamos el USB como dispositivo de arranque. Elegimos la entrada que empieza por **UEFI:** para que la instalación se haga en modo UEFI.
 4. Guardamos los cambios y reiniciamos el servidor si es necesario.
 5. Cuando arranque desde el USB, aparecerá el menú de instalación de Proxmox.
 6. Seleccionamos **Install Proxmox VE** para comenzar con la instalación.
 
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-01-menu-arranque-uefi-usb.jpg" alt="Menú de arranque con la entrada UEFI del USB" width="480" /></p>
+
 Una vez iniciado el instalador de Proxmox, aparecerá el acuerdo de licencia (EULA). Lo leeremos y aceptaremos para poder continuar con la instalación.
 
-<p align="center"><img src="imagenes/pagina-3-imagen-4.jpeg" alt="Instalador de Proxmox: acuerdo de licencia" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-02-proxmox-instalador-eula.jpg" alt="Instalador de Proxmox: acuerdo de licencia" width="520" /></p>
 
 A continuación, el instalador nos pedirá configurar la cuenta de administrador. Tendremos que introducir un correo electrónico y crear una contraseña segura que utilizaremos para acceder a Proxmox. Es importante guardar estos datos para poder iniciar sesión más adelante.
 
-<p align="center"><img src="imagenes/pagina-3-imagen-5.jpeg" alt="Configuración de la cuenta de administrador de Proxmox" width="500" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-03-proxmox-instalador-password-email.jpg" alt="Configuración de la cuenta de administrador de Proxmox" width="500" /></p>
 
 Después, configuraremos la dirección IP del servidor para que tenga conectividad con los otros ordenadores de la red. También indicaremos la máscara de red, la puerta de enlace y el servidor DNS para asegurarnos de que la conexión funcione correctamente.
 
-<p align="center"><img src="imagenes/pagina-4-imagen-4.jpeg" alt="Configuración de red durante la instalación de Proxmox" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-04-proxmox-instalador-red.jpg" alt="Configuración de red durante la instalación de Proxmox" width="520" /></p>
 
 Por último, revisaremos el resumen de la configuración para comprobar que todos los datos sean correctos. Si todo está bien, pulsaremos **Install** para comenzar la instalación de Proxmox. Esperaremos a que termine y, una vez finalizada, reiniciaremos el servidor para empezar a utilizarlo.
 
-<p align="center"><img src="imagenes/pagina-4-imagen-5.jpeg" alt="Resumen de la instalación de Proxmox" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-05-proxmox-instalador-resumen.jpg" alt="Resumen de la instalación de Proxmox" width="520" /></p>
+
+> **Nota:** en el resumen del instalador aparecen como IP `10.3.10.0/24` y como puerta de enlace `10.3.10.0`, que es la dirección de red y no una dirección válida para un equipo. Después lo corregimos en `/etc/network/interfaces`: el puente `vmbr0` quedó con la IP `10.3.10.2/24` y la puerta de enlace `10.3.10.1` (ver Práctica 4, Tarea 4).
 
 ## 2. Direcciones IP y redes VLAN
 
 Según el diagrama, nuestra sede utiliza la red `10.3.0.0/16` y tiene las siguientes VLAN:
 
-| VLAN | Departamento | Red |
-|---:|---|---|
-| 310 | Servidores | `10.3.10.0/24` |
-| 320 | RRHH | `10.3.20.0/24` |
-| 330 | Dirección | `10.3.30.0/24` |
-| 399 | Gestión | `10.3.99.0/24` |
+| VLAN | Departamento | Red | Puerta de enlace (switch) |
+|---:|---|---|---|
+| 310 | Servidores | `10.3.10.0/24` | `10.3.10.1` |
+| 320 | RRHH | `10.3.20.0/24` | `10.3.20.1` |
+| 330 | Dirección | `10.3.30.0/24` | `10.3.30.1` |
+| 399 | Gestión | `10.3.99.0/24` | `10.3.99.1` |
 
 ## 3. Conexión al Cisco 3560 mediante consola
 
 Primero, tendremos que instalar PuTTY en nuestro ordenador cliente. Este programa nos permitirá conectarnos al switch Cisco 3560 mediante una conexión por consola y ejecutar los comandos necesarios para configurarlo.
 
-<p align="center"><img src="imagenes/pagina-4-imagen-6.jpeg" alt="Terminal utilizada durante la preparación de PuTTY" width="520" /></p>
+```bash
+sudo apt install putty
+```
 
-Antes de conectar el switch Cisco 3560 al ordenador, identificaremos dónde se encuentra el puerto serial o de consola. Para ello, utilizaremos la imagen de referencia incluida en las capturas para localizar el puerto correcto y conectar el cable de consola.
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-06-instalacion-putty-apt.jpg" alt="Instalación de PuTTY con apt" width="520" /></p>
 
-<p align="center"><img src="imagenes/pagina-5-imagen-5.jpeg" alt="Comprobación del puerto serie en el equipo" width="500" /></p>
+Una vez instalado PuTTY, conectaremos el cable de consola entre el ordenador y el switch. Después, abriremos el programa, seleccionaremos el tipo de conexión **Serial** e indicaremos el puerto correspondiente. En el primer intento usamos el puerto serie integrado `/dev/ttyS0`.
 
-Una vez instalado PuTTY, conectaremos el cable de consola entre el ordenador y el switch. Después, abriremos el programa, seleccionaremos el tipo de conexión **Serial** e indicaremos el puerto COM correspondiente.
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-07-putty-serial-ttys0.jpg" alt="Configuración de la conexión Serial en PuTTY con /dev/ttyS0" width="500" /></p>
 
-<p align="center"><img src="imagenes/pagina-5-imagen-4.jpeg" alt="Configuración de la conexión Serial en PuTTY" width="500" /></p>
+Antes de conectar el switch Cisco 3560 al ordenador, identificaremos dónde se encuentra el puerto serial o de consola. El cable de consola se conecta mediante un adaptador **USB–serie**, así que buscamos en los mensajes del sistema qué nombre le ha dado:
 
-Una vez conectado el cable y configurados los parámetros en PuTTY, pulsaremos **Open** para establecer la conexión. Si todo está correcto, podremos acceder a la consola del switch Cisco 3560 y empezar a introducir los comandos necesarios para su configuración.
+```bash
+sudo dmesg | grep tty
+```
 
-<p align="center"><img src="imagenes/pagina-5-imagen-6.jpeg" alt="Consola del switch Cisco 3560" width="520" /></p>
+La salida muestra que el adaptador **FTDI USB Serial Device** se ha conectado como **`ttyUSB0`**, así que ese es el puerto que tenemos que usar en PuTTY, y no `ttyS0`.
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-08-dmesg-adaptador-usb-serie-ttyusb0.jpg" alt="Comprobación del puerto serie con dmesg: el adaptador aparece como ttyUSB0" width="520" /></p>
 
 ## 4. Configuración de VLANs en el Cisco 3560
 
@@ -115,19 +180,31 @@ conf t
 
 Luego, crearemos las VLAN necesarias y asignaremos un nombre a cada una para identificar los diferentes departamentos de la sede de Sevilla.
 
-<p align="center"><img src="imagenes/pagina-5-imagen-7.jpeg" alt="Comandos para crear y nombrar las VLAN" width="520" /></p>
+```text
+vlan 310
+ name SERVIDOR-Sevilla
+exit
+vlan 320
+ name RRHH-Sevilla
+exit
+vlan 330
+ name DIRECCION-Sevilla
+exit
+vlan 399
+ name GESTION-Sevilla
+```
 
-A continuación, veremos las interfaces disponibles en el switch Cisco 3560. Esta información nos permitirá identificar los puertos que utilizaremos para conectar el servidor Proxmox y los futuros equipos, y así poder asignar cada puerto a la VLAN correspondiente.
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-10-switch-creacion-vlans.jpg" alt="Comandos para crear y nombrar las VLAN" width="520" /></p>
 
-<p align="center"><img src="imagenes/pagina-5-imagen-8.jpeg" alt="Listado de VLANs y estado de los puertos" width="520" /></p>
+A continuación, veremos las VLAN y las interfaces del switch Cisco 3560 con `show vlan brief`. Esta información nos permitirá identificar los puertos que utilizaremos para conectar el servidor Proxmox y los futuros equipos, y así poder asignar cada puerto a la VLAN correspondiente. Las cuatro VLAN aparecen en estado **active**; como el switch es compartido en el laboratorio, también salen las VLAN de otros grupos.
 
-En esta imagen podemos ver la configuración de PuTTY que utilizamos para conectarnos al switch Cisco 3560 mediante el puerto serial. Seleccionamos el tipo de conexión **Serial**, indicamos el puerto `/dev/ttyUSB0` y establecemos una velocidad de **9600 baudios**.
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-11-switch-show-vlan-brief.jpg" alt="Listado de VLANs y estado de los puertos" width="520" /></p>
 
-<p align="center"><img src="imagenes/pagina-6-imagen-4.jpeg" alt="Parámetros de conexión de PuTTY" width="500" /></p>
+En esta imagen podemos ver la configuración de PuTTY que utilizamos para conectarnos al switch Cisco 3560 mediante el puerto serial. Seleccionamos el tipo de conexión **Serial**, indicamos el puerto `/dev/ttyUSB0` y establecemos una velocidad de **9600 baudios**. Guardamos la configuración como la sesión **SEVILLA** para no tener que escribirla cada vez.
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-09-putty-serial-ttyusb0-sesion-sevilla.jpg" alt="Parámetros de conexión de PuTTY" width="500" /></p>
 
 Una vez configurados estos parámetros, pulsamos **Open** para acceder a la consola del switch. Desde allí, continuamos con la configuración de las VLAN que habíamos creado anteriormente y añadimos las que todavía faltaban.
-
-<p align="center"><img src="imagenes/pagina-6-imagen-5.jpeg" alt="Configuración de las VLAN en el switch Cisco 3560" width="520" /></p>
 
 Una vez conectados al switch Cisco 3560 mediante PuTTY, configuramos las VLAN necesarias para la sede de Sevilla. Para ello, entramos en el modo de configuración global con el comando `conf t` y creamos cada VLAN con su número, nombre y red IP correspondiente:
 
@@ -136,11 +213,69 @@ Una vez conectados al switch Cisco 3560 mediante PuTTY, configuramos las VLAN ne
 - **VLAN 330 — Dirección:** `10.3.30.0/24`
 - **VLAN 399 — Gestión:** `10.3.99.0/24`
 
-> **Nota:** las redes indicadas documentan el esquema IP de cada VLAN. La creación de una VLAN en el switch no configura por sí sola una dirección IP ni el enrutamiento de esa red.
+> **Nota:** las redes indicadas documentan el esquema IP de cada VLAN. La creación de una VLAN en el switch no configura por sí sola una dirección IP ni el enrutamiento de esa red. Por eso, en el siguiente apartado configuramos una interfaz VLAN para cada una.
+
+## 5. Interfaces VLAN (SVI)
+
+Para que el switch tenga una dirección IP en cada red y actúe como puerta de enlace de cada departamento, creamos una **interfaz VLAN (SVI)** por VLAN, le asignamos su IP y la activamos con `no shutdown`:
+
+```text
+interface vlan 310
+ ip address 10.3.10.1 255.255.255.0
+ no shutdown
+exit
+interface vlan 320
+ ip address 10.3.20.1 255.255.255.0
+ no shutdown
+exit
+interface vlan 330
+ ip address 10.3.30.1 255.255.255.0
+ no shutdown
+exit
+interface vlan 399
+ ip address 10.3.99.1 255.255.255.0
+ no shutdown
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-12-switch-svi-direcciones-ip.jpg" alt="Configuración de las interfaces VLAN con su dirección IP" width="560" /></p>
+
+> **Nota:** en una primera sesión pusimos `10.3.99.2` en la VLAN 399. Después la cambiamos a `10.3.99.1` para que todas las VLAN sigan el mismo criterio (la `.1` es la puerta de enlace).
+
+## 6. Configuración de los puertos del switch
+
+**Puerto Gi0/22 (servidor Proxmox) en modo trunk.** El puerto del servidor Proxmox lo configuramos como **trunk 802.1Q**, con la VLAN 310 como nativa y las cuatro VLAN permitidas. Así Proxmox sigue estando en la VLAN 310, y además las máquinas virtuales pueden conectarse a cualquiera de las otras VLAN.
+
+```text
+interface gi0/22
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk native vlan 310
+ switchport trunk allowed vlan 310,320,330,399
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-13-switch-gi0-22-modo-trunk.jpg" alt="Puerto Gi0/22 configurado como trunk" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-14-switch-gi0-22-vlan-nativa-permitidas.jpg" alt="Puerto Gi0/22 con la VLAN nativa 310 y las VLAN permitidas" width="560" /></p>
+
+**Puertos Gi0/23 (VLAN 310) y Gi0/25 (VLAN 320) en modo access.** El ordenador cliente se conecta a Gi0/23, en la VLAN 310. Gi0/25 queda en la VLAN 320 (RRHH). En los dos activamos **PortFast** para que el puerto pase a funcionar en cuanto se conecta el equipo, sin esperar a Spanning Tree.
+
+```text
+interface gi0/23
+ switchport mode access
+ switchport access vlan 310
+ spanning-tree portfast
+exit
+interface gi0/25
+ switchport mode access
+ switchport access vlan 320
+ spanning-tree portfast
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-15-switch-gi0-23-access-vlan-310.jpg" alt="Puerto Gi0/23 en modo access en la VLAN 310" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p2-16-switch-gi0-25-access-vlan-320.jpg" alt="Puerto Gi0/25 en modo access en la VLAN 320" width="560" /></p>
 
 ---
 
-# Fase 3: Despliegue de los equipos del laboratorio
+# Práctica 3: Despliegue de los equipos del laboratorio
 
 Esta fase corresponde a la **Práctica 3: Despliegue de equipos del laboratorio**. Con Proxmox instalado y las VLAN configuradas en el switch, desplegamos los equipos del laboratorio del grupo:
 
@@ -164,12 +299,12 @@ Antes de entrar en Proxmox, planificamos en la pizarra cómo se conectan los equ
 | Equipo | Puerto del 3560 | Modo | Dirección IP |
 |---|---|---|---|
 | Switch Cisco 3560 (interfaz de la VLAN 310) | — | — | `10.3.10.1` |
-| Servidor Proxmox | `0/22` | Access, VLAN 310 | `10.3.10.2/24` |
+| Servidor Proxmox | `0/22` | Trunk 802.1Q, VLAN nativa 310 | `10.3.10.2/24` |
 | Ordenador cliente (host PC) | `0/23` | Access, VLAN 310 | `10.3.10.3/24` |
 
-Los dos puertos se configuran en modo **access** dentro de la VLAN 310, de modo que el servidor Proxmox y el ordenador cliente quedan en la misma red y pueden comunicarse. Dentro de Proxmox se alojarán las máquinas virtuales de los servidores (S1, S2…).
+En la pizarra planificamos los dos puertos en modo **access** dentro de la VLAN 310. Al final, el puerto de Proxmox (`0/22`) lo configuramos como **trunk** con VLAN nativa 310 (ver Práctica 2, apartado 6): el servidor Proxmox y el ordenador cliente siguen en la misma red y pueden comunicarse. Dentro de Proxmox se alojarán las máquinas virtuales de los servidores (S1, S2…).
 
-<p align="center"><img src="imagenes/01_Esquema_red_pizarra.jpeg" alt="Esquema en la pizarra de la VLAN 310 con el switch 3560, Proxmox y el PC cliente" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-01-esquema-vlan310-pizarra.jpg" alt="Esquema en la pizarra de la VLAN 310 con el switch 3560, Proxmox y el PC cliente" width="560" /></p>
 
 ## 2. Requisitos de los equipos
 
@@ -216,21 +351,21 @@ https://10.3.10.2:8006
 
 El navegador mostrará un aviso de certificado, porque Proxmox utiliza un certificado autofirmado. Lo aceptamos para continuar. En la pantalla de inicio de sesión introducimos el usuario `root`, la contraseña que definimos durante la instalación y el dominio **Linux PAM standard authentication**, y pulsamos **Login**.
 
-<p align="center"><img src="imagenes/02_Login_Proxmox.jpeg" alt="Pantalla de inicio de sesión de Proxmox" width="420" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-02-proxmox-login.jpg" alt="Pantalla de inicio de sesión de Proxmox" width="420" /></p>
 
 Una vez dentro, vemos el panel **Datacenter** con nuestro nodo `gruposevilla` y sus almacenamientos: `local` (ISO, plantillas y copias de seguridad) y `local-lvm` (discos de las máquinas virtuales).
 
-<p align="center"><img src="imagenes/03_Panel_Datacenter_inicial.jpeg" alt="Panel Datacenter de Proxmox con el nodo gruposevilla" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-03-proxmox-panel-datacenter.jpg" alt="Panel Datacenter de Proxmox con el nodo gruposevilla" width="520" /></p>
 
 ### 4.2. Subir la imagen ISO de Ubuntu Server
 
 Para instalar un sistema operativo en una máquina virtual necesitamos su imagen ISO dentro de Proxmox. Para ello, seleccionamos el almacenamiento **local (gruposevilla)**, entramos en **ISO Images** y pulsamos **Upload**. Elegimos el archivo `ubuntu-24.04.1-live-server-amd64.iso` desde el ordenador y pulsamos **Upload**.
 
-<p align="center"><img src="imagenes/04_Subir_ISO_Ubuntu.jpeg" alt="Ventana para subir la ISO de Ubuntu Server a Proxmox" width="420" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-04-proxmox-subir-iso-ubuntu.jpg" alt="Ventana para subir la ISO de Ubuntu Server a Proxmox" width="420" /></p>
 
 Cuando termina la subida, la ISO aparece en la lista de **ISO Images** del almacenamiento `local`, con un tamaño de 2,77 GB.
 
-<p align="center"><img src="imagenes/05_ISO_subida_en_storage_local.jpeg" alt="ISO de Ubuntu 24.04.1 subida al almacenamiento local" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-05-proxmox-iso-ubuntu-subida.jpg" alt="ISO de Ubuntu 24.04.1 subida al almacenamiento local" width="520" /></p>
 
 ### 4.3. Crear la máquina virtual
 
@@ -238,25 +373,25 @@ Pulsamos el botón **Create VM**, en la parte superior derecha, para abrir el as
 
 **General.** Indicamos el nodo `gruposevilla`, el identificador de la máquina (**VM ID** `100`) y su nombre, `Ubuntuserver`.
 
-<p align="center"><img src="imagenes/06_Crear_VM_General.jpeg" alt="Asistente Create VM: pestaña General" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-06-crear-vm-general.jpg" alt="Asistente Create VM: pestaña General" width="520" /></p>
 
 **OS.** Marcamos **Use CD/DVD disc image file (iso)**, seleccionamos el almacenamiento `local` y la ISO `ubuntu-24.04.1-live-server-amd64.iso`. Como sistema invitado dejamos **Linux** con la versión **6.x – 2.6 Kernel**.
 
-<p align="center"><img src="imagenes/07_Crear_VM_OS.jpeg" alt="Asistente Create VM: pestaña OS" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-07-crear-vm-os.jpg" alt="Asistente Create VM: pestaña OS" width="520" /></p>
 
 **System.** Dejamos la tarjeta gráfica y el tipo de máquina por defecto y el controlador SCSI **VirtIO SCSI single**. Como BIOS elegimos **OVMF (UEFI)**, marcamos **Add EFI Disk** y guardamos el disco EFI en `local-lvm`. Con esto la máquina arranca en **modo UEFI**, como exige la práctica. El disco EFI de Proxmox solo guarda las variables del firmware y no es uno de los cuatro discos del diseño.
 
-<p align="center"><img src="imagenes/08_Crear_VM_System.jpeg" alt="Asistente Create VM: pestaña System" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-08-crear-vm-system-uefi.jpg" alt="Asistente Create VM: pestaña System" width="520" /></p>
 
 **Disks.** En el asistente se creó un primer disco, `scsi0`, en el almacenamiento `local-lvm` con un tamaño de **32 GB** y sin caché. Este disco no cumple el diseño de la Tarea 1, así que después lo sustituimos por los cuatro discos de la práctica (apartado 4.5).
 
-<p align="center"><img src="imagenes/09_Crear_VM_Disks.jpeg" alt="Asistente Create VM: pestaña Disks" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-09-crear-vm-disks-inicial.jpg" alt="Asistente Create VM: pestaña Disks" width="520" /></p>
 
 **CPU y Memory.** Asignamos 1 socket con 1 núcleo (tipo de CPU `x86-64-v2-AES`) y **2048 MB** de memoria RAM. Estos valores se pueden ver en el resumen final.
 
 **Network.** Conectamos la tarjeta de red al puente `vmbr0`, que es la interfaz de red del servidor Proxmox, con el modelo **VirtIO (paravirtualized)** y el cortafuegos activado. Así, la máquina virtual sale a la red por el mismo puerto que el servidor.
 
-<p align="center"><img src="imagenes/10_Crear_VM_Network.jpeg" alt="Asistente Create VM: pestaña Network" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-10-crear-vm-network.jpg" alt="Asistente Create VM: pestaña Network" width="520" /></p>
 
 **Confirm.** Revisamos el resumen de la configuración y pulsamos **Finish** para crear la máquina:
 
@@ -273,13 +408,13 @@ Pulsamos el botón **Create VM**, en la parte superior derecha, para abrir el as
 | `efidisk0` | `local-lvm:1,efitype=4m,pre-enrolled-keys=1` |
 | `net0` | `virtio,bridge=vmbr0,firewall=1` |
 
-<p align="center"><img src="imagenes/11_Crear_VM_Confirm.jpeg" alt="Asistente Create VM: resumen de la configuración" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-11-crear-vm-confirm.jpg" alt="Asistente Create VM: resumen de la configuración" width="520" /></p>
 
 ### 4.4. Comprobación de la máquina virtual
 
 Al volver al panel **Datacenter**, la nueva máquina virtual aparece en la lista de recursos como **100 (Ubuntuserver)**, dentro del nodo `gruposevilla`.
 
-<p align="center"><img src="imagenes/12_VM_100_Ubuntuserver_creada.jpeg" alt="Panel Datacenter con la máquina virtual 100 (Ubuntuserver) creada" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-12-vm-100-creada.jpg" alt="Panel Datacenter con la máquina virtual 100 (Ubuntuserver) creada" width="520" /></p>
 
 ### 4.5. Añadir los cuatro discos del diseño
 
@@ -299,8 +434,7 @@ Con la máquina apagada, seleccionamos **100 (Ubuntuserver) → Hardware** y aju
 
 Todos los discos usan el controlador **VirtIO SCSI single**, el almacenamiento `local-lvm` y la caché por defecto (**No cache**).
 
-<p align="center"><img src="imagenes/P3_01_Proxmox_disco1_scsi0_1.5GB_EFI_boot.jpg" alt="Disco scsi0 de 1,5 GB para EFI y /boot" width="420" /> <img src="imagenes/P3_02_Proxmox_disco2_scsi1_10GB_swap.jpg" alt="Disco scsi1 de 10 GB para la swap" width="420" /></p>
-<p align="center"><img src="imagenes/P3_03_Proxmox_disco3_scsi2_20GB_raiz.jpg" alt="Disco scsi2 de 20 GB para la raíz" width="420" /> <img src="imagenes/P3_04_Proxmox_disco4_scsi3_30GB_home.jpg" alt="Disco scsi3 de 30 GB para /home" width="420" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-13-proxmox-cuatro-discos-scsi0-scsi3.jpg" alt="Discos scsi0 (1,5 GB), scsi1 (10 GB), scsi2 (20 GB) y scsi3 (30 GB)" width="700" /></p>
 
 ### 4.6. Instalación de Ubuntu Server con particionado manual
 
@@ -308,31 +442,31 @@ Todos los discos usan el controlador **VirtIO SCSI single**, el almacenamiento `
 2. Seguimos el instalador (idioma, teclado, red) hasta llegar a **Guided storage configuration**.
 3. Elegimos **Custom storage layout**, que es el particionado manual. No usamos el particionado automático.
 
-<p align="center"><img src="imagenes/P3_05_Instalador_custom_storage_layout.jpg" alt="Opción Custom storage layout en el instalador" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-14-instalador-custom-storage-layout.jpg" alt="Opción Custom storage layout en el instalador" width="520" /></p>
 
 4. Creamos las particiones en cada disco tal como las diseñamos en la Tarea 1:
    - En `scsi0` (1,5 GB): marcamos el disco como **Use as Boot Device**, lo que crea la partición EFI (`/boot/efi`, fat32), y en el espacio libre que queda añadimos una partición ext4 montada en `/boot`.
 
-<p align="center"><img src="imagenes/P3_06_Particion_boot_en_scsi0.jpg" alt="Creación de la partición /boot en ext4 en el disco scsi0" width="480" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-15-particion-boot-scsi0.jpg" alt="Creación de la partición /boot en ext4 en el disco scsi0" width="480" /></p>
 
    - En `scsi1` (10 GB): una partición que ocupa todo el disco, con formato **swap**.
 
-<p align="center"><img src="imagenes/P3_07_Particion_swap_en_scsi1.jpg" alt="Creación de la partición swap en el disco scsi1" width="480" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-16-particion-swap-scsi1.jpg" alt="Creación de la partición swap en el disco scsi1" width="480" /></p>
 
    - En `scsi2` (20 GB): una partición ext4 que ocupa todo el disco, montada en `/`.
    - En `scsi3` (30 GB): una partición ext4 que ocupa todo el disco, montada en `/home`.
 
 5. Revisamos el resumen. En **Dispositivos utilizados** se ve que cada punto de montaje está en su propio disco: `/boot/efi` (fat32) y `/boot` (ext4) en `scsi0`, la swap en `scsi1`, `/` en `scsi2` y `/home` en `scsi3`.
 
-<p align="center"><img src="imagenes/P3_08_Resumen_final_particionado.jpg" alt="Resumen final del particionado manual con los cuatro discos" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-17-resumen-particionado.jpg" alt="Resumen final del particionado manual con los cuatro discos" width="560" /></p>
 
 6. Confirmamos y completamos la instalación. En **Profile configuration** indicamos el nombre `Sevilla`, el nombre del servidor `sevilla` y el usuario `grupo-s`.
 
-<p align="center"><img src="imagenes/P3_09_Configuracion_perfil_usuario.jpg" alt="Configuración del perfil de usuario en el instalador" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-18-perfil-usuario.jpg" alt="Configuración del perfil de usuario en el instalador" width="520" /></p>
 
 7. Al terminar, quitamos la ISO de la máquina (**Hardware → CD/DVD Drive → Do not use any media**) y reiniciamos. El sistema arranca solo desde el disco y podemos iniciar sesión con `grupo-s`. En el mensaje de bienvenida ya se ve que `/home` tiene su propio espacio (29,36 GB).
 
-<p align="center"><img src="imagenes/P3_10_Login_tras_reinicio_home_29GB.jpg" alt="Inicio de sesión en Ubuntu Server tras reiniciar" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-19-login-tras-reinicio.jpg" alt="Inicio de sesión en Ubuntu Server tras reiniciar" width="520" /></p>
 
 ## 5. Tarea 3: Verificación después de la instalación
 
@@ -347,7 +481,7 @@ ls /sys/firmware/efi
 
 En la salida de `df -h` (punto 2) ya aparece montado el sistema de ficheros `efivarfs` en `/sys/firmware/efi/efivars`. Este sistema de ficheros solo existe cuando el equipo ha arrancado en modo UEFI, así que es una prueba de que el servidor arranca en UEFI.
 
-<p align="center"><img src="imagenes/P3_13_df_h_servidor_UEFI.jpg" alt="Salida de lsblk -f y df -h en el servidor, con efivarfs montado en /sys/firmware/efi/efivars" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-21-df-h-efivarfs.jpg" alt="Salida de lsblk -f y df -h en el servidor, con efivarfs montado en /sys/firmware/efi/efivars" width="560" /></p>
 
 > **Pendiente:** captura de `ls /sys/firmware/efi` para tener también la comprobación directa del directorio.
 
@@ -358,7 +492,7 @@ lsblk -f
 df -h
 ```
 
-<p align="center"><img src="imagenes/P3_12_lsblk_f_servidor.jpg" alt="Salida de lsblk -f en el servidor con los cuatro discos y sus puntos de montaje" width="680" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-20-lsblk-f.jpg" alt="Salida de lsblk -f en el servidor con los cuatro discos y sus puntos de montaje" width="680" /></p>
 
 La salida de `lsblk -f` confirma que cada punto de montaje está en su propio disco, tal como lo diseñamos en la Tarea 1:
 
@@ -377,7 +511,7 @@ free -h
 swapon --show
 ```
 
-<p align="center"><img src="imagenes/P3_14_free_swapon_servidor.jpg" alt="Salida de free -h y swapon --show con la swap en /dev/sdb1" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-22-free-swapon.jpg" alt="Salida de free -h y swapon --show con la swap en /dev/sdb1" width="560" /></p>
 
 > **Nota:** en `lsblk` aparece todavía `sr0` con la ISO de Ubuntu Server. Hay que quitarla de la máquina (**Hardware → CD/DVD Drive → Do not use any media**) para que no quede ningún medio de instalación conectado.
 
@@ -398,33 +532,33 @@ Con `blkid` podemos comparar los UUID de `/etc/fstab` con los de cada partición
 
 1. Subimos la ISO de Linux Mint al almacenamiento `local` de Proxmox, igual que hicimos con la de Ubuntu Server (apartado 4.2). La imagen `linuxmint-22.3-cinnamon-64bit.iso` (3,09 GB) aparece en **ISO Images** junto a la de Ubuntu Server.
 
-<p align="center"><img src="imagenes/P3_15_ISO_LinuxMint_en_Proxmox.jpg" alt="ISO de Linux Mint 22.3 subida al almacenamiento local de Proxmox" width="520" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-23-iso-linux-mint-proxmox.jpg" alt="ISO de Linux Mint 22.3 subida al almacenamiento local de Proxmox" width="520" /></p>
 
 2. Creamos una nueva máquina virtual con **Create VM** (VM 102). En la pestaña **OS** seleccionamos la ISO de Linux Mint y como sistema invitado **Linux 6.x – 2.6 Kernel**.
 
-<p align="center"><img src="imagenes/P3_16_CrearVM_Mint_OS.jpg" alt="Asistente Create VM: pestaña OS con la ISO de Linux Mint" width="480" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-24-crear-vm-mint-os.jpg" alt="Asistente Create VM: pestaña OS con la ISO de Linux Mint" width="480" /></p>
 
 3. En la pestaña **System** elegimos BIOS **OVMF (UEFI)** con disco EFI en `local-lvm` y el controlador **VirtIO SCSI single**. Después le asignamos un único disco y la tarjeta de red en el puente `vmbr0`.
 
-<p align="center"><img src="imagenes/P3_17_CrearVM_Mint_System_UEFI.jpg" alt="Asistente Create VM: pestaña System con OVMF (UEFI)" width="420" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-25-crear-vm-mint-system-uefi.jpg" alt="Asistente Create VM: pestaña System con OVMF (UEFI)" width="420" /></p>
 
 4. Arrancamos la máquina desde la ISO. Se inicia la sesión en vivo de **Linux Mint 22.3 Cinnamon**, y desde el icono del escritorio lanzamos el instalador.
 
-<p align="center"><img src="imagenes/P3_18_Mint_live_escritorio.jpg" alt="Escritorio de la sesión en vivo de Linux Mint 22.3" width="440" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-26-mint-sesion-live.jpg" alt="Escritorio de la sesión en vivo de Linux Mint 22.3" width="440" /></p>
 
 5. Instalamos Linux Mint con la opción de particionado estándar del instalador (**Borrar disco e instalar Linux Mint**), que usa el único disco de la máquina.
 
-<p align="center"><img src="imagenes/P3_19_Mint_instalando.jpg" alt="Instalador de Linux Mint copiando archivos" width="440" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-27-mint-instalando.jpg" alt="Instalador de Linux Mint copiando archivos" width="440" /></p>
 
 6. Al terminar, quitamos la ISO y reiniciamos. La máquina arranca desde el disco y muestra la pantalla de inicio de sesión del usuario `sevilla`.
 
-<p align="center"><img src="imagenes/P3_20_Mint_login_instalado.jpg" alt="Pantalla de inicio de sesión de Linux Mint ya instalado" width="440" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p3-28-mint-login.jpg" alt="Pantalla de inicio de sesión de Linux Mint ya instalado" width="440" /></p>
 
 > **Pendiente:** captura de los pasos del instalador donde se elige el particionado estándar.
 
 ### 6.2. Cliente físico
 
-1. Arrancamos el equipo físico del grupo desde un USB con Linux Mint (igual que en la Fase 2, apartado 1).
+1. Arrancamos el equipo físico del grupo desde un USB con Linux Mint (igual que en la Práctica 2, apartado 1).
 2. Instalamos Linux Mint en el único disco del equipo con el particionado estándar.
 3. Conectamos el equipo a un puerto de la VLAN 310 del switch (por ejemplo, `0/23`, con la IP `10.3.10.3/24`) para que llegue al servidor y a la interfaz de Proxmox.
 
@@ -432,7 +566,7 @@ Con `blkid` podemos comparar los UUID de `/etc/fstab` con los de cada partición
 
 ---
 
-# Fase 4: Despliegue de servicios con Windows Server
+# Práctica 4: Despliegue de servicios con Windows Server
 
 Esta fase corresponde a la **Práctica 4: Despliegue de servicios con Windows Server**. La dirección de la empresa quiere centralizar la autenticación de los usuarios, la administración de los equipos, los recursos compartidos y las copias de seguridad. Para ello desplegamos un servidor **Windows Server 2025** en Proxmox que, además, asignará automáticamente la configuración IP a los clientes mediante **DHCP**. Para proteger la red frente a servidores DHCP no autorizados, activaremos **DHCP Snooping** en el switch Cisco 3560.
 
@@ -455,35 +589,32 @@ Esta fase corresponde a la **Práctica 4: Despliegue de servicios con Windows Se
 
 Antes de instalar comprobamos que la máquina utiliza UEFI y que tiene conectados los cuatro discos virtuales. En Proxmox seleccionamos **OVMF (UEFI)** y el almacenamiento `local-lvm` para el disco EFI.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.26.03.jpeg" alt="Configuración del sistema de la máquina virtual con firmware OVMF (UEFI)" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-01-vm-system-ovmf-uefi.jpg" alt="Configuración del sistema de la máquina virtual con firmware OVMF (UEFI)" width="560" /></p>
 
 **Aquí lo que hemos hecho es seleccionar OVMF (UEFI) como firmware de la máquina virtual y añadir el disco EFI en Proxmox.** De esta forma, la máquina queda preparada para iniciar Windows Server utilizando UEFI.
 
 En la pestaña **Disks** añadimos los cuatro discos virtuales mediante el controlador **VirtIO SCSI single**. Los tamaños configurados son 60 GB, 50 GB, 50 GB y 20 GB.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.28.39.jpeg" alt="Configuración del disco scsi0 de 60 GB en Proxmox" width="500" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-02-vm-cuatro-discos-60-50-50-20.jpg" alt="Configuración de los discos scsi0 a scsi3 de 60, 50, 50 y 20 GB en Proxmox" width="700" /></p>
 
-**Aquí lo que hemos hecho es configurar el primer disco virtual (`scsi0`) con una capacidad de 60 GB, que se utilizará para instalar el sistema operativo.**
+**Aquí lo que hemos hecho es configurar los cuatro discos virtuales** (de izquierda a derecha y de arriba abajo):
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.28.45.jpeg" alt="Configuración del disco scsi1 de 50 GB en Proxmox" width="500" /></p>
+- **`scsi0`**, de 60 GB, que se utilizará para instalar el sistema operativo.
+- **`scsi1`**, de 50 GB, para almacenar datos.
+- **`scsi2`**, de otros 50 GB, destinado a los datos departamentales.
+- **`scsi3`**, de 20 GB, que utilizaremos para guardar las copias de seguridad.
 
-**Aquí lo que hemos hecho es configurar el segundo disco virtual (`scsi1`) con 50 GB de capacidad para almacenar datos.**
+Antes de crear la máquina revisamos el resumen. En él se ven los 8192 MB de memoria, los cuatro discos (60, 50, 50 y 20 GB), el disco EFI, la ISO de Windows Server y la red en `vmbr0`. La máquina tiene el identificador **103**.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.28.49.jpeg" alt="Configuración del disco scsi2 de 50 GB en Proxmox" width="500" /></p>
-
-**Aquí lo que hemos hecho es configurar el tercer disco virtual (`scsi2`) con otros 50 GB, destinado a los datos departamentales.**
-
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 09.28.54.jpeg" alt="Configuración del disco scsi3 de 20 GB en Proxmox" width="500" /></p>
-
-**Aquí lo que hemos hecho es configurar el cuarto disco virtual (`scsi3`) con 20 GB, que utilizaremos para guardar las copias de seguridad.**
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-03-vm-confirm-resumen.jpg" alt="Resumen de la VM 103 con 8192 MB de RAM y los cuatro discos" width="560" /></p>
 
 ### 1.2. Esquema de discos y volúmenes
 
 | Disco | Tamaño | Volumen | Etiqueta | Finalidad |
 |---|---|---|---|---|
 | Disco 0 | 60 GB | `C:` | Sistema | Sistema operativo |
-| Disco 1 | 50 GB | `D:` | Recursos_Compartidos | Recursos compartidos corporativos |
-| Disco 2 | 50 GB | `E:` | datos_departamentales | Datos departamentales |
+| Disco 1 | 50 GB | `E:` | datos_departamentales | Datos departamentales |
+| Disco 2 | 50 GB | `D:` | Recursos_Compartidos | Recursos compartidos corporativos |
 | Disco 3 | 20 GB | `F:` | copias_de_seguridad | Copias de seguridad |
 
 Separamos el sistema, los datos y las copias en discos distintos para que un problema en uno no afecte a los demás y para que las copias de seguridad no estén en el mismo disco que los datos que protegen.
@@ -497,26 +628,28 @@ El servidor se conecta a la VLAN 310 (Servidores, `10.3.10.0/24`), igual que el 
 | Switch Cisco 3560 (puerta de enlace) | `10.3.10.1` | Estática |
 | Servidor Proxmox | `10.3.10.2/24` | Estática |
 | Cliente físico | `10.3.10.3/24` | Dirección fija o reserva DHCP |
-| Servidor Windows Server 2025 | `10.3.10.10/24` | Estática propuesta |
-| Clientes | `10.3.10.100` – `10.3.10.200` | DHCP propuesto |
+| Servidor Windows Server 2025 | `10.3.10.100/24` | Estática |
+| Clientes | `10.3.10.100` – `10.3.10.200` | Ámbito DHCP configurado |
+
+> **Atención:** la IP del servidor (`10.3.10.100`) está dentro del rango del ámbito DHCP. Hay que excluirla del ámbito (o empezar el rango en `10.3.10.101`) para que el servidor DHCP no la entregue a un cliente.
 
 ### 1.4. Nombre del servidor y del dominio
 
 - **Servidor:** `WS2025-ASIX333`, que es el nombre que aparece en la consola de Proxmox.
-- **Dominio:** `sevilla.local` (propuesta inicial).
+- **Dominio:** `sevilla.local` (propuesta inicial). En el ámbito DHCP se configuró `sevilla.com`, así que hay que unificar el nombre del dominio.
 
 ## 2. Tarea 2: Instalación de Windows Server 2025
 
 1. Creamos la máquina en Proxmox con BIOS **OVMF (UEFI)**, disco EFI y los cuatro discos de la tabla anterior.
 2. Arrancamos desde la ISO y llegamos a la pantalla de selección del disco donde se instalará Windows Server 2025. En esa pantalla aparecen los cuatro discos virtuales con capacidades de 20 GB, 60 GB, 50 GB y 50 GB. Seleccionamos el disco de **60 GB** para instalar el sistema operativo.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 10.07.23.jpeg" alt="Selección del disco de 60 GB para instalar Windows Server 2025" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-04-seleccion-disco-60gb.jpg" alt="Selección del disco de 60 GB para instalar Windows Server 2025" width="560" /></p>
 
 **Aquí lo que hemos hecho es seleccionar el disco virtual de 60 GB para instalar Windows Server.** En la pantalla se ven también los otros tres discos, que se reservarán para los datos y las copias de seguridad.
 
 3. Una vez finalizada la instalación, Windows solicita establecer la contraseña de la cuenta **Administrador**.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-13 at 10.22.59.jpeg" alt="Configuración de la contraseña de la cuenta Administrador de Windows Server" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-05-password-administrador.jpg" alt="Configuración de la contraseña de la cuenta Administrador de Windows Server" width="560" /></p>
 
 **Aquí lo que hemos hecho es establecer la contraseña de la cuenta Administrador para poder iniciar sesión en Windows Server una vez terminada la instalación.**
 
@@ -524,25 +657,27 @@ El servidor se conecta a la VLAN 310 (Servidores, `10.3.10.0/24`), igual que el 
 
 En **Administración de discos** (`diskmgmt.msc`) inicializamos los discos secundarios y creamos volúmenes simples. Los formateamos en **NTFS**, dejamos el tamaño de unidad de asignación predeterminado y asignamos las letras y etiquetas correspondientes.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-16 at 09.09.49.jpeg" alt="Asistente para formatear un volumen en NTFS" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-06b-formatear-volumen-ntfs.jpg" alt="Asistente para formatear un volumen en NTFS" width="560" /></p>
 
 **Aquí lo que hemos hecho es seleccionar el sistema de archivos NTFS para formatear el volumen y dejar el tamaño de unidad de asignación predeterminado.**
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-16 at 09.12.03.jpeg" alt="Configuración de la etiqueta copias_de_seguridad para el volumen de copias" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-06-volumen-copias-seguridad.jpg" alt="Configuración de la etiqueta copias_de_seguridad para el volumen de copias" width="560" /></p>
 
 **Aquí lo que hemos hecho es asignar la etiqueta `copias_de_seguridad` al volumen destinado a guardar las copias. También mantenemos el formato NTFS y el formato rápido.**
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-16 at 09.18.55.jpeg" alt="Configuración de la etiqueta Recursos_Compartidos para el volumen compartido" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-07-volumen-recursos-compartidos.jpg" alt="Configuración de la etiqueta Recursos_Compartidos para el volumen compartido" width="560" /></p>
 
 **Aquí lo que hemos hecho es asignar la etiqueta `Recursos_Compartidos` al volumen que utilizaremos para los recursos compartidos corporativos.**
 
 Una vez creados y formateados los volúmenes, comprobamos su estado desde **Administración de discos**. En la captura se observan los tres discos secundarios en línea y con formato NTFS:
 
-- `D:` — `Recursos_Compartidos`, aproximadamente 50 GB.
-- `E:` — `datos_departamentales`, aproximadamente 50 GB.
-- `F:` — `copias_de_seguridad`, aproximadamente 20 GB.
+- `D:` — `Recursos_Compartidos`, aproximadamente 50 GB (Disco 2).
+- `E:` — `datos_departamentales`, aproximadamente 50 GB (Disco 1).
+- `F:` — `copias_de_seguridad`, aproximadamente 20 GB (Disco 3).
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-16 at 09.19.59.jpeg" alt="Administración de discos con los volúmenes D, E y F creados en NTFS" width="680" /></p>
+En el Disco 0 se ven la partición de sistema **EFI** (200 MB), `C:` (59 GB) y una partición de **recuperación** (802 MB). Esto demuestra que Windows se instaló en modo **UEFI** con tabla de particiones **GPT**.
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-08-administracion-discos-final.jpg" alt="Administración de discos con los volúmenes C, D, E y F en NTFS" width="680" /></p>
 
 **Aquí lo que hemos hecho es comprobar que los tres volúmenes están creados, aparecen en línea y utilizan NTFS. También podemos ver que cada uno tiene la letra y la etiqueta que le hemos asignado.**
 
@@ -550,29 +685,33 @@ Una vez creados y formateados los volúmenes, comprobamos su estado desde **Admi
 
 Configuramos una dirección IP estática en el adaptador Ethernet de Windows Server. En la captura aparece la dirección `10.3.10.100` con máscara `255.255.255.0`.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 08.30.52.jpeg" alt="Propiedades IPv4 del adaptador Ethernet de Windows Server con IP estática" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-09-ipv4-estatica.jpg" alt="Propiedades IPv4 del adaptador Ethernet de Windows Server con IP estática" width="460" /></p>
 
 **Aquí lo que hemos hecho es entrar en las propiedades IPv4 del adaptador Ethernet y seleccionar la configuración manual. En la captura se ve la dirección IP `10.3.10.100` y la máscara `255.255.255.0`. Los campos de puerta de enlace y DNS aparecen sin completar en esta imagen.**
 
 Después comprobamos la configuración desde la consola de Windows y realizamos una prueba de conectividad con la dirección `10.3.10.1`.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 08.37.00.jpeg" alt="Comprobación de la configuración de red y ping desde el equipo Windows" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-10-ipconfig-ping-gateway.jpg" alt="Comprobación de la configuración de red y ping desde el equipo Windows" width="560" /></p>
 
-**Aquí lo que hemos hecho es consultar la configuración de red desde la consola de Windows y ejecutar un `ping` hacia `10.3.10.1`. En la pantalla se observan respuestas correctas, por lo que hay conectividad con esa dirección de la red.**
+**Aquí lo que hemos hecho es consultar la configuración de red desde la consola de Windows y ejecutar un `ping` hacia `10.3.10.1`. Se enviaron 4 paquetes y se recibieron los 4 (0 % de pérdida), así que hay conectividad con esa dirección de la red.**
+
+En la misma sesión revisamos la red del servidor Proxmox en el fichero `/etc/network/interfaces`. El puente `vmbr0` tiene la IP `10.3.10.2/24` y la puerta de enlace `10.3.10.1`, y usa la tarjeta física `enp1s0f0`.
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-11-proxmox-interfaces-vmbr0.jpg" alt="Fichero /etc/network/interfaces de Proxmox con vmbr0 en 10.3.10.2/24" width="420" /></p>
 
 ## 5. Tarea 5: Servicio DHCP en Windows Server
 
 Una vez instalado el rol **Servidor DHCP**, abrimos la consola DHCP desde **Administrador del servidor → Herramientas → DHCP**.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.05.39.jpeg" alt="Consola de administración DHCP abierta en Windows Server" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-12-consola-dhcp.jpg" alt="Consola de administración DHCP abierta en Windows Server" width="560" /></p>
 
 **Aquí lo que hemos hecho es abrir la consola de administración DHCP para gestionar el servicio y crear el ámbito que utilizarán los equipos clientes.**
 
 ### 5.1. Creación del ámbito
 
-En el asistente para crear un ámbito indicamos un nombre y un rango de direcciones IP. En una de las capturas se ve el rango desde `10.3.10.10` hasta `10.3.10.200`.
+En el asistente para crear un ámbito indicamos un nombre y un rango de direcciones IP. En la captura se ve el rango desde `10.3.10.100` hasta `10.3.10.200`.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.11.27.jpeg" alt="Asistente DHCP para definir el intervalo de direcciones IP del ámbito" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-13-ambito-intervalo-ip.jpg" alt="Asistente DHCP para definir el intervalo de direcciones IP del ámbito" width="560" /></p>
 
 **Aquí lo que hemos hecho es introducir el intervalo de direcciones que podrá entregar el servidor DHCP a los clientes.**
 
@@ -580,7 +719,7 @@ En el asistente para crear un ámbito indicamos un nombre y un rango de direccio
 
 En el asistente configuramos el nombre de dominio y el servidor DNS que recibirán los clientes. La captura muestra el dominio `sevilla.com` y el servidor DNS `10.3.10.100`.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.27.32.jpeg" alt="Asistente DHCP con el dominio sevilla.com y el servidor DNS 10.3.10.100" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-14-ambito-dominio-dns.jpg" alt="Asistente DHCP con el dominio sevilla.com y el servidor DNS 10.3.10.100" width="560" /></p>
 
 **Aquí lo que hemos hecho es indicar el nombre de dominio que se entregará a los clientes y añadir la dirección IP del servidor DNS.**
 
@@ -588,7 +727,7 @@ En el asistente configuramos el nombre de dominio y el servidor DNS que recibir�
 
 Después de completar el asistente, volvemos a la consola DHCP. En ella aparece el ámbito identificado como `10.3.10.0` y con el nombre `Sevilla`.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.28.31.jpeg" alt="Consola DHCP con el ámbito 10.3.10.0 Sevilla" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-15-ambito-creado.jpg" alt="Consola DHCP con el ámbito 10.3.10.0 Sevilla" width="560" /></p>
 
 **Aquí lo que hemos hecho es comprobar que el ámbito `Sevilla` aparece creado dentro de IPv4 en la consola de administración DHCP.**
 
@@ -598,7 +737,7 @@ Después de completar el asistente, volvemos a la consola DHCP. En ella aparece 
 
 Para administrar el switch Cisco 3560, conectamos el equipo del laboratorio mediante el cable de consola y abrimos una sesión con PuTTY. Durante la conexión aparecen mensajes del sistema que indican cambios en el estado de varias interfaces GigabitEthernet y de algunas interfaces VLAN.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.42.49.jpeg" alt="Conexión de consola al switch Cisco 3560 mediante PuTTY y mensajes de estado de las interfaces" width="620" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-17-consola-switch-putty.jpg" alt="Conexión de consola al switch Cisco 3560 mediante PuTTY y mensajes de estado de las interfaces" width="620" /></p>
 
 **Aquí lo que hemos hecho es acceder al switch Cisco 3560 mediante PuTTY utilizando la conexión de consola. En la terminal aparecen mensajes que informan de cambios en el estado de diferentes puertos del switch mientras conectamos los equipos del laboratorio.**
 
@@ -606,17 +745,13 @@ Para administrar el switch Cisco 3560, conectamos el equipo del laboratorio medi
 
 Para simular un servidor DHCP no autorizado utilizamos un equipo físico con Ubuntu Server. Durante la instalación configuramos el perfil del equipo y completamos la puesta en marcha del sistema.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-06 at 08.33.53.jpeg" alt="Configuración del perfil del servidor Ubuntu utilizado para la práctica" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-18-ubuntu-perfil-instalacion.jpg" alt="Configuración del perfil del servidor Ubuntu utilizado para la práctica" width="560" /></p>
 
 **Aquí lo que hemos hecho es completar la configuración del perfil de Ubuntu Server, indicando el nombre del usuario y del equipo que utilizaremos para administrar el servidor.**
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-06 at 08.37.11.jpeg" alt="Equipo físico utilizado para preparar el servidor Ubuntu en el laboratorio" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-18b-ubuntu-bienvenida.jpg" alt="Pantalla de bienvenida de Ubuntu 24.04.5 LTS" width="560" /></p>
 
-**Aquí se muestra el equipo físico del laboratorio que utilizamos para preparar y administrar el servidor Ubuntu.**
-
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-06 at 09.55.50.jpeg" alt="Pantalla de bienvenida de Ubuntu Server 24.04.5 LTS" width="560" /></p>
-
-**Aquí lo que hemos hecho es comprobar que Ubuntu Server ha terminado de arrancar y que podemos acceder al sistema para continuar con la configuración del servicio DHCP.**
+**Aquí lo que hemos hecho es comprobar que Ubuntu ha terminado de arrancar y que podemos acceder al sistema para continuar con la configuración del servicio DHCP.**
 
 ### 6.3. Instalación y comprobación del servicio DHCP en Ubuntu
 
@@ -627,7 +762,7 @@ sudo apt install isc-dhcp-server
 sudo systemctl status isc-dhcp-server
 ```
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-06 at 10.37.35.jpeg" alt="Estado del servicio isc-dhcp-server en ejecución en Ubuntu" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-19-isc-dhcp-server-status.jpg" alt="Estado del servicio isc-dhcp-server en ejecución en Ubuntu" width="560" /></p>
 
 **Aquí lo que hemos hecho es consultar el estado del servicio `isc-dhcp-server`. En la salida aparece como `active (running)`, por lo que el servicio está iniciado en Ubuntu.**
 
@@ -639,9 +774,18 @@ Editamos el archivo de configuración del servicio:
 sudo nano /etc/dhcp/dhcpd.conf
 ```
 
+```conf
+subnet 10.3.10.0 netmask 255.255.255.0 {
+        range 10.3.10.201 10.3.10.230;
+        option routers 10.3.10.254;
+        option subnet-mask 255.255.255.0;
+        option broadcast-address 10.3.10.255;
+}
+```
+
 En la captura se observa un ámbito de pruebas para la red `10.3.10.0/24`, con un rango de direcciones diferente al que utiliza el servidor Windows y una puerta de enlace incorrecta para simular el servidor DHCP fraudulento.
 
-<p align="center"><img src="imagenes/WhatsApp Image 2026-11-20 at 10.32.58.jpeg" alt="Configuración del ámbito DHCP fraudulento en dhcpd.conf" width="560" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-20-dhcpd-conf-ambito-fraudulento.jpg" alt="Configuración del ámbito DHCP fraudulento en dhcpd.conf" width="520" /></p>
 
 **Aquí lo que hemos hecho es editar `dhcpd.conf` y definir el ámbito de pruebas para la red `10.3.10.0/24`. El servidor Ubuntu ofrece direcciones entre `10.3.10.201` y `10.3.10.230` y anuncia como puerta de enlace `10.3.10.254`, con el objetivo de simular una configuración DHCP incorrecta.**
 
@@ -654,14 +798,36 @@ conf t
 ip dhcp snooping
 ip dhcp snooping vlan 310
 no ip dhcp snooping information option
-interface fastEthernet 0/22
+interface gigabitEthernet 0/22
  ip dhcp snooping trust
 end
 show ip dhcp snooping
 show ip dhcp snooping binding
 ```
 
-El puerto `0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. Los puertos por los que pueden entrar respuestas de servidores no autorizados deben permanecer **untrusted**.
+El puerto `Gi0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. Los puertos por los que pueden entrar respuestas de servidores no autorizados deben permanecer **untrusted**.
+
+> **Pendiente:** aplicar esta configuración y añadir las capturas de `show ip dhcp snooping`, `show ip dhcp snooping binding` y las pruebas desde un cliente antes y después de activarlo.
+
+---
+
+# Incidencias y soluciones
+
+| Incidencia | Causa | Solución |
+|---|---|---|
+| No podíamos entrar en Proxmox después de la primera instalación | Olvidamos la contraseña de `root` | Reinstalamos Proxmox |
+| PuTTY no conectaba con el switch usando `/dev/ttyS0` | El cable de consola usa un adaptador USB–serie | Con `sudo dmesg \| grep tty` vimos que el puerto correcto es `/dev/ttyUSB0` |
+| *PuTTY Fatal Error: Opening serial port '/dev/ttyUSB0': Permiso denegado* | El usuario no tiene permiso para usar el puerto serie | Abrimos PuTTY con `sudo putty` (también se puede añadir el usuario al grupo `dialout`) |
+| `% Invalid input detected` en el switch | Errores al escribir los comandos (`interfaces vlan`, `gi/22`) o comandos fuera de `conf t` | Escribir bien los comandos (`interface vlan 310`, `interface gi0/22`) dentro de `conf t` |
+| IP y puerta de enlace de Proxmox con la dirección de red `10.3.10.0` | Error en el instalador | Corregido en `/etc/network/interfaces` (`10.3.10.2/24`, puerta de enlace `10.3.10.1`) |
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-16-putty-error-permiso-ttyusb0.jpg" alt="Error de PuTTY por permiso denegado en /dev/ttyUSB0" width="460" /></p>
+
+# Tareas pendientes
+
+- [ ] **Práctica 1:** indicar la herramienta de comunicación y la de diagramas, y el inventario del hardware.
+- [ ] **Práctica 3:** capturas de `ls /sys/firmware/efi`, `cat /etc/fstab` y `blkid`; quitar la ISO (`sr0`); cliente físico con Linux Mint.
+- [ ] **Práctica 4:** poner la puerta de enlace (`10.3.10.1`) y el DNS en el servidor; excluir `10.3.10.100` del ámbito; añadir la opción de puerta de enlace al ámbito y activarlo; unificar el dominio; reserva DHCP para el cliente físico y `ipconfig /all` en los clientes; aplicar y probar DHCP Snooping.
 
 ---
 
