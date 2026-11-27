@@ -789,7 +789,88 @@ En la captura se observa un ámbito de pruebas para la red `10.3.10.0/24`, con u
 
 **Aquí lo que hemos hecho es editar `dhcpd.conf` y definir el ámbito de pruebas para la red `10.3.10.0/24`. El servidor Ubuntu ofrece direcciones entre `10.3.10.201` y `10.3.10.230` y anuncia como puerta de enlace `10.3.10.254`, con el objetivo de simular una configuración DHCP incorrecta.**
 
-### 6.5. Activación de DHCP Snooping en el Cisco 3560
+### 6.5. Configuración del switch para la práctica
+
+Antes de activar DHCP Snooping volvemos a configurar en el Cisco 3560 las interfaces VLAN y los puertos que intervienen en la práctica. Así nos aseguramos de que las respuestas del Windows Server entran por un único puerto y de que sabemos a qué puerto está conectado cada equipo.
+
+**Esquema de los puertos del switch:**
+
+| Puerto | Modo | VLAN | Equipo conectado | DHCP Snooping |
+|---|---|---|---|---|
+| `Gi0/22` | Trunk 802.1Q (nativa 310) | 310, 320, 330, 399 | Servidor Proxmox (Windows Server 2025, VM 103) | **Trusted** |
+| `Gi0/23` | Access | 310 | Cliente físico | Untrusted |
+| `Gi0/25` | Access | 320 | Equipo de RRHH | Untrusted |
+
+**Interfaces VLAN (SVI).** Creamos una interfaz VLAN por cada red con su puerta de enlace `.1` y la activamos con `no shutdown`:
+
+```text
+interface vlan 310
+ ip address 10.3.10.1 255.255.255.0
+ no shutdown
+exit
+interface vlan 320
+ ip address 10.3.20.1 255.255.255.0
+ no shutdown
+exit
+interface vlan 330
+ ip address 10.3.30.1 255.255.255.0
+ no shutdown
+interface vlan 399
+ ip address 10.3.99.1 255.255.255.0
+ no shutdown
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-21-switch-svi-vlans.jpg" alt="Configuración de las interfaces VLAN 310, 320, 330 y 399 en el Cisco 3560" width="560" /></p>
+
+**Aquí lo que hemos hecho es asignar a cada interfaz VLAN su dirección IP (`10.3.10.1`, `10.3.20.1`, `10.3.30.1` y `10.3.99.1`) y activarla con `no shutdown`. El primer intento con `interfaces vlan 310` da error porque el comando correcto es `interface`, en singular.**
+
+**Puerto `Gi0/22` en modo trunk.** Es el puerto del servidor Proxmox, por donde entran las respuestas DHCP del Windows Server. En el 3560 hay que indicar primero la encapsulación `dot1q` antes de poner el puerto en modo trunk:
+
+```text
+interface gi0/22
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-22-switch-gi0-22-trunk.jpg" alt="Puerto Gi0/22 configurado como trunk 802.1Q" width="560" /></p>
+
+**Aquí lo que hemos hecho es configurar `Gi0/22` como trunk 802.1Q. Al aplicar el modo trunk, el puerto cae y vuelve a levantarse (`changed state to down` → `changed state to up`), lo que indica que ha renegociado el enlace. Los primeros intentos dan error porque escribimos `switchport` fuera de la interfaz y `gi/22` en lugar de `gi0/22`.**
+
+Después indicamos la VLAN nativa y limitamos las VLAN que pueden pasar por el trunk:
+
+```text
+interface gi0/22
+ switchport trunk native vlan 310
+ switchport trunk allowed vlan 310,320,330,399
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-23-switch-gi0-22-vlan-nativa-permitidas.jpg" alt="Puerto Gi0/22 con la VLAN nativa 310 y las VLAN permitidas" width="560" /></p>
+
+**Aquí lo que hemos hecho es poner la VLAN 310 como nativa, para que Proxmox y el Windows Server sigan en la red `10.3.10.0/24`, y permitir en el trunk solo las cuatro VLAN de la sede.**
+
+**Puertos `Gi0/23` y `Gi0/25` en modo access.** Son puertos de equipos finales, así que los ponemos en modo access, cada uno en su VLAN, y activamos **PortFast** para que el equipo pueda pedir IP por DHCP nada más conectarse, sin esperar a Spanning Tree:
+
+```text
+interface gi0/23
+ switchport mode access
+ switchport access vlan 310
+ spanning-tree portfast
+exit
+interface gi0/25
+ switchport access vlan 320
+ switchport mode access
+ spanning-tree portfast
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-24-switch-gi0-23-access-vlan-310.jpg" alt="Puerto Gi0/23 en modo access en la VLAN 310 con PortFast" width="560" /></p>
+
+**Aquí lo que hemos hecho es configurar `Gi0/23` en modo access en la VLAN 310 y activar PortFast. El aviso `%Warning: portfast should only be enabled on ports connected to a single host` es informativo: PortFast solo se debe usar en puertos con un único equipo final, nunca con otro switch, porque podría provocar bucles temporales.**
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-25-switch-gi0-25-access-vlan-320.jpg" alt="Puerto Gi0/25 en modo access en la VLAN 320 con PortFast" width="560" /></p>
+
+**Aquí lo que hemos hecho es configurar `Gi0/25` en modo access en la VLAN 320 con PortFast. El mensaje `Portfast has been configured ... but will only have effect when the interface is in a non-trunking mode` confirma que PortFast funciona porque el puerto está en modo access.**
+
+### 6.6. Activación de DHCP Snooping en el Cisco 3560
 
 La configuración prevista para proteger la red es la siguiente:
 
@@ -805,7 +886,7 @@ show ip dhcp snooping
 show ip dhcp snooping binding
 ```
 
-El puerto `Gi0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. Los puertos por los que pueden entrar respuestas de servidores no autorizados deben permanecer **untrusted**.
+El puerto `Gi0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. Los puertos de acceso (`Gi0/23`, `Gi0/25` y el puerto donde se conecte el Ubuntu Server fraudulento) quedan como **untrusted**, que es el valor por defecto al activar DHCP Snooping.
 
 > **Pendiente:** aplicar esta configuración y añadir las capturas de `show ip dhcp snooping`, `show ip dhcp snooping binding` y las pruebas desde un cliente antes y después de activarlo.
 
@@ -823,11 +904,6 @@ El puerto `Gi0/22` es por donde entran las respuestas del Windows Server (a trav
 
 <p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-16-putty-error-permiso-ttyusb0.jpg" alt="Error de PuTTY por permiso denegado en /dev/ttyUSB0" width="460" /></p>
 
-# Tareas pendientes
-
-- [ ] **Práctica 1:** indicar la herramienta de comunicación y la de diagramas, y el inventario del hardware.
-- [ ] **Práctica 3:** capturas de `ls /sys/firmware/efi`, `cat /etc/fstab` y `blkid`; quitar la ISO (`sr0`); cliente físico con Linux Mint.
-- [ ] **Práctica 4:** poner la puerta de enlace (`10.3.10.1`) y el DNS en el servidor; excluir `10.3.10.100` del ámbito; añadir la opción de puerta de enlace al ámbito y activarlo; unificar el dominio; reserva DHCP para el cliente físico y `ipconfig /all` en los clientes; aplicar y probar DHCP Snooping.
 
 ---
 
