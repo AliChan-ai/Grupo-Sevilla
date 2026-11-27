@@ -104,7 +104,7 @@
 
 **Qué he hecho:** Hemos instalado Ubuntu Server en un equipo cliente.
 
-**Qué he conseguido:** *Pendiente de completar.*
+**Qué he conseguido:** Ubuntu Server instalado y configurado correctamente
 
 **Qué no he conseguido y por qué:** No hemos podido completar todas las tareas porque la mayor parte del tiempo la hemos dedicado a crear y configurar las VLAN.
 
