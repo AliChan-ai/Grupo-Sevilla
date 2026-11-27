@@ -793,13 +793,15 @@ En la captura se observa un ámbito de pruebas para la red `10.3.10.0/24`, con u
 
 Antes de activar DHCP Snooping volvemos a configurar en el Cisco 3560 las interfaces VLAN y los puertos que intervienen en la práctica. Así nos aseguramos de que las respuestas del Windows Server entran por un único puerto y de que sabemos a qué puerto está conectado cada equipo.
 
-**Esquema de los puertos del switch:**
+**Esquema de los puertos del switch.** La última columna indica cómo quedará cada puerto cuando activemos DHCP Snooping (todavía no está aplicado, ver apartado 6.7):
 
-| Puerto | Modo | VLAN | Equipo conectado | DHCP Snooping |
+| Puerto | Modo | VLAN | Equipo conectado | DHCP Snooping (previsto) |
 |---|---|---|---|---|
 | `Gi0/22` | Trunk 802.1Q (nativa 310) | 310, 320, 330, 399 | Servidor Proxmox (Windows Server 2025, VM 103) | **Trusted** |
 | `Gi0/23` | Access | 310 | Cliente físico | Untrusted |
-| `Gi0/25` | Access | 320 | Equipo de RRHH | Untrusted |
+| `Gi0/25` – `Gi0/26` | Access | 320 | Equipos de RRHH | Untrusted |
+| `Gi0/27` – `Gi0/28` | Access | 330 | Equipos de Dirección | Untrusted |
+| `Gi0/29` – `Gi0/30` | Access | 399 | Equipos de Gestión | Untrusted |
 
 **Interfaces VLAN (SVI).** Creamos una interfaz VLAN por cada red con su puerta de enlace `.1` y la activamos con `no shutdown`:
 
@@ -870,7 +872,70 @@ interface gi0/25
 
 **Aquí lo que hemos hecho es configurar `Gi0/25` en modo access en la VLAN 320 con PortFast. El mensaje `Portfast has been configured ... but will only have effect when the interface is in a non-trunking mode` confirma que PortFast funciona porque el puerto está en modo access.**
 
-### 6.6. Activación de DHCP Snooping en el Cisco 3560
+**Rangos de puertos para cada departamento.** Para no configurar los puertos uno a uno, usamos `interface range` y dejamos dos puertos access por VLAN: `Gi0/25`–`Gi0/26` para RRHH, `Gi0/27`–`Gi0/28` para Dirección y `Gi0/29`–`Gi0/30` para Gestión.
+
+```text
+interface range gi0/25 - 26
+ switchport mode access
+ switchport access vlan 320
+ spanning-tree portfast
+interface range gi0/27 - 28
+ switchport mode access
+ switchport access vlan 330
+ spanning-tree portfast
+interface range gi0/29 - 30
+ switchport access vlan 399
+ spanning-tree portfast
+end
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-26-switch-range-gi0-25-28-access.jpg" alt="Rangos Gi0/25-26 en la VLAN 320 y Gi0/27-28 en la VLAN 330" width="560" /></p>
+
+**Aquí lo que hemos hecho es poner `Gi0/25`–`Gi0/26` en la VLAN 320 y `Gi0/27`–`Gi0/28` en la VLAN 330, los dos rangos en modo access y con PortFast. El primer intento de PortFast da error porque escribimos `portsfast` en lugar de `portfast`. El mensaje `Portfast will be configured in 2 interfaces due to the range command` confirma que el comando se aplica a los dos puertos del rango.**
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-27-switch-range-gi0-29-30-access-vlan-399.jpg" alt="Rango Gi0/29-30 en la VLAN 399 con PortFast" width="560" /></p>
+
+**Aquí lo que hemos hecho es asignar `Gi0/29`–`Gi0/30` a la VLAN 399 de Gestión con PortFast y salir con `end`. El mensaje `%SYS-5-CONFIG_I: Configured from console` indica que la configuración se ha aplicado desde la consola.**
+
+> **Nota:** en el rango `Gi0/29`–`Gi0/30` no escribimos `switchport mode access`. Aunque los puertos ya aparecen en la VLAN 399, conviene añadirlo para que queden fijos en modo access, igual que los demás, y no negocien un trunk si se conecta otro switch.
+
+### 6.6. Comprobación de la configuración del switch
+
+Antes de activar DHCP Snooping comprobamos que las VLAN, el trunk y las interfaces VLAN han quedado bien.
+
+**VLAN y puertos asignados.** Con `show vlan brief` vemos cada VLAN de la sede con sus puertos:
+
+```text
+show vlan brief
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-28-switch-show-vlan-brief.jpg" alt="Salida de show vlan brief con las VLAN de Sevilla y sus puertos" width="560" /></p>
+
+**Aquí lo que hemos hecho es comprobar que las cuatro VLAN de Sevilla están `active` y tienen sus puertos: la VLAN 310 tiene `Gi0/23`, la 320 tiene `Gi0/25` y `Gi0/26`, la 330 tiene `Gi0/27` y `Gi0/28`, y la 399 tiene `Gi0/29` y `Gi0/30`. `Gi0/22` no aparece en la lista porque es un trunk. También salen las VLAN de los otros grupos, porque el switch es compartido.**
+
+**Trunk.** Con `show interfaces trunk` comprobamos el puerto del servidor Proxmox:
+
+```text
+show interfaces trunk
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-29-switch-show-interfaces-trunk.jpg" alt="Salida de show interfaces trunk con Gi0/22 en trunking y VLAN nativa 310" width="560" /></p>
+
+**Aquí lo que hemos hecho es comprobar que `Gi0/22` está en estado `trunking` con encapsulación `802.1q` y VLAN nativa 310, y que por él solo pasan las VLAN 310, 320, 330 y 399. Las cuatro aparecen activas y en estado *forwarding* de Spanning Tree.**
+
+**Interfaces VLAN.** Con `show ip interface brief` vemos la IP y el estado de cada interfaz VLAN:
+
+```text
+show ip interface brief
+```
+
+<p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-30-switch-show-ip-interface-brief.jpg" alt="Salida de show ip interface brief con las interfaces VLAN 310, 320, 330 y 399 en up" width="560" /></p>
+
+**Aquí lo que hemos hecho es comprobar que `Vlan310` (`10.3.10.1`), `Vlan320` (`10.3.20.1`), `Vlan330` (`10.3.30.1`) y `Vlan399` (`10.3.99.1`) están en estado `up`/`up`. Una interfaz VLAN solo está `up` cuando su VLAN tiene algún puerto activo, así que esto también confirma que los puertos funcionan.**
+
+> **Nota:** en `Vlan399` la columna *Method* pone `manual` en lugar de `NVRAM`. Esto quiere decir que la IP se ha cambiado y todavía no está guardada en la configuración de arranque. Hay que guardar con `copy running-config startup-config` para no perderla si se reinicia el switch.
+
+### 6.7. Activación de DHCP Snooping en el Cisco 3560
 
 La configuración prevista para proteger la red es la siguiente:
 
@@ -886,7 +951,7 @@ show ip dhcp snooping
 show ip dhcp snooping binding
 ```
 
-El puerto `Gi0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. Los puertos de acceso (`Gi0/23`, `Gi0/25` y el puerto donde se conecte el Ubuntu Server fraudulento) quedan como **untrusted**, que es el valor por defecto al activar DHCP Snooping.
+El puerto `Gi0/22` es por donde entran las respuestas del Windows Server (a través de Proxmox), así que es el único **trusted**. Los puertos de acceso (`Gi0/23`, `Gi0/25` a `Gi0/30` y el puerto donde se conecte el Ubuntu Server fraudulento) quedan como **untrusted**, que es el valor por defecto al activar DHCP Snooping.
 
 > **Pendiente:** aplicar esta configuración y añadir las capturas de `show ip dhcp snooping`, `show ip dhcp snooping binding` y las pruebas desde un cliente antes y después de activarlo.
 
@@ -900,10 +965,17 @@ El puerto `Gi0/22` es por donde entran las respuestas del Windows Server (a trav
 | PuTTY no conectaba con el switch usando `/dev/ttyS0` | El cable de consola usa un adaptador USB–serie | Con `sudo dmesg \| grep tty` vimos que el puerto correcto es `/dev/ttyUSB0` |
 | *PuTTY Fatal Error: Opening serial port '/dev/ttyUSB0': Permiso denegado* | El usuario no tiene permiso para usar el puerto serie | Abrimos PuTTY con `sudo putty` (también se puede añadir el usuario al grupo `dialout`) |
 | `% Invalid input detected` en el switch | Errores al escribir los comandos (`interfaces vlan`, `gi/22`) o comandos fuera de `conf t` | Escribir bien los comandos (`interface vlan 310`, `interface gi0/22`) dentro de `conf t` |
+| `% Invalid input detected` al activar PortFast | Escribimos `spanning-tree portsfast` | El comando correcto es `spanning-tree portfast` |
+| `% Incomplete command` con `en` y `% Invalid input` con `conf t` | Escribimos `enable` y `conf t` estando ya en `(config)#` | Esos comandos no se usan dentro de `conf t`; ya estábamos en modo configuración |
 | IP y puerta de enlace de Proxmox con la dirección de red `10.3.10.0` | Error en el instalador | Corregido en `/etc/network/interfaces` (`10.3.10.2/24`, puerta de enlace `10.3.10.1`) |
 
 <p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-16-putty-error-permiso-ttyusb0.jpg" alt="Error de PuTTY por permiso denegado en /dev/ttyUSB0" width="460" /></p>
 
+# Tareas pendientes
+
+- [ ] **Práctica 1:** indicar la herramienta de comunicación y la de diagramas, y el inventario del hardware.
+- [ ] **Práctica 3:** capturas de `ls /sys/firmware/efi`, `cat /etc/fstab` y `blkid`; quitar la ISO (`sr0`); cliente físico con Linux Mint.
+- [ ] **Práctica 4:** poner la puerta de enlace (`10.3.10.1`) y el DNS en el servidor; excluir `10.3.10.100` del ámbito; añadir la opción de puerta de enlace al ámbito y activarlo; unificar el dominio; reserva DHCP para el cliente físico y `ipconfig /all` en los clientes; indicar en el esquema de puertos a qué puerto se conecta el Ubuntu Server fraudulento; añadir `switchport mode access` en `Gi0/29`–`Gi0/30`; guardar la configuración del switch (`copy running-config startup-config`), ya que `Vlan399` aparece como `manual`; aplicar y probar DHCP Snooping.
 
 ---
 
