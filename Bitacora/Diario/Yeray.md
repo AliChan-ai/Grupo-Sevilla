@@ -119,6 +119,35 @@
 
 **Qué no he conseguido y por qué:** No hemos podido empezar nuevas prácticas porque hemos dedicado el tiempo a revisar el trabajo anterior, corregir errores y preparar las entregas.
 
+## Semana 5
+
+**Objetivo:** Terminar servidor ubuntu.
+
+**Qué he hecho:** He configurado las conexiones entre switch- maquina.
+
+**Qué he conseguido:** La conectividad bien hecha.
+
+**Qué no he conseguido y por qué:** Seguir con el windows
+
+## Semana 6
+
+**Objetivo:** Terminar las prácticas para entregarlas.
+
+**Qué he hecho:** Como era vaga solo venimos unos del grupo para adelantar pero tuvimos muchos problemas de conexión entre máquinas.
+
+**Qué he conseguido:** Arreglar conexión entre maquina virtual y adelantar en dhcp
+
+**Qué no he conseguido y por qué:** Acabar el dhcp por los errores en el putty.
+
+## Semana 7
+
+**Objetivo:** Terminarlo todo.
+
+**Qué he hecho:** El examen y hacer unas últimas fotos que nos faltaban para el documento.
+
+**Qué he conseguido:** Hacer las ultimas fotos.
+
+**Qué no he conseguido y por qué:** 
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:5865F2,100:7B2CBF&height=110&section=footer&animation=fadeIn" width="100%" alt=""/>
