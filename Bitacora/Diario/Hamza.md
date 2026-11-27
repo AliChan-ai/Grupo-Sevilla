@@ -1,3 +1,4 @@
+
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:5865F2,100:7B2CBF&height=170&section=header&text=Bit%C3%A1cora%20diaria&fontColor=ffffff&fontSize=46&fontAlignY=36&animation=fadeIn&desc=Grupo%20Sevilla%20%C2%B7%20Proyecto%20Intermodular%20%C2%B7%202.%C2%BA%20ASIX&descSize=16&descAlignY=58" width="100%" alt="Bitácora diaria · Grupo Sevilla"/>
@@ -25,8 +26,8 @@
 </tr>
 </table>
 
-<img src="https://img.shields.io/badge/SEMANAS_REGISTRADAS-6-5865F2?style=flat-square" alt="Semanas registradas: 6"/>
-<img src="https://img.shields.io/badge/CONSEGUIDAS-3-2EA043?style=flat-square" alt="Conseguidas: 3"/>
+<img src="https://img.shields.io/badge/SEMANAS_REGISTRADAS-7-5865F2?style=flat-square" alt="Semanas registradas: 7"/>
+<img src="https://img.shields.io/badge/CONSEGUIDAS-4-2EA043?style=flat-square" alt="Conseguidas: 4"/>
 <img src="https://img.shields.io/badge/PARCIALES-3-D29922?style=flat-square" alt="Parciales: 3"/>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:5865F2,100:7B2CBF&height=3&animation=twinkling" width="100%" alt=""/>
@@ -37,7 +38,7 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=3A86FF&center=true&vCenter=true&width=620&height=30&lines=Seis+semanas+de+trabajo;Objetivo+%C2%B7+Avance+%C2%B7+Estado" alt="Seis semanas de trabajo"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=3A86FF&center=true&vCenter=true&width=620&height=30&lines=Siete+semanas+de+trabajo;Objetivo+%C2%B7+Avance+%C2%B7+Estado" alt="Siete semanas de trabajo"/>
 
 <table width="100%">
 <tr>
@@ -74,6 +75,11 @@
 <td align="center"><a href="#semana-6"><img src="https://img.shields.io/badge/SEMANA_6-3A86FF?style=for-the-badge" alt="Semana 6"/></a></td>
 <td align="left">Terminar la práctica y organizar las fotos</td>
 <td align="center"><img src="https://img.shields.io/badge/PARCIAL-D29922?style=for-the-badge" alt="Parcial"/></td>
+</tr>
+<tr>
+<td align="center"><a href="#semana-7"><img src="https://img.shields.io/badge/SEMANA_7-7B2CBF?style=for-the-badge" alt="Semana 7"/></a></td>
+<td align="left">Terminar la documentación de la bitácora y realizar el examen</td>
+<td align="center"><img src="https://img.shields.io/badge/CONSEGUIDO-2EA043?style=for-the-badge" alt="Conseguido"/></td>
 </tr>
 </table>
 
@@ -152,6 +158,18 @@
 **Qué he conseguido:** He mejorado la documentación y he añadido las imágenes necesarias.
 
 **Qué no he conseguido y por qué:** No he podido terminar la práctica actual, porque todavía no se ha completado en el servidor y por eso aún no puedo documentarla.
+
+---
+
+## Semana 7
+
+**Objetivo:** Terminar la documentación de la bitácora grupal  y realizar el examen.
+
+**Qué he hecho:** He terminado de documentar la bitácora correspondiente a la semana 7, revisando y organizando la información para dejarla completa y actualizada. Además, he dedicado toda la hora de clase a realizar el examen.
+
+**Qué he conseguido:** Completar el examen durante toda la hora de clase.
+
+**Qué no he conseguido y por qué:** No he podido avanzar en otras tareas del proyecto, porque he dedicado todo el tiempo de clase a terminar la bitácora y realizar el examen.
 
 <div align="center">
 
