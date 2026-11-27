@@ -118,7 +118,25 @@
 
 **Qué he conseguido:** Instalar y configurar correctamente los equipos
 
+**Qué no he conseguido y por qué:** Han habido fallos de conexión que han dificultado terminar las tareas previstas
+
+---
+
+## Semana 5
+
+**Objetivo:** 
+
+**Qué he hecho:** 
+
+**Qué he conseguido:** 
+
 **Qué no he conseguido y por qué:** 
+
+---
+
+## Semana 7
+
+**Qué he hecho:** Examen y terminar la documentación
 
 <div align="center">
 
