@@ -6,7 +6,7 @@
   <img src="./Documentacion/imagenes/cabecera_oscuro_2.svg" width="100%" alt="Grupo Sevilla · Proyecto Intermodular"/>
 </picture>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=3200&pause=1200&color=5865F2&center=true&vCenter=true&repeat=true&width=760&height=40&lines=Administraci%C3%B3n+de+Sistemas+Inform%C3%A1ticos+en+Red;Planificaci%C3%B3n+rigurosa+y+trabajo+colaborativo;Documentaci%C3%B3n+trazable+y+control+de+versiones;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="Lema del equipo"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=3200&pause=1200&color=5865F2&center=true&vCenter=true&repeat=true&width=760&height=40&lines=Proyecto+Intermodular+%C2%B7+2.%C2%BA+ASIX;Grupo+Sevilla+%C2%B7+Curso+2026-2027" alt="Proyecto Intermodular · 2.º ASIX"/>
 
 <br>
 
@@ -30,9 +30,9 @@
 
 ## 1. Presentación
 
-**Grupo Sevilla** es un equipo formado por seis estudiantes de **2.º curso del ciclo formativo de Administración de Sistemas Informáticos en Red (ASIX)**, que desarrolla de manera conjunta el **Proyecto Intermodular** correspondiente al curso académico 2026–2027.
+Somos **Grupo Sevilla**, seis alumnos de **2.º de ASIX** haciendo juntos el **Proyecto Intermodular** del curso 2026–2027.
 
-El presente repositorio constituye el espacio central de trabajo del grupo. En él se recogen la documentación oficial, los recursos técnicos empleados y el seguimiento continuo de la evolución del proyecto.
+En este repo guardamos todo lo del proyecto: la documentación que vamos entregando, los scripts y recursos que usamos y la bitácora con lo que vamos haciendo cada día.
 
 <div align="center">
 
@@ -42,11 +42,11 @@ El presente repositorio constituye el espacio central de trabajo del grupo. En �
 
 ## 2. Organización del equipo
 
-El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo de dos integrantes, con el fin de garantizar el apoyo mutuo y la continuidad del trabajo.
+Nos hemos repartido en **tres áreas** con **dos personas en cada una**. Así, si un día falta alguien, siempre hay otro que sabe cómo va su parte.
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=7B2CBF&center=true&vCenter=true&width=620&height=30&lines=Coordinaci%C3%B3n+%E2%80%A2+Documentaci%C3%B3n+%E2%80%A2+%C3%81rea+t%C3%A9cnica;Seis+integrantes+%C2%B7+Tres+%C3%A1reas+%C2%B7+Un+objetivo" alt="Coordinación • Documentación • Área técnica"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=7B2CBF&center=true&vCenter=true&width=620&height=30&lines=Coordinaci%C3%B3n+%E2%80%A2+Documentaci%C3%B3n+%E2%80%A2+%C3%81rea+t%C3%A9cnica" alt="Coordinación • Documentación • Área técnica"/>
 
 <table>
 <tr>
@@ -75,7 +75,7 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 <br/>
 <a href="https://github.com/Jhoel52"><img src="https://wsrv.nl/?url=github.com/Jhoel52.png&w=240&h=240&fit=cover&mask=circle" width="110" alt="Foto de Jhoel Fuentes"/></a><br/>
 <b><a href="https://github.com/Jhoel52">Jhoel Fuentes</a></b><br/>
-<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable t%C3%A9cnico"/><br/>
+<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable técnico"/><br/>
 <a href="https://github.com/Jhoel52"><img src="https://img.shields.io/badge/@Jhoel52-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub de Jhoel Fuentes"/></a>
 <br/><br/>
 </td>
@@ -101,7 +101,7 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 <br/>
 <a href="https://github.com/raulllorcagomez"><img src="https://wsrv.nl/?url=github.com/raulllorcagomez.png&w=240&h=240&fit=cover&mask=circle" width="110" alt="Foto de Raul Llorca"/></a><br/>
 <b><a href="https://github.com/raulllorcagomez">Raul Llorca</a></b><br/>
-<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable t%C3%A9cnico"/><br/>
+<img src="https://img.shields.io/badge/Responsable_t%C3%A9cnico-3A86FF?style=flat-square" alt="Responsable técnico"/><br/>
 <a href="https://github.com/raulllorcagomez"><img src="https://img.shields.io/badge/@raulllorcagomez-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub de Raul Llorca"/></a>
 <br/><br/>
 </td>
@@ -111,15 +111,15 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 </div>
 
 <details>
-<summary><b>Funciones de cada área</b></summary>
+<summary><b>¿Qué hace cada área?</b></summary>
 
 <br>
 
-| Área | Funciones principales |
+| Área | Qué hace |
 |:---|:---|
-| **Coordinación** | Planificación general, asignación de tareas, control de plazos y comunicación con el equipo docente. |
-| **Documentación** | Redacción y revisión de documentos, elaboración de actas, mantenimiento de la bitácora y control de calidad documental. |
-| **Área técnica** | Diseño, implementación y pruebas de la solución técnica, así como la selección y justificación de las herramientas. |
+| **Coordinación** | Reparte las tareas, controla que lleguemos a los plazos y habla con los profes. |
+| **Documentación** | Escribe y revisa los documentos, hace las actas y lleva la bitácora al día. |
+| **Área técnica** | Monta y prueba la parte técnica del proyecto, y explica por qué usamos cada herramienta. |
 
 </details>
 
@@ -133,7 +133,7 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=3A86FF&center=true&vCenter=true&width=620&height=30&lines=Una+organizaci%C3%B3n+clara+para+cada+tipo+de+contenido;Documentaci%C3%B3n+%C2%B7+Recursos+%C2%B7+Bit%C3%A1cora" alt="Una organización clara para cada tipo de contenido"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=3A86FF&center=true&vCenter=true&width=620&height=30&lines=Bit%C3%A1cora+%C2%B7+Documentaci%C3%B3n+%C2%B7+Recursos" alt="Bitácora · Documentación · Recursos"/>
 
 <img src="./Recursos/Imagenes/estructura.svg" width="100%" alt="Estructura del repositorio: Bitacora, Documentacion, Recursos, Como hacer bitacora y README.md"/>
 
@@ -149,13 +149,13 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 
 <br>
 
-| Elemento | Contenido | Acceso |
+| Carpeta / archivo | Qué hay dentro | Enlace |
 |:---|:---|:---|
-| 📓 **`Bitacora/`** | Historial del trabajo realizado y seguimiento de la evolución del proyecto. | [Semanal](./Bitacora/Semanal.md) · [Diario](./Bitacora/Diario/) |
-| 📚 **`Documentacion/`** | Documentos principales, organización del equipo, justificación de roles y herramientas seleccionadas. | [Consultar →](./Documentacion/) |
-| 🛠️ **`Recursos/`** | Scripts, diagramas, imágenes y materiales utilizados durante el proyecto. | [Consultar →](./Recursos/) |
-| 📄 **`Como hacer bitacora`** | Guía de referencia para el correcto registro de la bitácora. | En la raíz del repositorio |
-| 📘 **`README.md`** | Presentación general del proyecto y del equipo. | Este documento |
+| 📓 **`Bitacora/`** | Lo que vamos haciendo, día a día y resumido por semanas. | [Semanal](./Bitacora/Semanal.md) · [Diario](./Bitacora/Diario/) |
+| 📚 **`Documentacion/`** | Las entregas, cómo nos organizamos, por qué cada uno tiene su rol y qué herramientas usamos. | [Ver →](./Documentacion/) |
+| 🛠️ **`Recursos/`** | Scripts, diagramas, imágenes y todo lo que vamos usando. | [Ver →](./Recursos/) |
+| 📄 **`Como hacer bitacora`** | Cómo hay que rellenar la bitácora. Mírala antes de escribir la primera entrada. | En la raíz |
+| 📘 **`README.md`** | Esto que estás leyendo. | — |
 
 <div align="center">
 
@@ -165,11 +165,11 @@ El equipo se estructura en **tres áreas de responsabilidad**, cada una a cargo 
 
 ## 4. Metodología de trabajo
 
-El grupo trabaja siguiendo un ciclo continuo de cuatro fases. Cada integrante contribuye desde su área de responsabilidad y todas las actuaciones quedan registradas en la bitácora.
+Trabajamos siempre igual: primero planificamos qué hay que hacer, nos lo repartimos, cada uno hace su parte y al final lo documentamos. Todo lo que se hace queda apuntado en la bitácora.
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=7B2CBF&center=true&vCenter=true&width=620&height=30&lines=Planificar+%E2%86%92+Organizar+%E2%86%92+Desarrollar+%E2%86%92+Documentar;Un+ciclo+continuo+de+mejora" alt="Planificar → Organizar → Desarrollar → Documentar"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=7B2CBF&center=true&vCenter=true&width=620&height=30&lines=Planificar+%E2%86%92+Organizar+%E2%86%92+Desarrollar+%E2%86%92+Documentar" alt="Planificar → Organizar → Desarrollar → Documentar"/>
 
 <img src="./Recursos/Imagenes/workflow.svg" width="100%" alt="Ciclo de trabajo: planificar, organizar, desarrollar y documentar"/>
 
@@ -179,7 +179,7 @@ El grupo trabaja siguiendo un ciclo continuo de cuatro fases. Cada integrante co
 
 ## 5. Normas de colaboración
 
-Con objeto de mantener el repositorio ordenado y coherente, se establecen las siguientes pautas:
+Para que el repo no se convierta en un caos, seguimos estas normas:
 
 <div align="center">
 
@@ -191,27 +191,27 @@ Con objeto de mantener el repositorio ordenado y coherente, se establecen las si
 </tr>
 <tr>
 <td align="center"><img src="https://img.shields.io/badge/01-5865F2?style=for-the-badge" alt="Norma 01"/></td>
-<td align="left"><b>✍️ Commits claros</b><br/>Mensajes descriptivos, redactados en <b>español</b> y en <b>modo imperativo</b>, con el formato <code>tipo: descripción</code>.</td>
+<td align="left"><b>✍️ Commits claros</b><br/>En <b>español</b>, en <b>imperativo</b> y con el formato <code>tipo: descripción</code>. Que se entienda qué has cambiado sin abrir el commit.</td>
 <td align="left"><code>docs: añadir justificación de roles</code></td>
 </tr>
 <tr>
 <td align="center"><img src="https://img.shields.io/badge/02-7B2CBF?style=for-the-badge" alt="Norma 02"/></td>
-<td align="left"><b>🏷️ Prefijos normalizados</b><br/>Todo commit comienza con un prefijo que indica su naturaleza:<br/><img src="https://img.shields.io/badge/docs-5865F2?style=flat-square" alt="docs"/> documentación &nbsp;<img src="https://img.shields.io/badge/feat-7B2CBF?style=flat-square" alt="feat"/> nueva funcionalidad<br/><img src="https://img.shields.io/badge/fix-3A86FF?style=flat-square" alt="fix"/> corrección &nbsp;<img src="https://img.shields.io/badge/chore-30363d?style=flat-square" alt="chore"/> mantenimiento</td>
+<td align="left"><b>🏷️ Prefijos</b><br/>Cada commit empieza por uno de estos:<br/><img src="https://img.shields.io/badge/docs-5865F2?style=flat-square" alt="docs"/> documentación &nbsp;<img src="https://img.shields.io/badge/feat-7B2CBF?style=flat-square" alt="feat"/> algo nuevo<br/><img src="https://img.shields.io/badge/fix-3A86FF?style=flat-square" alt="fix"/> arreglo &nbsp;<img src="https://img.shields.io/badge/chore-30363d?style=flat-square" alt="chore"/> mantenimiento</td>
 <td align="left"><code>feat: crear script de copia de seguridad</code></td>
 </tr>
 <tr>
 <td align="center"><img src="https://img.shields.io/badge/03-3A86FF?style=for-the-badge" alt="Norma 03"/></td>
-<td align="left"><b>📓 Bitácora al día</b><br/>Cada sesión de trabajo se registra en <code>Bitacora/Diario/</code> y se resume semanalmente en <code>Bitacora/Semanal.md</code>.</td>
+<td align="left"><b>📓 Bitácora al día</b><br/>Cada sesión se apunta en <code>Bitacora/Diario/</code> y luego se resume en <code>Bitacora/Semanal.md</code>.</td>
 <td align="left"><code>Diario/</code> → <code>Semanal.md</code></td>
 </tr>
 <tr>
 <td align="center"><img src="https://img.shields.io/badge/04-5865F2?style=for-the-badge" alt="Norma 04"/></td>
-<td align="left"><b>🗂️ Nomenclatura de archivos</b><br/>Nombres <b>sin espacios ni tildes</b>, preferiblemente con el formato <code>Nombre_Documento.md</code>.</td>
+<td align="left"><b>🗂️ Nombres de archivo</b><br/><b>Sin espacios ni tildes</b>. Mejor con el formato <code>Nombre_Documento.md</code>.</td>
 <td align="left">✅ <code>Justificacion_Roles.md</code><br/>❌ <code>Justificación roles.md</code></td>
 </tr>
 <tr>
 <td align="center"><img src="https://img.shields.io/badge/05-7B2CBF?style=for-the-badge" alt="Norma 05"/></td>
-<td align="left"><b>🔍 Revisión cruzada</b><br/>Los cambios relevantes son revisados por, <b>al menos, otro integrante</b> antes de darse por validados.</td>
+<td align="left"><b>🔍 Revisión</b><br/>Nada importante se da por bueno hasta que lo ha mirado <b>otro compañero</b>.</td>
 <td align="left">Autor → Revisor → <b>Validado</b></td>
 </tr>
 </table>
@@ -222,11 +222,11 @@ Con objeto de mantener el repositorio ordenado y coherente, se establecen las si
 
 ## 6. Gestión de tareas (Trello)
 
-La planificación y el seguimiento de las tareas del proyecto se gestionan en un tablero de **Trello** compartido por todo el equipo. En él se registra el estado de cada tarea, su responsable y su plazo de entrega.
+Las tareas las llevamos en un tablero de **Trello** que compartimos todos. Cada tarjeta tiene quién se encarga, para cuándo es y en qué punto está.
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=3A86FF&center=true&vCenter=true&width=620&height=30&lines=Pendiente+%E2%86%92+En+curso+%E2%86%92+En+revisi%C3%B3n+%E2%86%92+Hecho;Todas+las+tareas+en+un+solo+tablero" alt="Pendiente → En curso → En revisión → Hecho"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=3A86FF&center=true&vCenter=true&width=620&height=30&lines=Pendiente+%E2%86%92+En+curso+%E2%86%92+En+revisi%C3%B3n+%E2%86%92+Hecho" alt="Pendiente → En curso → En revisión → Hecho"/>
 
 <br>
 
@@ -238,7 +238,7 @@ La planificación y el seguimiento de las tareas del proyecto se gestionan en un
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=5865F2&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA;Un+equipo+%C2%B7+Un+proyecto+%C2%B7+Un+objetivo" alt="GRUPO SEVILLA"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=900&color=5865F2&center=true&vCenter=true&width=500&height=30&lines=GRUPO+SEVILLA" alt="GRUPO SEVILLA"/>
 
 <sub>2.º ASIX · Proyecto Intermodular · Curso 2026–2027</sub>
 
