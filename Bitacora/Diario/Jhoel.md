@@ -136,6 +136,24 @@
 
 **Qué no he conseguido y por qué:** Hemos completado las tareas previstas para esta jornada. Aun así, queda pendiente seguir revisando y solucionando los problemas de red de las sesiones anteriores.
 
+
+## Semana 6: Instalación de Windows Server 
+
+**Objetivo:** Instalar windows server con dhcp con protección contra los dhcp snooping 
+
+**Qué he hecho:** Instalación del windows server con su configuración y sus discos para los datos, para las copias y para el sistema 
+
+**Qué he conseguido:** La instalación correcta del widows y de los discos.
+
+**Qué no he conseguido y por qué:** La configuración mediante el putty ya que nos ha dado problemas y no hemos podido solucionarlo en este dia.
+
+## Semana 7: Examen 
+
+**Objetivo:** Hacer el examen.
+
+
+
+
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:5865F2,100:7B2CBF&height=110&section=footer&animation=fadeIn" width="100%" alt=""/>
