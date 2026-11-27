@@ -971,14 +971,6 @@ El puerto `Gi0/22` es por donde entran las respuestas del Windows Server (a trav
 
 <p align="center"><img src="https://raw.githubusercontent.com/AliChan-ai/Grupo-Sevilla/main/Documentacion/imagenes/p4-16-putty-error-permiso-ttyusb0.jpg" alt="Error de PuTTY por permiso denegado en /dev/ttyUSB0" width="460" /></p>
 
-# Tareas pendientes
-
-- [ ] **Práctica 1:** indicar la herramienta de comunicación y la de diagramas, y el inventario del hardware.
-- [ ] **Práctica 3:** capturas de `ls /sys/firmware/efi`, `cat /etc/fstab` y `blkid`; quitar la ISO (`sr0`); cliente físico con Linux Mint.
-- [ ] **Práctica 4:** poner la puerta de enlace (`10.3.10.1`) y el DNS en el servidor; excluir `10.3.10.100` del ámbito; añadir la opción de puerta de enlace al ámbito y activarlo; unificar el dominio; reserva DHCP para el cliente físico y `ipconfig /all` en los clientes; indicar en el esquema de puertos a qué puerto se conecta el Ubuntu Server fraudulento; añadir `switchport mode access` en `Gi0/29`–`Gi0/30`; guardar la configuración del switch (`copy running-config startup-config`), ya que `Vlan399` aparece como `manual`; aplicar y probar DHCP Snooping.
-
----
-
 <div align="center">
 
 **Grupo Sevilla · Proyecto intermodular · 2.º ASIX · Curso 2026–2027**
