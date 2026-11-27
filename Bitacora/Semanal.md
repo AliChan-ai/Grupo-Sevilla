@@ -147,22 +147,25 @@
 **Qué no hemos conseguido y por qué:** No hemos podido completar la instalación de Linux Mint, porque hemos dedicado parte de la sesión a resolver los problemas anteriores y a configurar Proxmox y Ubuntu Server. Esto nos ha llevado más tiempo del previsto, así que la dejamos pendiente para la próxima sesión.
 
 
-## Semana 6: Windows server y discos.
 
-**Objetivo del grupo:** Realizar la actividad 4 que es la instalación del windows server con dhcp y los 4 discos para los datos, para el sistema y para las copias.
+## Semana 6: Windows Server y discos.
+
+**Objetivo del grupo:** Realizar la actividad 4 que es la instalación del Windows Server con DHCP y los 4 discos para los datos, para el sistema y para las copias.
 
 **Qué hemos conseguido:**
 
 - Hemos realizado la instalación de Windows.
-- Hemos creado correctamente los discos
-- Hemos configurado correctamente el DHCP
+
+- Hemos creado correctamente los discos.
+
+- Hemos configurado correctamente el DHCP.
 
 **Qué no hemos conseguido y por qué:** Configurar correctamente la red porque el putty no nos funcionaba y no hemos podido terminarlo.
 
+
 ## Semana 7: Examen 
 
-**Objetivo del grupo:** Aprobar el examen. 
-
+**Objetivo del grupo:** Hemos dedicado la mayoria de la clase en hacer el examen y despues en la hora de administracion de sistemas operativo
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:5865F2,100:7B2CBF&height=110&section=footer&animation=fadeIn" width="100%" alt=""/>
