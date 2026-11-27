@@ -124,13 +124,13 @@
 
 ## Semana 5
 
-**Objetivo:** 
+**Objetivo:** Solucionar Problemas i configurar Ubuntu Server
 
-**Qué he hecho:** 
+**Qué he hecho:**  Terminar de instalar Ubuntu Server en Proxmox y configurar las particiones y distribución de discos
 
-**Qué he conseguido:** 
+**Qué he conseguido:** Configurar correctamente Ubuntu Server
 
-**Qué no he conseguido y por qué:** 
+**Qué no he conseguido y por qué:** Hemos terminado las tareas planteadas pero todavía queda solucionar algún problema de red
 
 ---
 
