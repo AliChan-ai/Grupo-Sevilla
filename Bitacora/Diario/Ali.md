@@ -145,13 +145,26 @@
 
 ## Semana 6
 
-**Objetivo:** Terminar todo el trabajo y entregarlo.
+**Objetivo:** Terminar todo el trabajo.
 
 **Qué he hecho:** He documentado las prácticas realizadas y he mejorado el README del repositorio.
 
 **Qué he conseguido:** He completado la documentación y he mejorado el README.
 
 **Qué no he conseguido y por qué:** No he podido entregar la práctica.
+
+---
+## Semana 7
+
+**Objetivo:** Terminar todo el trabajo y entregarlo.
+
+**Qué he hecho:** He documentado las prácticas realizadas y he realizado el examen.
+
+**Qué he conseguido:** He completado la documentación y he realizado el examen .
+
+**Qué no he conseguido y por qué:** .
+
+
 
 <div align="center">
 
