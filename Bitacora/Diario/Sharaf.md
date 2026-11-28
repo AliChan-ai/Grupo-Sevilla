@@ -145,7 +145,7 @@
 
 **Qué he hecho:** El examen y hacer unas últimas fotos que nos faltaban para el documento.
 
-**Qué he conseguido:** Hacer las ultimas fotos.
+**Qué he conseguido:** Adelantar configuracion de puertos y vlans y comprobar el funcionamiento del servidor dhcp.
 
 **Qué no he conseguido y por qué**:No hemos conseguido aun terminar ya que debido a problemas de la configuracion en el switch aun no hemos podido arreglar y estamos todavia en proceso de arreglarlo.
 <div align="center">
