@@ -123,7 +123,7 @@
 
 **Objetivo:** Terminar servidor ubuntu.
 
-**Qué he hecho:** He configurado las conexiones entre switch- maquina.
+**Qué he hecho:** He configurado las conexiones entre switch- maquina .
 
 **Qué he conseguido:** La conectividad bien hecha.
 
@@ -135,9 +135,9 @@
 
 **Qué he hecho:** Como era huelga solo venimos unos del grupo para adelantar pero tuvimos muchos problemas de conexión entre máquinas.
 
-**Qué he conseguido:** Arreglar conexión entre maquina virtual y adelantar en dhcp
+**Qué he conseguido:** Arreglar conexión entre maquina virtual y el cliente de ubuntu y adelantar en dhcp creando el nuevo ambito de nuestra red.
 
-**Qué no he conseguido y por qué:** Acabar el dhcp por los errores en el putty.
+**Qué no he conseguido y por qué:** Acabar el dhcp por los errores en el putty, esto nos retraso y no pudimos configurar el switch correctamente .
 
 ## Semana 7
 
