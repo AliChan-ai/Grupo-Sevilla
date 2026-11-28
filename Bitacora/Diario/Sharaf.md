@@ -133,7 +133,7 @@
 
 **Objetivo:** Terminar las prácticas para entregarlas.
 
-**Qué he hecho:** Como era vaga solo venimos unos del grupo para adelantar pero tuvimos muchos problemas de conexión entre máquinas.
+**Qué he hecho:** Como era huelga solo venimos unos del grupo para adelantar pero tuvimos muchos problemas de conexión entre máquinas.
 
 **Qué he conseguido:** Arreglar conexión entre maquina virtual y adelantar en dhcp
 
@@ -147,7 +147,7 @@
 
 **Qué he conseguido:** Hacer las ultimas fotos.
 
-**Qué no he conseguido y por qué:** 
+**Qué no he conseguido y por qué**:No hemos conseguido aun terminar ya que debido a problemas de la configuracion en el switch aun no hemos podido arreglar y estamos todavia en proceso de arreglarlo.
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:5865F2,100:7B2CBF&height=110&section=footer&animation=fadeIn" width="100%" alt=""/>
