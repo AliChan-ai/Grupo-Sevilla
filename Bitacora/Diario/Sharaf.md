@@ -135,7 +135,7 @@
 
 **Qué he hecho:** Como era huelga solo venimos unos del grupo para adelantar pero tuvimos muchos problemas de conexión entre máquinas.
 
-**Qué he conseguido:** Arreglar conexión entre maquina virtual y el cliente de ubuntu y adelantar en dhcp creando el nuevo ambito de nuestra red.
+**Qué he conseguido:** Arreglar conexión entre maquina virtual y el cliente de ubuntu y adelantar en dhcp creando el nuevo ambito de nuestra red en windows server.
 
 **Qué no he conseguido y por qué:** Acabar el dhcp por los errores en el putty, esto nos retraso y no pudimos configurar el switch correctamente .
 
